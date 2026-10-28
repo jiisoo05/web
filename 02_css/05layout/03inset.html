@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>inset 단축속성</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          dl {
+               background: rgba(0, 0, 255, .3);
+               position: absolute;
+               inset-inline: 10px;
+               inset-block: 50px;
+          }
+
+          .overlay1 {
+               position: fixed;
+               background: #ccc;
+               inset: 0;
+          }
+
+          .overlay2 {
+               width: 500px;
+               height: 500px;
+               background: rgba(0, 255, 0, .3);
+               position: absolute;
+               inset-block-start: 1rem;
+               inset-inline-start: 2rem;
+               left: 100px;
+          }
+
+          .overlay3 {
+               background: rgba(255, 0, 0, .3);
+               position: absolute;
+               inset: 0;
+               inset: 10rem 5rem;
+          }
+
+          .wrap{
+               background: rgba(255, 255, 0, 0.3);
+               border: 1px solid red;
+               position: absolute;
+               inset: 25vh 10%;
+               /* width:auto 이면 좌우 간격을 제외한 너비 */
+               /* height:auto 이면 상하 간격을 제외한 높이 */
+          }
+          .box{
+               width: 200px;
+               height: 200px;
+               background: green;
+               position: absolute;
+               inset: 0;
+               margin: auto;
+          }
+     </style>
+</head>
+
+<body>
+     <dl>
+          <dt>inset 단축속성</dt>
+          <dd>top,right,bottom,left를 한번에 지정합니다</dd>
+     </dl>
+     <div class="overlay1"></div>
+     <div class="overlay2"></div>
+     <div class="overlay3"></div>
+     <div class="wrap">
+          <div class="box">item</div>
+     </div>
+</body>
+
+</html>

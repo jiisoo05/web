@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>position</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          .box1 {
+               background: lightcoral;
+               width: 100px;
+               left: 10px;
+               top: 20px;
+               /* 좌표 안먹음 */
+          }
+
+          .box2 {
+               background: khaki;
+               width: 300px;
+               position: static;
+               /* 문서의 흐름대로 배치 - 기본값
+               좌표 안먹음 */
+               left: 10px;
+               top: 20px;
+          }
+
+          .box3 {
+               width: 500px;
+               background: lightblue;
+               position: relative;
+               /* 
+                자연스럽게 배치
+                고정되어 있지 않고 다른 요소에 의해 바뀔 수 있다.
+                상대적인 위치를 사용하기 때문에 다른 요소와 조화를 이룬다.
+                left top 속성 등 좌표값을 사용해 요소의 위치를 옮길 수 있다.
+                문서의 흐름을 유지하면서 (absolute)의 기준점이 되어 줄 수 있다.
+            */
+               left: 10px;
+               top: -20px;
+
+          }
+
+          .box4 {
+               width: 200px;
+               background: lightseagreen;
+               /* 현재 위치에서 오른쪽으로 100px 이동
+               아래쪽으로 50px 이동
+               */
+               position: relative;
+               left: 100px;
+               top: 50px;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="box1">박스1</div>
+     <div class="box2">박스2</div>
+     <div class="box3">박스3</div>
+     <div class="box4">박스4</div>
+</body>
+
+</html>

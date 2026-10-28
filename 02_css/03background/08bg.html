@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>background 속성</title>
+     <style>
+          body {
+               background: antiquewhite;
+          }
+
+          table {
+               border: 1px solid #ccc;
+               border-collapse: collapse;
+
+          }
+
+          th,
+          td {
+               border: 1px solid #ccc;
+               width: 250px;
+               height: 50px;
+
+          }
+
+          thead {
+               background: burlywood;
+          }
+
+          .box {
+               width: 200px;
+               height: 200px;
+               border: 1px dashed #333;
+               font-size: 20px;
+               text-align: center;
+               line-height: 200px;
+          }
+
+          .box1 {
+               background: #ccc url(./img/bg4.png) no-repeat left bottom/50%;
+          }
+
+          .box2 {
+               background-color: lavender;
+               background-image: url(./img/bg4.png);
+          }
+
+          .box3 {
+               background: url(./img/bg4.png);
+               background-repeat: no-repeat;
+               background-color: yellow;
+          }
+
+          .box4 {
+               background-color: yellow;
+               background-repeat: no-repeat;
+               background: url(./img/bg4.png);
+          }
+
+          .box5 {
+               background-color: yellow;
+               background-repeat: no-repeat;
+               background-image: url(./img/bg4.png);
+          }
+     </style>
+</head>
+
+<body>
+     <div>
+          <h2>background 속성</h2>
+          <ul>
+               <li>배경 관련 속성을 줄여서 표시</li>
+               <li>각 속성 값이 다르므로 표기 순서는 상관없음</li>
+               <li>background : url('경로') no-repeat fixed right bottom</li>
+          </ul>
+     </div>
+     <table>
+          <thead>
+               <tr>
+                    <th>속성</th>
+                    <th>속성 값</th>
+               </tr>
+          </thead>
+          <tbody>
+               <tr>
+                    <td>background-image</td>
+                    <td>url('images/bg3.jpg')</td>
+               </tr>
+               <tr>
+                    <td>background-repeat</td>
+                    <td>no-repeat</td>
+               </tr>
+               <tr>
+                    <td>background-attachment</td>
+                    <td>fixed</td>
+               </tr>
+               <tr>
+                    <td>background-position</td>
+                    <td>right bottom</td>
+               </tr>
+               <tr>
+                    <td>background-clip</td>
+                    <td>border-box</td>
+               </tr>
+               <tr>
+                    <td>background-origin</td>
+                    <td>padding-box</td>
+               </tr>
+               <tr>
+                    <td>background-size</td>
+                    <td>auto</td>
+               </tr>
+          </tbody>
+     </table>
+
+     <div class="box box1">박스1</div>
+     <div class="box box2">박스2</div>
+     <div class="box box3">박스3</div>
+     <div class="box box4">박스4</div>
+     <div class="box box5">박스5</div>
+
+</body>
+
+</html> 

@@ -1,0 +1,71 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=East+Sea+Dokdo&family=Nanum+Pen+Script&family=Song+Myung&display=swap');
+
+
+* {
+     margin: 0;
+     padding: 0;
+}
+
+.container {
+     width: 500px;
+     margin: 10px auto;
+     border: 1px solid #ccc;
+     padding: 10px;
+}
+
+.container ul {
+     padding: 50px;
+     border: 5px dotted #1a1a1a;
+     background-color: lightcoral;
+}
+
+/* ul list-style 다 다르게 */
+
+.con1 ul {
+     list-style: circle;
+}
+
+.con1 u2 {
+     list-style: circle;
+}
+
+.con1 u3 {
+     list-style: decimal;
+}
+
+.con1 u4 {
+     list-style: decimal-leading-zero;
+}
+
+/* h2 폰트 다 다르게 / 백그라운드 컬러 다 다르게 / 폰트 컬러 선택 */
+
+.con1>h2 {
+     list-style: none;
+     font-family: "Song Myung", serif;
+     color: #6348AD ;
+     background-color: #9FB284;
+}
+
+.con2>h2 {
+     list-style: circle;
+     font-family: "East Sea Dokdo", sans-serif;
+     color: #3D199F;
+     background-color:#9BBAC5 ;
+}
+
+.con3>h2 {
+     list-style: inside;
+     font-family: "Nanum Pen Script", cursive;
+     color: #250E66;
+     background-color: #84A7B2;
+}
+
+.con4>h2 {
+     list-style: decimal;
+     font-family: "Dongle", sans-serif;
+     color: #0E032B;
+     background-color: #B29084;
+}
+
+

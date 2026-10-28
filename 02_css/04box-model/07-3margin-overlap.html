@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>마진 중첩 현상</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+
+          }
+
+          .container {
+               width: 1300px;
+               height: 500px;
+               background: #ccc;
+               border: 2px solid red;
+               margin: 50px auto;
+
+          }
+
+          .first {
+               margin: 50px auto 0;
+
+          }
+
+          main {
+               background: lavender;
+               padding-block: 30px;
+
+          }
+
+          main .container {
+               margin-block: 0;
+               width: 1500px;
+               padding-top: 100px ;
+               background: green
+               
+          }
+
+          #box1 {
+               width: 300px;
+               height: 300px;
+               background: pink;
+               /* margin-top: 10px; */
+               
+          }
+
+          #box2 {
+               width: 100px;
+               height: 50px;
+               background: gold;
+               margin-block: 50px;
+
+
+          }
+
+          #box3 {
+               width: 200px;
+               height: 100px;
+               background: lightcoral;
+
+          }
+     </style>
+</head>
+
+<body>
+     <div class="container first"></div>
+     <main>
+          <div class="container">
+               <div id="box1"></div>
+               <div id="box2"></div>
+               <div id="box3"></div>
+          </div>
+     </main>
+     <footer class="container"></footer>
+</body>
+
+</html>

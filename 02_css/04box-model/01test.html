@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>블록/인라인 레벨 요소</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          .container {
+               background: yellow;
+               width: 500px;
+               margin: 0 auto;
+          }
+
+          h2 {
+               background: blue;
+          }
+
+          ul {
+               background: pink;
+               width: 80%
+          }
+
+          li {
+               background: green;
+               width: 90%;
+
+          }
+
+          span {
+               background: lavender;
+          }
+
+          strong {
+               background: khaki;
+               width: 1000px;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="container">
+          <h2>블록 레벨 요소</h2>
+          <ul>
+               <li>요소를 삽입했을 때 혼자 한줄을 차지하는 요소</li>
+               <li>요소의 너비가 100%
+                    <span>예) div, p, hn 등</span>
+               </li>
+          </ul>
+          <h2>인라인 레벨 요소</h2>
+          <ul>
+               <li>줄을 차지하지 않는 요소</li>
+               <li>화면에 표시되는 콘텐츠만큼만 영역을 차지하고 나머지 공간에는 다른 요소가 올 수 있음
+                    <strong>img, strong, span 등</strong>
+               </li>
+          </ul>
+     </div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 인라인 묶기</title>
+    <style>
+        h2 {
+            font-weight: 400;
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        p {
+            background: #ccc;
+        }
+
+        strong {
+            background: greenyellow;
+            font-weight: normal;
+        }
+
+        b {
+            background: pink;
+            font-weight: 400;
+        }
+
+        em {
+            font-style: normal;
+            background: green;
+        }
+        #blue{
+            color: blue;
+        }
+        .red {
+            color: red;
+        }
+        span {
+            font-size: 20px;
+            color: lawngreen !important; 
+        }
+        /* 태그 < class < id < 인라인스타일 < !important */
+
+    </style>
+</head>
+
+<body>
+    <h2>h2 : 제목태그 - 블록레벨</h2>
+    <p>
+        <strong>strong 태그 : 중요한 내용이라서 강조해야 할 때, </strong>
+        <b>b 태그 : 단순히 굵게 표시할 때,</b>
+    </p>
+    <em>em 태그 : 흐름상 특정 부분을 강조하고 싶을때(기울림꼴-이탤릭체) , </em>
+    <cite><a href="https://www.youtube.com/@flowyullab/">플로율랩-율쌤</a></cite>
+    <p><cite>모나리자</cite>는 16세기가 어쩌구 저쩌구</p>
+    <i>i 태그 : 단순히 이탤릭 체로 표시할 때</i>
+    <p>
+        웹의 창시자인 팀 버너스리의
+        <q cite="">웹의 힘은 보편성에 있다. 장애에 구애없이 모든 사람이 접근 할 수 있는 것이 필수적인 요소이다. </q>
+    </p>
+    <p>루비(ruby)는 1995년 일본의 프로그래머인 마츠모토 유키히로(
+        <ruby>
+            松本行弘
+            <rt>まつもとゆきひろ</rt>
+        </ruby>
+        )가 만든 프로그래밍 언어입니다.
+    </p>
+    <span class="red bg1 bg2">span: 줄 안에서 <b>(인라인묶기)</b></span>
+    <span id="yello">span: 줄 안에서 <b>(인라인묶기)</b></span>
+    <span class="red" id="blue" style="color: blueviolet;">span: 줄 안에서 <b>(인라인묶기)</b></span>
+    <span>span: 줄 안에서 <b>(인라인묶기)</b></span>
+</body>
+
+</html>

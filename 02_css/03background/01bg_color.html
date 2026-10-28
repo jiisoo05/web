@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>background-color 속성</title>
+     <link rel="stylesheet" href="css/01bg_color.css">
+</head>
+
+<body>
+     <div class="wrap">
+          <div class="container">
+               <h2>16진수 표기법</h2>
+               <ul class="ul1">
+                    <li>#ffffff처럼 #과 함께 6자리의 16진수로 표시</li>
+                    <li>앞에서부터 두자리씩 묶어 빨강, 초록, 파랑의 양</li>
+                    <li>하나도 섞이지 않았을때는 00, 가득 섞였을때는 ff로 표시</li>
+                    <li>#000000(검은색)~#ffffff(흰색)</li>
+                    <li>
+                         두자리씩 중복될 경우 줄여 사용할 수 있음<br>
+                         <b>#ffff00 - #ff0 , #cccccc - #ccc</b>
+                    </li>
+               </ul>
+          </div><!-- //.container -->
+          <div class="container">
+               <h2>hsl/hsla 표기법</h2>
+               <ul class="ul2">
+                    <li>color:hsl(240,100%,50%)처럼 세 자리의 숫자로 표시</li>
+                    <li>앞의 숫자부터 색상(hue), 채도(saturation), 밝기(light)의 양</li>
+                    <li>투명도를 조절할 때는 color:hsla(240,100%,50%,0.3)처럼 마지막에 알파값 추가</li>
+                    <li>알파값은 불투명도를 나타내는 값으로 0~1 값 중에서 사용(1은 불투명, 0은 완전투명)</li>
+               </ul>
+          </div><!-- //.container -->
+          <div class="container">
+               <h2>rgb/rgba 표기법</h2>
+               <ul class="ul3">
+                    <li>color:rgb(255,0,0)처럼 세 자리의 숫자로 표시</li>
+                    <li>앞의 숫자부터 빨강, 초록, 파랑의 양</li>
+                    <li>하나도 섞이지 않았을때는 0, 가득 섞였을 때는 255</li>
+                    <li>투명도를 조절할 때는 color:rgba(255,255,255,.3)처럼 마지막 알파값 추가</li>
+                    <li>알파값은 불투명도를 나타내는 값으로 0~1 값 중에서 사용(1은 불투명, 0은 완전투명)</li>
+               </ul>
+          </div><!-- //.container -->
+          <div class="container">
+               <h2>색상 이름 표기법</h2>
+               <ul class="ul4">
+                    <li>잘 알려진 색상 이름으로 표시</li>
+                    <li>기본 색상 16사지</li>
+                    <li>모든 브라우저에서 표현할 수 있는 색상을 웹 안전 색상(web-safe-color)라고 하는데 기본 16가지 색상을 포함해 모두 216가지 입니다.</li>
+               </ul>
+          </div><!-- //.container -->
+     </div><!-- //.wrap -->
+</body>
+
+</html>

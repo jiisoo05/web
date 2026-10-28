@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>border 속성</title>
+     <style>
+          div {
+               width: 100px;
+               height: 100px;
+               margin: 15px;
+               text-align: center;
+               line-height: 100px;
+               background: skyblue;
+          }
+
+          .box1 {
+               border: 1px dashed blue;
+          }
+
+          .box2 {
+               background: transparent;
+               /* border: 2px dotted red; */
+               border-left: 10px solid #ccc;
+
+          }
+
+          .box3 {
+               border: 2px solid cornflowerblue;
+               background: transparent;
+
+          }
+
+          .box4 {
+               border: 5px solid red;
+               border-style: dotted;
+
+          }
+
+          .box5 {
+               border: 9px solid orange;
+               border-style: dotted;
+          }
+     </style>
+
+</head>
+
+<body>
+     <h2>border 속성</h2>
+     <ul>
+          <li>테두리스타일과 두께 색상 등을 묶어 표시</li>
+          <li>순서 상관없음</li>
+          <li><strong> border : 1px solid #ccc;</strong></li>
+     </ul>
+     <div class="box1">박스1</div>
+     <div class="box2">박스2</div>
+     <div class="box3">박스3</div>
+     <div class="box4">박스4</div>
+     <div class="box5">박스5</div>
+</body>
+
+</html>

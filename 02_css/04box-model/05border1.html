@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>border</title>
+     <style>
+          div {
+               width: 200px;
+               height: 100px;
+               margin: 15px;
+               display: inline-block;
+               background: rgb(0 255 0 / 0.1);
+               border-width: 15px;
+          }
+
+          .none {
+               border-style: none;
+          }
+
+          .hidden {
+               border-style: hidden;
+          }
+
+          .dashed {
+               border-style: dashed;
+               color: blue;
+               border-color: red green blue pink;
+          }
+
+          .dotted {
+               border-style: dotted;
+               border-left-color: yellow;
+          }
+
+          .double {
+               border-style: double;
+               border-bottom-width: 50px;
+          }
+
+          .groove {
+               border-style: groove;
+          }
+
+          .inset {
+               border-style: inset;
+          }
+
+          .outset {
+               border-style: outset;
+          }
+
+          .ridge {
+               border-style: ridge;
+          }
+
+          .solid {
+               border-style: solid;
+               border-width: 10px 20px;
+               border-color: red blue green;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="none">none</div>
+     <div class="hidden">hidden</div>
+     <div class="dashed">dashed</div>
+     <div class="dotted">dotted</div>
+     <div class="double">double</div>
+     <div class="groove">groove</div>
+     <div class="inset">inset</div>
+     <div class="outset">outset</div>
+     <div class="ridge">ridge</div>
+     <div class="solid">solid</div>
+</body>
+
+</html>

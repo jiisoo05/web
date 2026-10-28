@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>float</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          h1,
+          .container,
+          p {
+               width: 1280px;
+               border: 1px solid #ccc;
+               margin: 0 auto;
+               box-sizing: border-box;
+          }
+
+          .container{
+               overflow: hidden;
+          }
+
+          .container div {
+               width: 150px;
+               height: 50px;
+               background: lightblue;
+          }
+
+          .container .left {
+               float: left;
+          }
+
+          .container .right {
+               float: right;
+          }
+     </style>
+</head>
+
+<body>
+     <h1>clear 속성을 이용한 위치 조정</h1>
+     <div class="container">
+          <div class="left">왼쪽 끝에 위치하고 싶은 요소</div>
+          <div class="right">오른쪽 끝에 위치하고 싶은 요소</div>
+     </div>
+     <p>이 글자를 아래쪽에 제대로 출력 하고 싶어요</p>
+</body>
+
+</html>

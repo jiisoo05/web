@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>position: absolute</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          .box {
+               width: 50px;
+               height: 50px;
+               background: rgb(255 0 0 / 0.5);
+               font-size: 1.5em;
+               line-height: 50px;
+               text-align: center;
+               color: #fff;
+               position: absolute;
+          }
+
+          #cr1 {
+               right: 0;
+               top: 0;
+          }
+
+          #cr2 {
+               left: 50px;
+               top: 0;
+          }
+
+          #cr3 {
+               bottom: 0;
+               left: 30%;
+          }
+
+          #cr4 {
+               left: 200px;
+               top: 50;
+
+          }
+
+          #cr5 {
+               right: 500px;
+               bottom: 500px;
+          }
+          
+     </style>
+</head>
+
+<body>
+     <div class="box" id="cr1">cr1</div>
+     <div class="box" id="cr2">cr2</div>
+     <div class="box" id="cr3">cr3</div>
+     <div class="box" id="cr4">cr4</div>
+     <div class="box" id="cr5">cr5</div>
+</body>
+
+</html>

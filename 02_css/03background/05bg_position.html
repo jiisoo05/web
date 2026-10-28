@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>background-position</title>
+     <style>
+          div {
+               margin: 100px;
+               border: 1px solid #ccc;
+               width: 150px;
+               padding: 50px;
+
+          }
+
+          button {
+               box-sizing: border-box;
+               line-height: 1;
+               font-size: 12px;
+               background-repeat: no-repeat;
+               width: 100%;
+               height: 50px;
+               background-color: #ff00ff;
+               border: 0;
+               color: #fff;
+               border-radius: 8px;
+               font-weight: bold 
+               
+
+          }
+
+          #bg1 {
+               background-position: 10px 9xp;
+
+
+          }
+
+          #bg2 {
+               background-position: right center;
+               color: transparent;
+
+          }
+
+          .bg {
+               width: 1000px;
+               height: 500px;
+               background-image: url(./img/1456.png);
+               background-repeat: no-repeat;
+               border: 10px solid red;
+          }
+
+          .bg1 {
+               background-position: right;
+
+          }
+
+          .bg2 {
+               background-position: center;
+          }
+
+          .bg3 {
+               background-image: url(./img/check.png);
+               background-position: right -310px top -310px;
+          }
+
+          .bg4 {
+               background-image: url(./img/check.png);
+               background-position: -310px -310px;
+
+
+          }
+     </style>
+</head>
+
+<body>
+     <div><button type="button" id="bg1">bookmark</button></div>
+     <div><button type="button" id="bg2">bookmark</button></div>
+     <div class="bg bg1">text</div>
+     <div class="bg bg2">text</div>
+     <div class="bg bg3">text</div>
+     <div class="bg bg4">text</div>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>주요 선택자</title>
+     <style>
+          h2{
+               background-color: crimson;
+               width: 300px;
+               color: rgb(225,225,225);
+          }
+          p{
+               font-size: 10px;
+               margin-left: 20px;
+          }
+          .container{
+               border: 1px solid #ccc;
+               margin-bottom: 10px;
+          }
+          .cblue{
+               color: blue;
+
+          }
+          .in1{
+               font-style: normal;
+
+          }
+          #cy{
+               color: yellow;
+          }
+          h1,h2,h3,.no{
+               font-size: 16px;
+               font-weight: normal;
+
+          }
+          h2{
+               background-color: yellowgreen;
+          }
+     </style>
+</head>
+
+<body>
+     <h1>주요 선택자</h1>
+     <h2>태그 선택자</h2>
+     <p class="no">문서에서 특정 태그를 사용한 모든 요소에 스타일이 적용됨</p>
+     <h3>형식</h3>
+     <p>기본형 - 태그이름 {스타일속성:속성 값;}</p>
+
+     <div class="container">
+          <h2>클래스 선택자</h2>
+          <p class="cblue">마침표(.) 다음에 클래스 이름 지정</p>
+          <em class="cblue in1">문서 안에서 여러번 반복할 스타일이라면 클래스 선택자로 정의</em>
+     </div>
+
+     <div class="container">
+          <h2 id="cy">아이디 선택자</h2>
+          <p>문서 안에서 한번만 사용한다면 id 선택자로 정의</p>
+          <em>파운드(#) 다음에 id 이름 지정</em>
+     </div>
+     <div class="container">
+          <h3>class 선택자와 id 선택자의 차이</h3>
+          <p><strong>공통점 : </strong>요소(태그)의 특정 부분에만 스타일 적용</p>
+          <p><strong>클래스 선택자 : </strong>
+               문서 안에서 여러번 반복, 여러개 가능
+          </p>
+     </div>
+     <div class="container">
+          <h3>그룹 선택자</h3>
+          <ul>
+               <li>같은 스타일을 사용하는 선택자를 한꺼번에 정의</li>
+               <li>쉼표(,)로 구분해 여러 선택자를 나열</li>
+          </ul>
+     </div>
+</body>
+
+</html>

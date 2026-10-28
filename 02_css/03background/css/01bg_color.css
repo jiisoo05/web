@@ -1,0 +1,48 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=East+Sea+Dokdo&family=Nanum+Pen+Script&family=Song+Myung&display=swap');
+
+
+* {
+     margin: 0;
+     padding: 0;
+}
+
+body {
+     background-color: #FAF7CE;
+}
+
+.container {
+     width: 500px;
+     border: 1px solid #fff;
+     margin-top: 10px;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+
+
+ul {
+     list-style: none;
+}
+
+/* 1. hsl / 2.rgb / 3.16진수/ 4.rgba  구글웹폰트 4개 */
+
+.ul1 {
+     background-color: hsl(204, 89%, 76%);
+     font-family: "Song Myung", serif;
+}
+
+.ul2 {
+     background-color: rgb(95, 191, 231);
+     font-family: "East Sea Dokdo", sans-serif;
+}
+
+.ul3 {
+     background-color: #37A4D3;
+     font-family: "Nanum Pen Script", cursive;
+}
+
+.ul4 {
+     background-color: rgb(22, 131, 179);
+     font-family: "Dongle", sans-serif;
+}

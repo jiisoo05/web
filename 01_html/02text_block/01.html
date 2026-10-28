@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트를 묶는 블록 태그</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 20px;
+        }
+
+        hr {
+            border: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 기본형 <hn>제목</hn> -->
+    <!-- 각 웹 콘텐츠 영역에서 제목을 표시할 때 사용하는 태그 -->
+    <!-- 중요도/크기 h1 > h2 > h3 > h4 > h5 > h6 -->
+    <!-- 텍스트와 인라인 요소를 포함할 수 있지만 블록레벨 요소는 포함할 수 없습니다 --> 
+    <h1>로고 묶을때 - 사이크 가장 큰 제목 (사이트명)</h1>
+    <h2>대제목</h2>
+    <h3>그다음제목</h3>
+    <h4>그다음제목</h4>
+    <h5>그다음제목</h5>
+    <h6>그다음제목</h6>
+
+    <!-- 기본형 <p>단락 내용</p> -->
+    <!-- 텍스트와 인라인 요소를 포함할 수 있지만 블록레벨 요소는 포함할 수 없습니다 -->
+    <p>p : 단락 태그입니다.<br>
+        입력한 내용 앞 뒤로 빈 줄이 생기면서 텍스트 단락이 만들어 집니다.
+    </p>
+    <p>
+        br : 줄바꾸기 - 줄 바꿀 위치에 br 태그를 사용, 강제 개행 태그를 <br />
+        닫는 태그 없음 : 단독 태그
+    </p>
+    <!-- 기본형 : <blockquote>인용 내용</blockquote> -->
+    <!-- 다른 텍스트 보다 안으로 들여써짐 -->
+    <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque minima consectetur, quis ad itaque
+        distinctio ut est optio sed saepe facilis et assumenda sapiente pariatur architecto facere, dignissimos
+        quibusdam ullam.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci laborum quasi dolorum, quam voluptates beatae
+        neque nihil rerum non aut voluptate omnis eum enim quia voluptatum minus ut delectus eos explicabo quae. Libero
+        tenetur reiciendis officiis vel voluptas assumenda, et quas molestiae! Quia laudantium dicta aliquid tempore
+        aperiam magnam exercitationem quasi facere deleniti nemo deserunt dolorem minus hic nam nihil ex natus
+        similique, rerum expedita autem inventore distinctio alias corrupti! Voluptate quo ipsum laboriosam sequi porro
+        cum libero error debitis deleniti minima? Est dolores reprehenderit, corrupti quo voluptatibus cumque dolorem
+        numquam cum possimus ab minus perspiciatis ipsum architecto id quisquam!
+    </blockquote>
+    <!-- 기본형 <hr> 닫는 태그 없음 : 단독 태그 / 분위기 전환 -->
+    <p>주제가 바뀔때 분위기 전환, 수평 줄 생김</p>
+    <hr />
+    <p>내용이 바뀝니다</p>
+    <!-- 기본형 : <pre>텍스트</pre> -->
+    <!-- 소스에 표시한 공백이 그대로 표시됨, 프로그램 소스를 표시할 때 유용함 -->
+    <pre>
+         let num = 10;
+         (num % 2) === 0 ? alert('짝수') : alert('홀수');
+         </pre>
+
+</body>
+
+</html>

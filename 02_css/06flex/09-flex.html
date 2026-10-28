@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>flex</title>
+     <link rel="stylesheet" href="default.css">
+     <style>
+          .parent {
+               margin-top: 100px;
+
+          }
+
+          .flex_container {
+               display: flex;
+          }
+
+          /* flex : flex-grow flex-shrink flex-bssis */
+          .flex_item {
+               flex: 1 1 0;
+               flex: 1;
+          }
+
+          .con {
+               width: 800px;
+               margin: 0 auto;
+          }
+
+          .con .flex_item:nth-child(1) {
+               flex: 1;
+          }
+
+          .con .flex_item:nth-child(2) {
+               flex: 3;
+          }
+
+          .con .flex_item:nth-child(3) {
+               flex: 2;
+          }
+
+          .parent .flex_item{
+               flex: 1 1 auto;
+               flex: 1 auto;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="flex_container con">
+          <div class="flex_item">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae inventore deleniti dolor
+                    consectetur amet
+                    aperiam enim deserunt ipsam harum, veritatis error. Vel odio repudiandae ab doloremque provident
+                    reiciendis
+                    inventore facilis.</p>
+          </div>
+          <div class="flex_item">BB</div>
+          <div class="flex_item">CCCCCCC</div>
+     </div>
+     <div class="flex_container parent">
+          <div class="flex_item">1111111111111</div>
+          <div class="flex_item">22222222</div>
+          <div class="flex_item">333</div>
+     </div>
+</body>
+
+</html>

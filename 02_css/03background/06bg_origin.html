@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>background-origin</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          div {
+               margin-bottom: 50px;
+               width: 400px;
+               height: 200px;
+               border: 10px dotted red;
+               padding: 35px;
+               background-image: url(./img/bg8.png);
+               background-repeat: no-repeat;
+
+          }
+
+          .bg1{
+               background-origin: padding-box;
+               /* 기본값 */
+          }
+          .bg2{
+               background-origin: border-box;
+          }
+          .bg3{
+               background-origin: content-box;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="bg1"></div>
+</body>
+
+</html>

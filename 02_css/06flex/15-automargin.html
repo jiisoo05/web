@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>automargin</title>
+  <link rel="stylesheet" href="default.css">
+  <style>
+    .flex_container {
+      display: flex;
+    }
+
+    .container2 {
+      flex-direction: column;
+      background: pink;
+      margin-top: 200px;
+      height: 800px;
+    }
+
+    .flex_item {
+      flex-basis: 150px;
+    }
+
+    .flex_item:last-child {margin-left: auto;}
+    .container2 .flex_item:last-child {
+      margin-left: 0;
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex_container">
+    <div class="flex_item">A</div>
+    <div class="flex_item">B</div>
+    <div class="flex_item">C</div>
+  </div>
+  <div class="flex_container container2">
+    <div class="flex_item">A</div>
+    <div class="flex_item">B</div>
+    <div class="flex_item">C</div>
+  </div>
+</body>
+
+</html>

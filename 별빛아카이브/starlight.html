@@ -1,0 +1,2223 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>별빛 아카이브 | 서브컬쳐 가이드</title>
+     <link rel="stylesheet" href="./css/starlight.css">
+     <script>
+          try { document.documentElement.dataset.theme = localStorage.getItem("starlight-theme") === "dark" ? "dark" : "light"; }
+          catch (error) { document.documentElement.dataset.theme = "light"; }
+     </script>
+
+</head>
+
+<body>
+
+     <!-- =========================
+       상단 헤더
+  ========================== -->
+     <header class="header">
+          <div class="container header-inner">
+
+               <a href="#" class="logo">
+                    <div class="logo-symbol">✦</div>
+                    <div>
+                         <div class="logo-name">별빛 아카이브</div>
+                         <span class="logo-sub">CHARACTER DATABASE</span>
+                    </div>
+               </a>
+
+               <nav class="nav">
+                    <a href="#tier-overview-section">티어표</a>
+                    <a href="#full-tier-section">캐릭터 도감</a>
+               </nav>
+
+               <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" type="button" aria-label="다크 모드로 전환"
+                         aria-pressed="false" title="테마 전환">
+                         <span class="theme-icon" aria-hidden="true">☾</span>
+                    </button>
+                    <button class="login-button" id="loginButton">
+                         로그인
+                    </button>
+               </div>
+
+          </div>
+     </header>
+
+
+     <main>
+
+          <!-- =========================
+     메인 소개 + 게임 선택
+========================== -->
+          <section class="hero">
+               <div class="container">
+
+                    <!-- 게임 선택 메뉴 -->
+                    <div class="game-selector">
+
+                         <button class="game-tab" data-game="원신" type="button">
+                              <span class="game-tab-icon"> <img
+                                        src="https://i.namu.wiki/i/1t29vu_UAwMwOuN9paANoQmH9DMS4f658rH53In5nWB9sFPtU7llWzlUC-6rnV422G6icrM0puM0qH2WhHsVCA.webp"
+                                        alt="원신로고" width="30" height="30"></span>
+                              <span>원신</span>
+                         </button>
+
+                         <button class="game-tab active" data-game="스타레일" type="button">
+                              <span class="game-tab-icon"><img
+                                        src="https://i.namu.wiki/i/5g4Q-tDWNycSVtWcSIBk2drqSm_e4d01rWoXHwDyBH944HSShaRlBv1FD5rlYzMaohNcJxe7Lw0JAaQKeQDscg.webp"
+                                        alt="스타레일 로고" width="36" height="20"></span>
+                              <span>
+                                   스타레일
+                                   <span class="selected-game-label">현재 선택된 게임</span>
+                              </span>
+                         </button>
+
+                         <button class="game-tab" data-game="명조" type="button">
+                              <span class="game-tab-icon"><img
+                                        src="https://i.namu.wiki/i/cAEcJZC7aRPHtw48y63AzdJNnc4x_H1g7xHD-FpzChwu6CllvsyqW7x_YGYTtvdeoif99Dlp3p4IXfg3KbP9jA.webp"
+                                        alt="명조 로고" width="38" height="25"></span>
+                              <span>명조</span>
+                         </button>
+
+                         <button class="game-tab" data-game="젠레스 존 제로" type="button">
+                              <span class="game-tab-icon"><img
+                                        src="https://upload.wikimedia.org/wikipedia/en/9/92/Zenless_Zone_Zero_logo.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+                                        alt="젠레스 존 제로 로고" width="30" height="30"></span>
+                              <span>젠레스 존 제로</span>
+                         </button>
+
+                    </div>
+
+                    <!-- 메인 소개 박스 -->
+                    <div class="hero-box">
+
+                         <span class="eyebrow">YOUR GAME GUIDE</span>
+
+                         <h1>
+                              나만의 캐릭터 공략을<br>
+                              <span>한곳에서, 더 쉽게.</span>
+                         </h1>
+
+                         <p>
+                              캐릭터 티어부터 추천 세팅, 유물, 파티 조합까지.<br>
+                              필요한 정보를 한눈에 확인해보세요.
+                         </p>
+
+                    </div>
+
+               </div>
+          </section>
+
+          <!-- =========================
+         티어표 요약
+    ========================== -->
+          <section class="section" id="tier-overview-section">
+               <div class="container">
+
+                    <div class="section-heading">
+                         <div>
+                              <div class="section-kicker">CHARACTER RANKING</div>
+                              <h2 class="section-title">캐릭터 티어표</h2>
+                              <p class="section-description">
+                                   현재 티어 요약을 확인하고 원하는 캐릭터의 공략으로 이동해보세요!
+                              </p>
+                         </div>
+                    </div>
+
+                    <div class="tier-overview" id="tierOverview">
+
+                         <!-- 자바스크립트에서 카드 생성 -->
+
+                    </div>
+
+                    <div class="view-all-wrap">
+                         <button class="view-all-button" id="viewAllButton">
+                              전체 티어표 자세히 보기
+                              <span class="arrow">→</span>
+                         </button>
+                    </div>
+
+               </div>
+          </section>
+
+
+          <!-- =========================
+         전체 티어표
+    ========================== -->
+          <section class="section hidden" id="full-tier-section">
+               <div class="container">
+
+                    <div class="section-heading">
+                         <div>
+                              <div class="section-kicker">FULL RANKING</div>
+                              <h2 class="section-title">전체 캐릭터 티어</h2>
+                              <p class="section-description">
+                                   검색과 운명의 길 필터로 원하는 캐릭터를 찾아봐.
+                              </p>
+                         </div>
+                    </div>
+
+                    <!-- 역할별 티어 선택 -->
+                    <div class="role-tabs" id="roleTabs" role="group" aria-label="캐릭터 역할별 티어표">
+                         <button type="button" class="role-tab active" data-role="전체" aria-pressed="true">전체</button>
+                         <button type="button" class="role-tab" data-role="메인 딜러" aria-pressed="false">메인 딜러</button>
+                         <button type="button" class="role-tab" data-role="서브 딜러" aria-pressed="false">서브 딜러</button>
+                         <button type="button" class="role-tab" data-role="버퍼·디버퍼" aria-pressed="false">버퍼·디버퍼</button>
+                         <button type="button" class="role-tab" data-role="생존 지원" aria-pressed="false">생존 지원</button>
+                    </div>
+
+                    <div class="full-tier-panel">
+
+                         <div class="filter-bar">
+                              <input class="search-input" type="search" id="searchInput" placeholder="캐릭터 이름 검색..."
+                                   aria-label="캐릭터 이름 검색">
+
+                              <select class="filter-select" id="pathFilter" aria-label="캐릭터 분류 필터">
+                                   <option value="전체">모든 분류</option>
+                                   <option value="파멸">파멸</option>
+                                   <option value="수렵">수렵</option>
+                                   <option value="지식">지식</option>
+                                   <option value="화합">화합</option>
+                                   <option value="공허">공허</option>
+                                   <option value="보존">보존</option>
+                                   <option value="풍요">풍요</option>
+                                   <option value="기억">기억</option>
+                              </select>
+                         </div>
+
+                         <div id="fullTierList">
+                              <!-- 자바스크립트에서 티어별 목록 생성 -->
+                         </div>
+
+                    </div>
+
+                    <div class="notice">
+                         ※ 네 게임의 캐릭터 목록과 티어는 화면 기능 확인용 예시 데이터야.
+                         최신 메타를 반영한 공식 순위가 아니며, 실제 공략 데이터는 추후 업데이트할 예정이야.
+                    </div>
+
+               </div>
+          </section>
+
+     </main>
+
+
+     <!-- =========================
+       하단
+  ========================== -->
+     <footer class="footer">
+          <div class="container">
+               <strong>별빛 아카이브</strong>
+               <p>다양한 캐릭터들의 공략을 위한 공간</p>
+               <p style="margin-top: 8px;">
+                    본 사이트는 팬 제작 프로젝트이며 공식 게임 사이트가 아닙니다.
+               </p>
+          </div>
+     </footer>
+
+
+     <script>
+          /* =========================
+             1. 캐릭터 예시 데이터
+      
+             티어, 이름, 운명의 길을 수정하면
+             메인 화면과 전체 티어표에 반영돼.
+          ========================= */
+
+          // data/캐릭터 티어표.txt 순서대로 반영한 스타레일 캐릭터 목록
+          // 새 티어를 적용하려면 TXT와 HTML 데이터를 함께 업데이트해 주세요.
+          let characters = [
+               {
+                    name: "은랑LV.999",
+                    tier: 0,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/은랑LV.999.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "어벤츄린 • 웨이브",
+                    tier: 0,
+                    path: "환락",
+                    element: "양자",
+                    image: "./images/characters/어벤츄린_웨이브.webp",
+                    description: "아군의 공격으로 '열의' 자원을 적립해 강력한 특성 추가 공격을 발동하고, 필살기로 지속 시간을 늘리는 강화 상태에서 모은 열의로 방어력 무시 버프와 강력한 강화 환락 스킬을 연속 난사하는 양자 속성·환락 운명의 길 메인 딜러입니다.",
+                    lightCone: "5성 '파도에 내던진 한여름' 전용 광추. 치확 18%, 환락 스킬 발동시 속도 24%와 환락도 40%가 증가한다. 어벤츄린은 스스로 치피를 96%나 챙길 수 있어 치확은 좋은 옵션이며, 속도 24%는 세팅 난이도를 낮출 뿐만 아니라 특성으로 환락도 24%도 추가로 제공하는 옵션이기도 하다. 즉 치확 18%와 환락도 64%를 제공한다. 웨이브 시작 시/환락 스킬 3회 발동 시 sp 회복이라는 편의성도 붙어 있다.",
+                    relic: "빛나는 공훈의 마법 소녀 4세트",
+                    team: "추천 파티 조합은 추후 업데이트",
+
+               },
+               {
+                    name: "에바네시아",
+                    tier: 0,
+                    path: "환락",
+                    element: "물리",
+                    image: "./images/characters/에바네시아.webp",
+                    rarity: 5,
+                    description: "필살기와 전투 스킬로 범위 물리 피해를 가하며, 에너지와 '훌륭한 솜씨에는 보상을' 자원이 서로 양방향 전환되는 특성을 이용해 [여우 선생님]의 턴 소모 없는 무료 추가 공격과 환락 피해를 연속 발동하는 물리 속성·환락 운명의 길 메인 딜러입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "천야 • 블레이드",
+                    tier: 0,
+                    path: "공허",
+                    element: "불",
+                    image: "./images/characters/천야_블레이드.webp",
+                    description: "아군의 공격이나 피격으로 충전을 쌓아 SP 소모 없는 강력한 추가 전투 스킬을 난사하는 화염 속성·공허 운명의 길 서브 딜러 겸 서포터입니다.",
+                    lightCone: "몸은 봄나무 같고, 마음은 식은 재 같으며, 손끝에는 여전히 장인의 불티가 남아 있다.",
+                    relic: "신공을 탐구하는 명장 4세트",
+                    team: "추천 파티 조합은 추후 업데이트",
+               },
+               {
+                    name: "에버나이트",
+                    tier: 0,
+                    path: "기억",
+                    element: "얼음",
+                    image: "./images/characters/에버나이트.webp",
+                    description: "자해 및 피격과 전투 스킬로 '기억 물질' 자원을 적립하고, 궁극기로 강화 결계를 전개한 뒤 소환물의 폭발적인 자폭 추가 공격을 난사해 모든 아군 메인딜러의 치명타 피해를 대폭 높이는 얼음 속성·기억 운명의 길 서브 딜러 겸 메인 딜러입니다.",
+                    lightCone: "5성 '그녀가 보기로 결심했을 때' 전용 광추. 속도 200을 목표로 하는 효광에겐 유물작의 난이도를 완화하려면 이 광추가 있는 것이 유리하다. 4.2 버전 이후 환락 캐릭터들이 대거 출시되며 아하타임 행동 수를 위한 효광 속도 200 세팅의 필수성이 잦아들었지만 어쨌든 효광의 속도는 높을수록 좋고, 에충 효율과 치명타 버프 효과는 여전히 우수하다. 특히나 효광의 첫 행동궁 가능 여부가 전광에서 갈린다.",
+                    relic: "천명에 응해 먼 길을 떠난 점술가 4세트",
+                    team: "추천 파티 조합은 추후 업데이트",
+
+               },
+               {
+                    name: "효광",
+                    tier: 0,
+                    path: "환락",
+                    element: "물리",
+                    image: "./images/characters/효광.webp",
+                    description: "자신의 속도에 비례해 팀 전체의 환락도를 높이고 속성 저항 관통 버프를 주는 결계를 전개하며, 필살기 사용 시 '웃음 포인트' 소모 없이 소환물 [아하]의 보너스 턴을 즉시 발동시켜 모든 환락 아군의 전용 스킬 연쇄 공격을 유도하는 물리 속성·환락 운명의 길 핵심 서포터입니다.",
+                    lightCone: "5성 '긴 밤의 별빛에게' HP를 올려주고 에버나이트 자신의 가피증과 에충까지 제공하는 전용 광추. 여기에 방어력 무시의 경우 모든 아군의 기억의 정령이 대상이므로 기억 파티를 만들 경우 효율이 매우 높다. 에버나이트가 2성혼을 활성화했을 시, 전광 2중첩을 하면 혼돈 같은 콘텐츠에서 전투를 시작하자마자 필살기를 사용하는 게 가능해진다.",
+                    relic: "천지를 재창조한 구세주 4세트",
+                    team: "추천 파티 조합은 추후 업데이트",
+
+               },
+               {
+                    name: "펄",
+                    tier: 0,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/펄.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "로빈 • 서머레토",
+                    tier: 0,
+                    path: "기억",
+                    element: "바람",
+                    image: "./images/characters/로빈_서머레토.png",
+                    description: "아군의 행동 게이지를 100% 당기고 에너지 회복을 시키며 팀 전체에 방어력 무시와 피해증가 버프를 제공하는 서포터 겸 서브딜러 입니다.",
+                    lightCone: "맑은 하늘과 푸른 바다를 가로질러 날아가자, 날개로 일으킨 물보라는 새로운 선율이 된다. 조화 외에, 「화합」은 또 어떻게 노래할 수 있을까?",
+                    relic: "천지를 재창조한 구세주 4세트",
+                    team: "추천 파티 조합은 추후 업데이트",
+
+               },
+               {
+                    name: "히아킨",
+                    tier: 0,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/히아킨.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "히메코 • 노바",
+                    tier: 0.5,
+                    path: "지식",
+                    element: "불",
+                    image: "./images/characters/히메코_노바.webp",
+                    rarity: 5,
+                    description: "아군의 행동과 공격을 지원하는 화합 캐릭터.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "토오사카린",
+                    tier: 0.5,
+                    path: "지식",
+                    element: "양자",
+                    image: "./images/characters/토오사카린.webp",
+                    rarity: 5,
+                    description: "아군의 전투 능력을 지원하는 화합 캐릭터.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "애쉬베일",
+                    tier: 0.5,
+                    path: "수렵",
+                    element: "번개",
+                    image: "./images/characters/애쉬베일.webp",
+                    rarity: 5,
+                    description: "아군을 보호하는 보존 캐릭터.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "스파키",
+                    tier: 0.5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/스파키.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "히실렌스",
+                    tier: 0.5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/히실렌스.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "달리아",
+                    tier: 0.5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/달리아.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "키레네",
+                    tier: 0.5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/키레네.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "개척자 • 기억",
+                    tier: 0.5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/개척자_기억.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "반디",
+                    tier: 0.5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/반디.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "카스토리스",
+                    tier: 0.5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/카스토리스.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "트리비",
+                    tier: 0.5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/트리비.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "개척자 • 환락",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/개척자_환락.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "파이논",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/파이논.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "아처",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/아처.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "아낙사",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/아낙사.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "마이데이",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/마이데이.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "카프카",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/카프카.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "길가메시",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/길가메시.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "블랙스완",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/블랙스완.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "더 헤르타",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/더헤르타.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "아케론",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/아케론.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "케리드라",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/케리드라.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "단항 • 등황",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/단항_등황.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "완매",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/완매.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "스파클",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/스파클.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "곽향",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/곽향.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "선데이",
+                    tier: 1,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/선데이.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "세이버",
+                    tier: 2,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/세이버.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "아글라이아",
+                    tier: 2,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/아글라이아.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "제레",
+                    tier: 2,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/제레.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "비소",
+                    tier: 2,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/비소.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "초구",
+                    tier: 2,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/초구.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "개척자 • 화합",
+                    tier: 2,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/개척자_화합.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "부트힐",
+                    tier: 2,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/부트힐.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "로빈",
+                    tier: 2,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/로빈.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "경류",
+                    image: "./images/characters/경류.webp",
+                    tier: 2,
+                    path: "파멸",
+                    element: "얼음",
+                    symbol: "❄",
+                    rarity: 5,
+                    description: "얼음 공격을 사용하는 파멸 캐릭터.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "사이퍼",
+                    tier: 2,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/사이퍼.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "은랑",
+                    tier: 2,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/은랑.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "망귀인",
+                    tier: 2,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/망귀인.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "웰트",
+                    tier: 2,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/웰트.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "맥택",
+                    tier: 3,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/맥택.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "Mar. 7th • 수렵",
+                    tier: 3,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/Mar. 7th_수렵.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "운리",
+                    tier: 3,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/운리.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "경원",
+                    image: "./images/characters/경원.webp",
+                    tier: 3,
+                    path: "지식",
+                    element: "번개",
+                    symbol: "雷",
+                    rarity: 5,
+                    description: "다수의 적을 상대하는 지식 캐릭터.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "블레이드",
+                    tier: 3,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/블레이드.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "영사",
+                    tier: 3,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/영사.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "정운",
+                    tier: 3,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/정운.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "브로냐",
+                    tier: 3,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/브로냐.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "헤르타",
+                    tier: 3,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/헤르타.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "어벤츄린",
+                    tier: 3,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/어벤츄린.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "라파",
+                    tier: 3,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/라파.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "부현",
+                    tier: 3,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/부연.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "갤러거",
+                    tier: 3,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/갤러거.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "제이드",
+                    tier: 3,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/제이드.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "미샤",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/미샤.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "설의",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/설의.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "Dr.레이시오",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/Dr. 레이시오.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "한아",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/한아.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "계네빈",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/계네빈.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "토파즈 & 복순이",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/토파즈.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "링스",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/링스.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "청작",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/청작.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "삼포",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/삼포.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "클라라",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/클라라.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "페라",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/페라.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "게파드",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/게파드.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "서벌",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/서벌.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "아스타",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/아스타.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "히메코",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/히메코.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "나찰",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/나찰.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "아젠티",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/아젠티.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "단항 • 음월",
+                    tier: 4,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/단항_음월.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "루카",
+                    tier: 5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/루카.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "어공",
+                    tier: 5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/어공.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "백로",
+                    image: "./images/characters/백로.webp",
+                    tier: 5,
+                    path: "풍요",
+                    element: "번개",
+                    symbol: "＋",
+                    rarity: 5,
+                    description: "아군을 회복하는 풍요 캐릭터.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "연경",
+                    tier: 5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/연경.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "소상",
+                    tier: 5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/소상.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "개척자 • 보존",
+                    tier: 5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/개척자_보존.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "후크",
+                    tier: 5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/후크.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "나타샤",
+                    tier: 5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/나타샤.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "아를란",
+                    tier: 5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/아를란.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "단항",
+                    tier: 5,
+                    path: "미등록",
+                    element: "미등록",
+                    image: "./images/characters/단항.webp",
+                    description: "상세 공략은 추후 업데이트할 예정입니다.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "Mar.7th",
+                    image: "./images/characters/Mar. 7th.webp",
+                    tier: 5,
+                    path: "보존",
+                    element: "얼음",
+                    symbol: "❄",
+                    rarity: 4,
+                    description: "아군을 보호하는 보존 캐릭터.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               },
+               {
+                    name: "개척자 • 파멸",
+                    image: "./images/characters/개척자_파멸.webp",
+                    tier: 5,
+                    path: "파멸",
+                    element: "물리",
+                    symbol: "✦",
+                    rarity: 5,
+                    description: "모험을 시작하는 개척자.",
+                    lightCone: "추천 광추는 추후 업데이트",
+                    relic: "추천 유물 세팅은 추후 업데이트",
+                    team: "추천 파티 조합은 추후 업데이트"
+               }
+          ];
+
+
+          // 게임별 캐릭터 데이터. 현재는 화면 동작 확인용 예시 데이터야.
+          const gameCharacters = {
+               "스타레일": characters,
+               "원신": [
+                    { name: "느비예트", tier: 0, path: "메인 딜러", element: "물", symbol: "水", rarity: 5, description: "물 원소 공격을 중심으로 전투하는 캐릭터.", lightCone: "추천 무기는 추후 업데이트", relic: "추천 성유물은 추후 업데이트", team: "추천 파티는 추후 업데이트" },
+                    { name: "푸리나", tier: 0, path: "서포터", element: "물", symbol: "♪", rarity: 5, description: "아군을 지원하는 물 원소 캐릭터.", lightCone: "추천 무기는 추후 업데이트", relic: "추천 성유물은 추후 업데이트", team: "추천 파티는 추후 업데이트" },
+                    { name: "아를레키노", tier: 1, path: "메인 딜러", element: "불", symbol: "✦", rarity: 5, description: "불 원소 공격을 사용하는 캐릭터.", lightCone: "추천 무기는 추후 업데이트", relic: "추천 성유물은 추후 업데이트", team: "추천 파티는 추후 업데이트" },
+                    { name: "나히다", tier: 1, path: "서포터", element: "풀", symbol: "❀", rarity: 5, description: "풀 원소 반응을 지원하는 캐릭터.", lightCone: "추천 무기는 추후 업데이트", relic: "추천 성유물은 추후 업데이트", team: "추천 파티는 추후 업데이트" },
+                    { name: "종려", tier: 2, path: "서포터", element: "바위", symbol: "◇", rarity: 5, description: "아군을 보호하는 캐릭터.", lightCone: "추천 무기는 추후 업데이트", relic: "추천 성유물은 추후 업데이트", team: "추천 파티는 추후 업데이트" },
+                    { name: "바바라", tier: 3, path: "생존 지원", element: "물", symbol: "＋", rarity: 4, description: "아군을 회복하는 캐릭터.", lightCone: "추천 무기는 추후 업데이트", relic: "추천 성유물은 추후 업데이트", team: "추천 파티는 추후 업데이트" }
+               ],
+               "명조": [
+                    { name: "금희", tier: 0, path: "메인 딜러", element: "회절", symbol: "✦", rarity: 5, description: "강력한 회절 피해를 주는 공명자.", lightCone: "추천 무기는 추후 업데이트", relic: "추천 에코는 추후 업데이트", team: "추천 파티는 추후 업데이트" },
+                    { name: "파수인", tier: 0, path: "서포터", element: "회절", symbol: "◇", rarity: 5, description: "팀을 지원하는 공명자.", lightCone: "추천 무기는 추후 업데이트", relic: "추천 에코는 추후 업데이트", team: "추천 파티는 추후 업데이트" },
+                    { name: "장리", tier: 1, path: "메인 딜러", element: "융융", symbol: "火", rarity: 5, description: "융융 피해를 사용하는 공명자.", lightCone: "추천 무기는 추후 업데이트", relic: "추천 에코는 추후 업데이트", team: "추천 파티는 추후 업데이트" },
+                    { name: "음림", tier: 1, path: "서브 딜러", element: "전도", symbol: "雷", rarity: 5, description: "전도 피해를 지원하는 공명자.", lightCone: "추천 무기는 추후 업데이트", relic: "추천 에코는 추후 업데이트", team: "추천 파티는 추후 업데이트" },
+                    { name: "설지", tier: 2, path: "생존 지원", element: "응결", symbol: "＋", rarity: 4, description: "아군을 회복하는 공명자.", lightCone: "추천 무기는 추후 업데이트", relic: "추천 에코는 추후 업데이트", team: "추천 파티는 추후 업데이트" }
+               ],
+               "젠레스 존 제로": [
+                    { name: "미야비", tier: 0, path: "강공", element: "얼음", symbol: "❄", rarity: 5, description: "강력한 이상 피해를 활용하는 에이전트.", lightCone: "추천 엔진은 추후 업데이트", relic: "추천 디스크는 추후 업데이트", team: "추천 파티는 추후 업데이트" },
+                    { name: "야나기", tier: 0, path: "이상", element: "전기", symbol: "雷", rarity: 5, description: "이상 축적과 전기 피해를 활용하는 에이전트.", lightCone: "추천 엔진은 추후 업데이트", relic: "추천 디스크는 추후 업데이트", team: "추천 파티는 추후 업데이트" },
+                    { name: "엘렌", tier: 1, path: "강공", element: "얼음", symbol: "❄", rarity: 5, description: "얼음 피해를 중심으로 전투하는 에이전트.", lightCone: "추천 엔진은 추후 업데이트", relic: "추천 디스크는 추후 업데이트", team: "추천 파티는 추후 업데이트" },
+                    { name: "청의", tier: 1, path: "격파", element: "전기", symbol: "⚡", rarity: 5, description: "적의 그로기를 지원하는 에이전트.", lightCone: "추천 엔진은 추후 업데이트", relic: "추천 디스크는 추후 업데이트", team: "추천 파티는 추후 업데이트" },
+                    { name: "니콜", tier: 2, path: "지원", element: "에테르", symbol: "◇", rarity: 4, description: "아군을 지원하는 에이전트.", lightCone: "추천 엔진은 추후 업데이트", relic: "추천 디스크는 추후 업데이트", team: "추천 파티는 추후 업데이트" }
+               ]
+          };
+
+          let currentGame = "스타레일";
+
+          function updatePathFilter() {
+               const filter = document.getElementById("pathFilter");
+               const categories = [...new Set(characters.map(character => character.path))];
+               filter.innerHTML = '<option value="전체">모든 분류</option>' +
+                    categories.map(category => `<option value="${escapeHTML(category)}">${escapeHTML(category)}</option>`).join("");
+          }
+
+          function selectGame(gameName) {
+               currentGame = gameName;
+               characters = gameCharacters[gameName] || gameCharacters["스타레일"];
+
+               document.querySelectorAll(".game-tab").forEach(button => {
+                    const selected = button.dataset.game === gameName;
+                    button.classList.toggle("active", selected);
+                    const oldLabel = button.querySelector(".selected-game-label");
+                    if (oldLabel) oldLabel.remove();
+                    if (selected) {
+                         const label = document.createElement("span");
+                         label.className = "selected-game-label";
+                         label.textContent = "현재 선택된 게임";
+                         button.lastElementChild.appendChild(label);
+                    }
+               });
+
+               updatePathFilter();
+               createOverview();
+               createFullTierList();
+               document.querySelector("#full-tier-section .section-title").textContent = currentGame + " 캐릭터 티어";
+          }
+
+          /* =========================
+             2. HTML 안전 처리
+          ========================= */
+
+          function escapeHTML(value) {
+               return String(value).replace(/[&<>"']/g, function (char) {
+                    const entities = {
+                         "&": "&amp;",
+                         "<": "&lt;",
+                         ">": "&gt;",
+                         '"': "&quot;",
+                         "'": "&#39;"
+                    };
+
+                    return entities[char];
+               });
+          }
+
+
+          /* =========================
+             3. 캐릭터 상세 페이지 열기
+      
+             별도의 파일 없이 새 탭에
+             캐릭터 공략 페이지를 생성해.
+          ========================= */
+
+          // 캐릭터 상세 정보를 같은 페이지에서 표시해.
+          let detailIsOpen = false;
+          let detailPreviousScroll = 0;
+
+          function closeCharacterDetail() {
+               const detailPage = document.getElementById("characterDetailPage");
+               if (!detailPage || !detailIsOpen) return;
+               detailPage.classList.add("hidden");
+               document.body.classList.remove("detail-page-open");
+               detailIsOpen = false;
+               document.title = "별빛 아카이브 | 서브컬쳐 가이드";
+               window.scrollTo(0, detailPreviousScroll);
+          }
+
+          function returnToTierList() {
+               if (history.state && history.state.starlightDetail) {
+                    history.back();
+               } else {
+                    closeCharacterDetail();
+               }
+          }
+
+          window.addEventListener("popstate", function () {
+               closeCharacterDetail();
+          });
+
+
+          // 캐릭터별 상세 공략: guide가 있는 캐릭터만 확장형으로 표시해.
+          // 이후 캐릭터를 추가할 때도 같은 guide 구조를 사용하면 돼.
+          function guideImage(url, alt, className = "guide-image") {
+               if (!url) return "";
+               return `<img class="${className}" src="${escapeHTML(url)}" alt="${escapeHTML(alt)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.classList.add('image-unavailable')">`;
+          }
+          function renderGuideCones(cones) {
+               return `<div class="guide-cones">${cones.map(c => `
+                    <article class="guide-cone">
+                         ${guideImage(c.image, c.name)}
+                         <div><div class="guide-cone-meta"><span class="guide-rarity">${c.rarity}성</span><strong>${escapeHTML(c.name)}</strong></div>
+                         <p>${escapeHTML(c.description)}</p></div>
+                    </article>`).join("")}</div>`;
+          }
+          // 캐릭터 소개 바로 아래에 가로형 주옵션 표를 독립적으로 표시
+          const statOptionIcons = {"HP": "https://i.namu.wiki/i/txUB-_O3B563PNdTaDUyZGcXRuTafzcf-LjlC60UM-nH6XqZrcATm6dBk4E5It6aXPjDeOykrLKw5VZOULNWGA.webp", "공격력": "https://i.namu.wiki/i/uePV2mB0zPJFw93hnszklKsnofetfyoMWz_OOY330mCEdYPI4fac1Izfh5mzlNTijrQrK-TwDVIU0AjgomXAcg.webp", "치명타 확률": "https://i.namu.wiki/i/O2_iwgnOH0VKGYjydAaENEvrakQ4iLiEWBJaGgHAKUCyzapjcBwx6GfLHuJANSmRsDzpe3G7m6TfLs-TaMDKgw.webp", "치명타 피해": "https://i.namu.wiki/i/TZbElub5HMVNmCQuzwGRPqVCH4-gcnPtxRrjpmCtW6Z4DGTHwvkJ7eJQYJbg7OjBl4kGuisDDjz0AvCLMRrM6w.webp", "속도": "https://i.namu.wiki/i/LzhuwIBzluJBApofTJmcu6Ha0r_r22Px4ISITWXKQcT4LDvRaAQH8tfzCkzmyj31CddORYfmLblHWVIi9U_u9w.webp", "방어력": "https://i.namu.wiki/i/LVEUOk8WW9dUlNwPhSwNdXMqHUS51wN3rcPiaeCT8f-f4wGAWW1aexZ6uwA2AP-hp0Um28JjgDYj3q7urUXpaA.webp"};
+          const silverWolfStatOptions = {
+            "머리":[["HP","HP"]], "팔":[["공격력","공격력"]],
+            "몸통":[["치명타 확률","치명타 확률"],["치명타 피해","치명타 피해"]],
+            "다리":[["속도","속도"]],
+            "차원구체":[["HP","HP 백분율"],["방어력","방어력 백분율"]],
+            "연결매듭":[["HP","HP 백분율"],["방어력","방어력 백분율"]]
+          };
+          function renderGuideStats(stats) {
+            const cells = stats.map(s => `<td>${guideImage(s.image,s.slot,"stat-table-icon")}<div class="stat-option-values">${(silverWolfStatOptions[s.slot]||[]).map(([icon,label])=>`<span class="stat-option">${guideImage(statOptionIcons[icon],label,"stat-value-icon")}<span>${escapeHTML(label)}</span></span>`).join("")}</div></td>`).join("");
+            return `<div class="stat-table-scroll"><table class="stat-wide-table"><thead><tr>${stats.map(s=>`<th scope="col">${escapeHTML(s.slot)}</th>`).join("")}</tr></thead><tbody><tr>${cells}</tr></tbody></table></div>
+            <div class="substat-priority"><strong>부옵션 우선순위</strong><div>${["속도","치명타 확률","치명타 피해"].map((s,i)=>`<span class="substat-chip"><b>${i+1}</b>${guideImage(statOptionIcons[s],s,"stat-value-icon")}${escapeHTML(s)}</span>`).join("")}</div></div>`;
+          }
+          function renderGuideRelics(guide) {
+               const set = guide.set;
+               return `<div class="guide-relics">
+                    <h3 class="guide-subtitle">터널 유물 세트</h3>
+                    <div class="guide-set-heading">${guideImage(set.image, set.name)}<div><strong>${escapeHTML(set.name)} ${set.count}세트</strong><span>추천 종결 세트</span></div></div>
+                    <div class="guide-set-pieces">${set.pieces.map(p => `<div>${guideImage(p.image, p.slot)}<span>${escapeHTML(p.slot)}</span></div>`).join("")}</div>
+                    <p class="guide-long-text">${escapeHTML(set.description)}</p>
+                    ${guide.planar ? `<h3 class="guide-subtitle">차원 장신구</h3>
+                    <div class="guide-set-heading">${guideImage(guide.planar.image, guide.planar.name)}<div><strong>${escapeHTML(guide.planar.name)} ${guide.planar.count}세트</strong><span>추천 차원 장신구</span></div></div>
+                    <div class="guide-set-pieces planar-pieces">${guide.planar.pieces.map(p => `<div>${guideImage(p.image, p.slot)}<span>${escapeHTML(p.slot)}</span></div>`).join("")}</div>
+                    <p class="guide-long-text">${escapeHTML(guide.planar.description)}</p>` : ""}
+               </div>`;
+          }
+          function renderGuideParty(party) {
+               return `<div class="guide-party"><h3 class="guide-subtitle">${escapeHTML(party.title)}</h3>
+                    <div class="guide-party-members">${party.members.map(m => `<div class="guide-party-member">${guideImage(m.image, m.name)}<strong>${escapeHTML(m.name)}</strong>${m.alternatives ? `<small>${m.alternatives.map(escapeHTML).join("<br>")}</small>` : ""}</div>`).join("")}</div>
+                    <h3 class="guide-subtitle">파티원 및 대체 캐릭터 설명</h3>
+                    ${party.notes.map(g => `<div class="guide-party-group"><h4>${g.icons && g.icons.length === 2 && g.group === "풍요 / 기억" ? `${guideImage(g.icons[0], "풍요", "guide-path-icon")}<span>풍요</span><span class="guide-group-divider">/</span>${guideImage(g.icons[1], "기억", "guide-path-icon")}<span>기억</span>` : `${(g.icons || (g.icon ? [g.icon] : [])).map(icon => guideImage(icon, g.group, "guide-path-icon")).join("")}${escapeHTML(g.group)}`} </h4>
+                    ${g.entries.map(e => `<div class="guide-party-note"><strong>${escapeHTML(e.name)}</strong><p>${escapeHTML(e.text)}</p></div>`).join("")}</div>`).join("")}
+               </div>`;
+          }
+
+
+          // 육성 정보: 레벨별 수치가 있는 스킬만 수치표 버튼을 표시해.
+          const silverWolfGrowth = {
+  "priority": [
+    {
+      "name": "일반공격",
+      "icon": "https://i.namu.wiki/i/DEGKoVM2pirc_pxQ_AgBvYQcx9AmDn-JWyFWYp0pwwUWVcrKOq9A0tuIy3uWa40t98mu4sKk15CRypWlALq0uQ.webp",
+      "priority": 1,
+      "goal": 6
+    },
+    {
+      "name": "전투스킬",
+      "icon": "https://i.namu.wiki/i/U1YcgfT052fpUd5mZFh4MHImoSq2xGKMHTUPjLmergDq9tQmm6eILjC5ICOpAida53yLb9TSxV3hzkuA6KOcJg.webp",
+      "priority": 3,
+      "goal": 10
+    },
+    {
+      "name": "필살기",
+      "icon": "https://i.namu.wiki/i/u2si3IdxI9_zBOONinPI679JYTkT1kX-TFwKlUzyqbvNIMfibWUNCEiP47Nj2r9q5xINcEW-D6pyuFXjNBoXXg.webp",
+      "priority": 2,
+      "goal": 10
+    },
+    {
+      "name": "특성",
+      "icon": "https://i.namu.wiki/i/gG5ViKQbPB9Q0CCimbaxqB5us2lqdaZsTiIcbGkSb6u1P_iQxFtuZsWZh-Ze_8UvZ6YTruNMj5QkOmiakL6TGQ.webp",
+      "priority": 2,
+      "goal": 10
+    },
+    {
+      "name": "환락스킬",
+      "icon": "https://i.namu.wiki/i/S8Mgyu1URh6o-xsDkY2W4TNz5c177wv95TEhrdPnsT6Ts05muCOjViPQGXFgUAinZAW70n8he88PUZayvLRrkQ.webp",
+      "priority": 2,
+      "goal": 10
+    }
+  ],
+  "skills": [
+    {
+      "name": "주먹이 불끈!",
+      "icon": "https://i.namu.wiki/i/DEGKoVM2pirc_pxQ_AgBvYQcx9AmDn-JWyFWYp0pwwUWVcrKOq9A0tuIy3uWa40t98mu4sKk15CRypWlALq0uQ.webp",
+      "type": "일반 공격 · 단일 공격",
+      "description": "지정된 단일 적에게 「은랑 LV.999」 공격력의 n%만큼 허수 속성 피해를 가한다",
+      "columns": [
+        "일반 공격 피해"
+      ],
+      "values": [
+        [
+          50
+        ],
+        [
+          60
+        ],
+        [
+          70
+        ],
+        [
+          80
+        ],
+        [
+          90
+        ],
+        [
+          100
+        ],
+        [
+          110
+        ]
+      ]
+    },
+    {
+      "name": "보상 스테이지: 「울프 타임」",
+      "icon": "https://i.namu.wiki/i/EAhEoFsiYvSMkx-npeqzHPilNqU5q3lPGHvIcUeP9nBUacXPprSayx22qw7dSZodshe8waDGfapqEDJMI0T42w.webp",
+      "type": "강화 일반 공격 · 바운스",
+      "description": "총 「은랑 LV.999」 공격력의 n% 만큼허수 속성 피해를 가하며, 해당 피해는 100단으로 균등하게 나뉘어 랜덤 단일 적에게 바운스된다. 일정 단수 바운스할 때마다 바운스를 일시 중지하고 [최상급 보급상자]를 1회 발동하며, 총 3회 발동할 수 있다. 필드 위 모든 적에게 치명적인 피해를 가했을 경우 이번 스킬은 종료되며, 공격 가능한 적이 존재하면 보너스 턴을 1개 획득하고, 남은 바운스 단수와 [최상급 보급상자] 횟수에 기반해 다시 발동한다. 턴마다 처음으로 해당 효과 발동 시, 자신의 모든 버프 효과가 1턴 연장된다.\n위의 피해를 모두 결산하면 마지막 일격을 발동하여 「은랑 LV.999」 공격력의 n%만큼 허수 속성 피해를 가하고, 해당 피해는 모든 적이 균등 분담한다.\n강화된 일반 공격은 전투 스킬 포인트를 회복할 수 없다. 보유한 [히든 스코어] 60pt당 강화된 일반 공격 동안 가하는 피해가 기존 피해의 15%만큼 증가한다, 최대 중첩수: 2스택",
+      "columns": [
+        "바운스 피해",
+        "마지막 일격"
+      ],
+      "values": [
+        [
+          120,
+          50
+        ],
+        [
+          144,
+          60
+        ],
+        [
+          168,
+          70
+        ],
+        [
+          192,
+          80
+        ],
+        [
+          216,
+          90
+        ],
+        [
+          240,
+          100
+        ],
+        [
+          264,
+          110
+        ]
+      ]
+    },
+    {
+      "name": "Shoot 속성 대폭발",
+      "icon": "https://i.namu.wiki/i/U1YcgfT052fpUd5mZFh4MHImoSq2xGKMHTUPjLmergDq9tQmm6eILjC5ICOpAida53yLb9TSxV3hzkuA6KOcJg.webp",
+      "type": "전투 스킬 · 범위 공격",
+      "description": "웃음 포인트를 5pt 획득하고, 모든 적에게 「은랑 LV.999」 공격력의 n%만큼 허수 속성 피해를 가한다",
+      "columns": [
+        "스킬 피해"
+      ],
+      "values": [
+        [
+          80
+        ],
+        [
+          88
+        ],
+        [
+          96
+        ],
+        [
+          104
+        ],
+        [
+          112
+        ],
+        [
+          120
+        ],
+        [
+          130
+        ],
+        [
+          140
+        ],
+        [
+          150
+        ],
+        [
+          160
+        ],
+        [
+          168
+        ],
+        [
+          176
+        ]
+      ]
+    },
+    {
+      "name": "무적 플레이어, 가동!",
+      "icon": "https://i.namu.wiki/i/u2si3IdxI9_zBOONinPI679JYTkT1kX-TFwKlUzyqbvNIMfibWUNCEiP47Nj2r9q5xINcEW-D6pyuFXjNBoXXg.webp",
+      "type": "필살기 · 강화 · 히든 스코어 60 소모",
+      "description": "[무적 플레이어] 상태에 진입하며, 행동 게이지가 100% 증가한다.\n[무적 플레이어] 상태에서는 결계를 펼친다. 「은랑 LV.999」가 [훌륭한 솜씨에는 보상을] 보유 시, 결계 내 아군이 전투 스킬 포인트를 1pt 소모할 때마다 일정 확률로 「은랑 LV.999」의 [최상급 보급상자]를 1회 발동한다. [최상급 보급상자]: 허수 속성 환락 피해를 n% 가하고, 해당 피해는 모든 적이 균등 분담하며, 랜덤으로 다음 중 1가지 효과를 발동한다.\n[초초초대검]: HP가 가장 높은 적에게 추가로 이번 총 피해량의 20%만큼 확정 피해를 가한다.\n[폭폭폭바알]: 전투 스킬 포인트를 2pt 회복한다.\n[기기괴괴콩]: 웃음 포인트를 3pt 획득한다.\n해당 효과를 발동하는 초기 고정 확률은 100%이며, 발동 성공 후 다음 발동 고정 확률은 현재 확률의 20%로 감소한다. 발동 전 목표가 처치될 경우 새로 등장한 적에게 발동한다",
+      "columns": [
+        "환락 피해"
+      ],
+      "values": [
+        [
+          45
+        ],
+        [
+          50
+        ],
+        [
+          54
+        ],
+        [
+          59
+        ],
+        [
+          63
+        ],
+        [
+          68
+        ],
+        [
+          73
+        ],
+        [
+          79
+        ],
+        [
+          84
+        ],
+        [
+          90
+        ],
+        [
+          94
+        ],
+        [
+          99
+        ]
+      ]
+    },
+    {
+      "name": "나만 믿어, 버스 태워줄게",
+      "icon": "https://i.namu.wiki/i/gG5ViKQbPB9Q0CCimbaxqB5us2lqdaZsTiIcbGkSb6u1P_iQxFtuZsWZh-Ze_8UvZ6YTruNMj5QkOmiakL6TGQ.webp",
+      "type": "특성 · 강화",
+      "description": "[히든 스코어]가 60pt에 도달하면필살기를 활성화할 수 있으며, 최대치 도달 후에도 240pt 초과할 수 있다.\n웃음 포인트 획득 시 「은랑 LV.999」는 같은 양의 [히든 스코어]를 획득한다. [히든 스코어] 1pt당 치명타 확률이 n% 증가한다. 치명타 확률이 100%에 도달하면 나머지 [히든 스코어] 1pt당 치명타 피해가 n% 증가하는 것으로 변경된다.\n[무적 플레이어] 상태에서 「은랑 LV.999」는 제어류 디버프 상태에 면역이고, 필살기를 발동할 수 없으며, 강화된 일반 공격 및 강화된 환락 스킬을 보유하고, 강화된 일반 공격을 3회 완전히 발동하면 [무적 플레이어] 상태가 종료된다. [무적 플레이어] 상태 종료 시 [히든 스코어]는 초기화된다.\n[훌륭한 솜씨에는 보상을] 보유 시, 일반 공격 또는 전투 스킬을 발동하면 피격된 적에게 허수 속성 환락 피해를 n% 가하며, 강화된 일반 공격의 스킬 피해가 동일한 배율의 환락 피해로 변경된다",
+      "columns": [
+        "치명타 확률",
+        "치명타 피해",
+        "환락 피해"
+      ],
+      "values": [
+        [
+          0.2,
+          0.4,
+          20
+        ],
+        [
+          0.22,
+          0.44,
+          22
+        ],
+        [
+          0.24,
+          0.48,
+          24
+        ],
+        [
+          0.26,
+          0.52,
+          26
+        ],
+        [
+          0.28,
+          0.56,
+          28
+        ],
+        [
+          0.3,
+          0.6,
+          30
+        ],
+        [
+          0.32,
+          0.65,
+          32
+        ],
+        [
+          0.35,
+          0.7,
+          35
+        ],
+        [
+          0.38,
+          0.75,
+          38
+        ],
+        [
+          0.4,
+          0.8,
+          40
+        ],
+        [
+          0.42,
+          0.84,
+          42
+        ],
+        [
+          0.44,
+          0.88,
+          44
+        ]
+      ]
+    },
+    {
+      "name": "999디펜더",
+      "icon": "https://i.namu.wiki/i/gG5ViKQbPB9Q0CCimbaxqB5us2lqdaZsTiIcbGkSb6u1P_iQxFtuZsWZh-Ze_8UvZ6YTruNMj5QkOmiakL6TGQ.webp",
+      "type": "특성 · 서포트 · 전용",
+      "description": "「은랑 LV.999」 획득 후 또는현재 파티에 「은랑 LV.999」가 존재할 시 다음 효과를 획득한다. 전투 중 적이 아군에게 제어류 디버프 상태를 부여하면 모든 아군은 [방화벽]을 획득한다, 지속 시간: 1턴. [방화벽] 상태에서 아군은 적이 부여하는 제어류 디버프 상태에 면역된다. 해당 효과는 웨이브마다 최대 1회 발동한다",
+      "columns": [],
+      "values": []
+    },
+    {
+      "name": "이게 바로 0티어 비술이야",
+      "icon": "https://i.namu.wiki/i/QDxxhJBoAeHXCf0E2SB3PUdrJTIjxY_xVPqf9594Uc0j8jdf41PN8NECYU1414Op3CIFzLDhrOT1KNasRrlCeQ.webp",
+      "type": "비술 · 소환",
+      "description": "[기기괴괴콩]을 소환한다.다시 사용하면 소환이 해제된다. 비술 사용 시 비술 포인트를 소모하지 않으며, 비술 포인트가 0일 경우 소환이 해제되고 비술을 사용할 수 없다.\n[기기괴괴콩]은 일정 범위 내의 일반 적을 공포 상태에 빠트리고, 동시에 자동으로 일반 적을 탐색 및 공격하며, 비술 포인트를 1pt 소모해 전투 진입 없이 즉시 처치한다.\n[기기괴괴콩]이 필드에 있을 시, 전투 진입 후 웨이브가 시작될 때마다 [기기괴괴콩]에 해당하는 [최상급 보급상자]를 1회 발동하고, 이번에 가하는 환락 피해는 [훌륭한 솜씨에는 보상을] 99pt로 고정 집계된다.",
+      "columns": [],
+      "values": []
+    },
+    {
+      "name": "레전드급 컨트롤 리플레이",
+      "icon": "https://i.namu.wiki/i/S8Mgyu1URh6o-xsDkY2W4TNz5c177wv95TEhrdPnsT6Ts05muCOjViPQGXFgUAinZAW70n8he88PUZayvLRrkQ.webp",
+      "type": "환락 스킬 · 강화",
+      "description": "[히든 스코어]를 15pt 획득한다",
+      "columns": [],
+      "values": []
+    },
+    {
+      "name": "붕괴급 피해 시연",
+      "icon": "https://i.namu.wiki/i/S8Mgyu1URh6o-xsDkY2W4TNz5c177wv95TEhrdPnsT6Ts05muCOjViPQGXFgUAinZAW70n8he88PUZayvLRrkQ.webp",
+      "type": "환락 스킬 · 바운스",
+      "description": "피해를 6회 가하며, 회당 랜덤 단일 적에게 허수 속성 환락 피해를 n% 가한다. [최상급 보급상자]가 발동될 고정 확률을 기본 수치로 초기화한다",
+      "columns": [
+        "환락 피해"
+      ],
+      "values": [
+        [
+          45
+        ],
+        [
+          50
+        ],
+        [
+          54
+        ],
+        [
+          59
+        ],
+        [
+          63
+        ],
+        [
+          68
+        ],
+        [
+          73
+        ],
+        [
+          79
+        ],
+        [
+          84
+        ],
+        [
+          90
+        ],
+        [
+          94
+        ],
+        [
+          99
+        ]
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "페이크 엔딩 스피드런 공략",
+      "icon": "https://i.namu.wiki/i/qmyGMq_KSiHIQJWMadproo19PREuI3r2B-llz2tRpWbLaOHnxK5UDrrnxKUZI2sbnkoD-eMNm8W9JVgoW1h_8A.webp}",
+      "description": "속도가 160 이상일 시, 자신의 환락도가 50% 증가하고, 이후 초과한 속도 1pt당 자신의 환락도가 2% 증가한다(초과한 속도는 최대 100pt까지 계산)"
+    },
+    {
+      "name": "진엔딩 개방 조건",
+      "icon": "https://i.namu.wiki/i/s-TFcj-1zV0Kqv7ugb2bKcofhdwuyDtaPn5-sBEPRQw-IHybq7NFSTw8vHRqWjyzdAtz0KBXSGI8slgkcR5GLg.webp}",
+      "description": "발동한 환락 스킬에 집계된 웃음 포인트가 20pt 이상일 시, 추가로 [히든 스코어]를 20pt 획득한다(40pt 이상일 시, 다시 추가로 20pt 획득한다)"
+    },
+    {
+      "name": "히든 스테이지 업적 올 클리어",
+      "icon": "https://i.namu.wiki/i/5aM0_6R95KVtdqyaNGFPEbOmJBCJE6R2ZbIGJrF09bVMovJROcRPA_c1fQwFE5YuMbfZMKnBFJfM9Yxat9U7fA.webp}",
+      "description": "[무적 플레이어] 상태 진입 후, [히든 스코어]를 20pt 획득한다"
+    }
+  ]
+};
+          function renderGrowth(character) {
+            if (character.name !== "은랑 LV.999") return `<p>육성 정보는 추후 업데이트할 예정이야.</p>`;
+            const g = silverWolfGrowth;
+            return `<div class="growth-guide">
+              <h3 class="guide-subtitle">행적 우선순위</h3>
+              <div class="growth-table-wrap"><table class="growth-table"><thead><tr><th>행적</th>${g.priority.map(p=>`<th>${guideImage(p.icon,p.name,"growth-skill-icon")}<span>${escapeHTML(p.name)}</span></th>`).join("")}</tr></thead><tbody><tr><th>우선순위</th>${g.priority.map(p=>`<td>${p.priority}</td>`).join("")}</tr><tr><th>목표</th>${g.priority.map(p=>`<td>Lv.${p.goal}</td>`).join("")}</tr></tbody></table></div>
+              <h3 class="guide-subtitle">스킬 설명</h3>
+              <div class="growth-skill-list">${g.skills.map(s=>`<article class="growth-skill"><div class="growth-skill-heading">${guideImage(s.icon,s.name,"growth-skill-icon")}<div><strong>${escapeHTML(s.name)}</strong><small>${escapeHTML(s.type)}</small></div></div><p>${escapeHTML(s.description).replaceAll("n%",s.values.length?'<button type="button" class="skill-number-link" aria-label="레벨별 수치 확인">n%</button>':'n%')}</p>${s.values.length?`<details class="growth-values"><summary>레벨별 수치 확인</summary><div class="growth-table-wrap"><table class="growth-table"><thead><tr><th>레벨</th>${s.columns.map(c=>`<th>${escapeHTML(c)}</th>`).join("")}</tr></thead><tbody>${s.values.map((row,i)=>`<tr><th>Lv.${i+1}</th>${row.map(v=>`<td>${v}%</td>`).join("")}</tr>`).join("")}</tbody></table></div></details>`:''}</article>`).join("")}</div>
+              <h3 class="guide-subtitle">추가 능력</h3>
+              <div class="growth-skill-list">${g.abilities.map(a=>`<article class="growth-skill"><div class="growth-skill-heading">${guideImage(a.icon,a.name,"growth-skill-icon")}<div><strong>${escapeHTML(a.name)}</strong><small>추가 능력</small></div></div><p>${escapeHTML(a.description)}</p></article>`).join("")}</div>
+              <h3 class="guide-subtitle">필수 / 종결 스탯</h3>
+              <div class="growth-table-wrap"><table class="growth-table"><thead><tr><th>구분</th><th>속도</th><th>치명타 확률</th><th>치명타 피해</th><th>공격력</th></tr></thead><tbody><tr><th>필수</th><td>160</td><td>76%</td><td>100%</td><td rowspan="2">유효 옵션 X</td></tr><tr><th>종결</th><td>200 또는 260</td><td>80%</td><td>120%+</td></tr></tbody></table></div>
+            </div>`;
+          }
+          function openCharacter(characterName) {
+               const character = characters.find(item => item.name === characterName);
+               if (!character) return;
+
+               const safeName = escapeHTML(character.name);
+               const safePath = escapeHTML(character.path);
+               const safeElement = escapeHTML(character.element);
+               const safeDescription = escapeHTML(character.description || "");
+               const safeLightCone = escapeHTML(character.lightCone || "");
+               const safeRelic = escapeHTML(character.relic || "");
+               const safeTeam = escapeHTML(character.team || "");
+               const avatar = character.image
+                    ? `<img src="${escapeHTML(character.image)}" alt="${safeName}" class="detail-character-image">`
+                    : escapeHTML(character.symbol || "✦");
+
+               let detailPage = document.getElementById("characterDetailPage");
+               if (!detailPage) {
+                    detailPage = document.createElement("div");
+                    detailPage.id = "characterDetailPage";
+                    detailPage.className = "character-detail-page hidden";
+                    document.body.appendChild(detailPage);
+               }
+
+               detailPage.innerHTML = `
+                    <div class="detail-topbar">
+                         <div class="container detail-topbar-inner">
+                              <button class="detail-back-button" type="button" id="detailBackButton">← 티어표로 돌아가기</button>
+                              <strong>✦ 별빛 아카이브</strong>
+                         </div>
+                    </div>
+                    <div class="detail-content">
+                         <section class="detail-profile">
+                              <div class="detail-avatar">${avatar}</div>
+                              <div class="detail-tags">
+                                   <span class="detail-tag">티어 ${character.tier}</span>
+                                   <span class="detail-tag">${safePath}</span>
+                                   <span class="detail-tag">${safeElement}</span>
+                              </div>
+                              <h1>${safeName}</h1>
+                              <p class="detail-description">${safeDescription}</p>
+                         </section>
+                         ${character.guide?.stats?.length ? `<section class="detail-info-card detail-stats-full"><h2>부위별 추천 주옵션</h2>${renderGuideStats(character.guide.stats)}</section>` : ""}
+                         <div class="detail-recommendations">
+                              <section class="detail-info-card detail-cones-card"><h2>추천 광추</h2><p class="cone-scroll-hint">추천 광추 3개 이후는 내부에서 스크롤해 확인할 수 있어 ↕</p><div class="cone-scroll-area">${character.guide ? renderGuideCones(character.guide.cones) : `<p>${safeLightCone}</p>`}</div></section>
+                              <section class="detail-info-card"><h2>추천 유물 및 장신구</h2>${character.guide ? renderGuideRelics(character.guide) : `<p>${safeRelic}</p>`}</section>
+                         </div>
+                         <section class="detail-info-card detail-party-full"><h2>추천 파티 조합</h2>${character.guide ? renderGuideParty(character.guide.party) : `<p>${safeTeam}</p>`}</section>
+                         <section class="detail-info-card detail-growth"><h2>육성 정보</h2>${renderGrowth(character)}</section>
+                    </div>
+               `;
+               const conesCard = detailPage.querySelector(".detail-cones-card");
+               const relicCard = detailPage.querySelector(".detail-recommendations > .detail-info-card:nth-child(2)");
+               if (conesCard && relicCard) {
+                    const syncHeight = () => {
+                         if (window.matchMedia("(max-width: 760px)").matches) {
+                              conesCard.style.height = "";
+                              return;
+                         }
+                         conesCard.style.height = `${Math.round(relicCard.getBoundingClientRect().height)}px`;
+                    };
+                    syncHeight();
+                    if (window.ResizeObserver) {
+                         if (window.starlightConeObserver) window.starlightConeObserver.disconnect();
+                         window.starlightConeObserver = new ResizeObserver(syncHeight);
+                         window.starlightConeObserver.observe(relicCard);
+                    }
+                    window.addEventListener("resize", syncHeight, {passive:true});
+               }
+               detailPage.querySelector("#detailBackButton").addEventListener("click", returnToTierList);
+               detailPage.querySelectorAll(".skill-number-link").forEach(button => button.addEventListener("click", () => {
+                    const details = button.closest(".growth-skill")?.querySelector(".growth-values");
+                    if (details) { details.open = !details.open; if (details.open) details.scrollIntoView({ behavior: "smooth", block: "nearest" }); }
+               }));
+
+               if (!detailIsOpen) {
+                    detailPreviousScroll = window.scrollY;
+                    history.pushState({ starlightDetail: true }, "", window.location.href);
+               }
+               detailIsOpen = true;
+               detailPage.classList.remove("hidden");
+               document.body.classList.add("detail-page-open");
+               document.title = character.name + " | 별빛 아카이브";
+               window.scrollTo(0, 0);
+          }
+
+
+          /* =========================
+             4. 메인 티어 요약 생성
+          ========================= */
+
+          function createOverview() {
+               const overview = document.getElementById("tierOverview");
+
+               const tiersToShow = [
+                    {
+                         tier: 0,
+                         title: "최상위 티어",
+                         description: currentGame + " · 티어 0 캐릭터"
+                    },
+                    {
+                         tier: currentGame === "스타레일" ? 0.5 : 1,
+                         title: "상위 티어",
+                         description: currentGame + (currentGame === "스타레일" ? " · 티어 0.5 캐릭터" : " · 티어 1 캐릭터")
+                    }
+               ];
+
+               overview.innerHTML = tiersToShow.map(group => {
+                    const tierCharacters = characters.filter(
+                         character => character.tier === group.tier
+                    );
+
+                    return `
+          <article class="tier-card">
+            <div class="tier-card-header">
+              <div class="tier-number">${group.tier}</div>
+              <div>
+                <h3>${group.title}</h3>
+                <p>${group.description}</p>
+              </div>
+            </div>
+
+            <div class="tier-characters">
+              ${tierCharacters.length
+                              ? tierCharacters.map(character => `
+                    <button
+                      class="character-card"
+                      data-character="${escapeHTML(character.name)}"
+                      aria-label="${escapeHTML(character.name)} 상세 정보 열기"
+                    >
+
+                         <span class="character-avatar">
+                                           ${character.image
+                                        ? '<img src="' + escapeHTML(character.image) +
+                                        '" alt="' + escapeHTML(character.name) +
+                                        '" class="character-image">'
+                                        : escapeHTML(character.symbol)}
+                                        </span>
+
+                      <span class="character-name">
+                        ${escapeHTML(character.name)}
+                      </span>
+                      <span class="character-path">
+                        ${escapeHTML(character.path)}
+                      </span>
+                    </button>
+                  `).join("")
+                              : `<p class="empty-message">등록된 캐릭터가 없어.</p>`
+                         }
+            </div>
+          </article>
+        `;
+               }).join("");
+          }
+
+
+          /* =========================
+             5. 전체 티어표 생성
+          ========================= */
+
+          // 캐릭터 역할은 게임별로 여기서 관리해. 여러 역할은 배열에 함께 적어줘.
+          // 아직 정해지지 않은 캐릭터는 전체 탭에서만 보여줘 (임의 분류 방지).
+          const characterRoles = {
+               "스타레일": {
+                    "천야 • 블레이드": ["서브 딜러", "버퍼·디버퍼"],
+                    "은랑 LV.999": ["메인 딜러"],
+                    "어벤츄린 • 웨이브": ["메인 딜러"],
+                    "에바네시아": ["메인 딜러"],
+                    "토오사카린": ["메인 딜러"],
+                    "히메코 • 노바": ["메인 딜러"],
+                    "애쉬베일": ["메인 딜러"],
+                    "경류": ["메인 딜러"],
+                    "경원": ["메인 딜러"],
+                    "백로": ["생존 지원"],
+                    "Mar. 7th": ["생존 지원"],
+                    "개척자 • 파멸": ["메인 딜러"],
+                    "로빈 • 서머레토": ["서브 딜러"],
+                    "효광": ["버퍼·디버퍼"],
+                    "에버나이트": ["메인 딜러", "서브 딜러"]
+               },
+               "원신": {
+                    "느비예트": ["메인 딜러"], "푸리나": ["서브 딜러"],
+                    "아를레키노": ["메인 딜러"], "나히다": ["서브 딜러"],
+                    "종려": ["버퍼·디버퍼"], "바바라": ["생존 지원"]
+               },
+               "명조": {
+                    "금희": ["메인 딜러"], "파수인": ["생존 지원"],
+                    "장리": ["메인 딜러"], "음림": ["서브 딜러"], "설지": ["생존 지원"]
+               },
+               "젠레스 존 제로": {
+                    "미야비": ["메인 딜러"], "야나기": ["메인 딜러"],
+                    "엘렌": ["메인 딜러"], "청의": ["버퍼·디버퍼"], "니콜": ["버퍼·디버퍼"]
+               }
+          };
+          let selectedRole = "전체";
+          document.getElementById("roleTabs").addEventListener("click", function (event) {
+               const button = event.target.closest("[data-role]");
+               if (!button) return;
+               selectedRole = button.dataset.role;
+               this.querySelectorAll(".role-tab").forEach(tab => {
+                    const active = tab === button;
+                    tab.classList.toggle("active", active);
+                    tab.setAttribute("aria-pressed", String(active));
+               });
+               createFullTierList();
+          });
+
+          function createFullTierList() {
+               const list = document.getElementById("fullTierList");
+               const search = document.getElementById("searchInput")
+                    .value.trim().toLowerCase();
+
+               const selectedPath = document.getElementById("pathFilter").value;
+
+               let matchedCount = 0;
+               let html = "";
+
+               for (const tier of [0, 0.5, 1, 2, 3, 4, 5]) {
+                    const tierCharacters = characters.filter(character => {
+                         const matchesTier = character.tier === tier;
+
+                         const matchesName = character.name
+                              .toLowerCase()
+                              .includes(search);
+
+                         const matchesPath =
+                              selectedPath === "전체" ||
+                              character.path === selectedPath;
+
+                         const roles = (characterRoles[currentGame] || {})[character.name] || [];
+                         const matchesRole = selectedRole === "전체" || roles.includes(selectedRole);
+                         return matchesTier && matchesName && matchesPath && matchesRole;
+                    });
+
+                    if (tierCharacters.length === 0) continue;
+
+                    matchedCount += tierCharacters.length;
+
+                    html += `
+            <div class="tier-row">
+            <div class="tier-row-label">
+              <span>${tier}</span>
+            </div>
+
+            <div class="tier-row-characters">
+              ${tierCharacters.map(character => `
+                <button
+                  class="mini-character"
+                  data-character="${escapeHTML(character.name)}"
+                >
+
+               <span class="mini-avatar">
+                     ${character.image
+                              ? '<img src="' + escapeHTML(character.image) +
+                              '" alt="' + escapeHTML(character.name) +
+                              '" class="mini-character-image">'
+                              : escapeHTML(character.symbol || "✦")}
+               </span>
+
+                  <span>
+                    <span class="mini-name">
+                      ${escapeHTML(character.name)}
+                    </span>
+                    <span class="mini-path">
+                      ${escapeHTML(character.path)} ·
+                      ${escapeHTML(character.element)}
+                    </span>
+                  </span>
+                </button>
+              `).join("")}
+            </div>
+          </div>
+        `;
+               }
+
+               if (matchedCount === 0) {
+                    html = `
+          <div class="empty-message">
+            검색 결과가 없어. 다른 이름으로 검색해 봐!
+          </div>
+        `;
+               }
+
+               list.innerHTML = html;
+          }
+
+
+          /* =========================
+             6. 버튼과 검색 이벤트
+          ========================= */
+
+
+          document.getElementById("viewAllButton").addEventListener(
+               "click",
+               function () {
+                    const section = document.getElementById("full-tier-section");
+
+                    // 현재 닫혀 있는지 확인
+                    const isHidden = section.classList.contains("hidden");
+
+                    if (isHidden) {
+                         // 전체 티어표 열기
+                         section.classList.remove("hidden");
+                         createFullTierList();
+
+                         this.innerHTML =
+                              '전체 티어표 접기 <span class="arrow">↑</span>';
+
+                         section.scrollIntoView({
+                              behavior: "smooth",
+                              block: "start"
+                         });
+
+                    } else {
+                         // 전체 티어표 닫기
+                         section.classList.add("hidden");
+
+                         this.innerHTML =
+                              '전체 티어표 자세히 보기 <span class="arrow">→</span>';
+
+                         // 메인 티어표로 이동
+                         document.getElementById("tier-overview-section")
+                              .scrollIntoView({
+                                   behavior: "smooth",
+                                   block: "start"
+                              });
+                    }
+               }
+          );
+
+
+          document.getElementById("searchInput").addEventListener(
+               "input",
+               createFullTierList
+          );
+
+          document.getElementById("pathFilter").addEventListener(
+               "change",
+               createFullTierList
+          );
+
+
+          /* =========================
+             7. 캐릭터 클릭 처리
+          ========================= */
+
+          document.addEventListener("click", function (event) {
+               const characterButton = event.target.closest("[data-character]");
+
+               if (!characterButton) return;
+
+               openCharacter(characterButton.dataset.character);
+          });
+
+
+          /* 테마 변경: 모든 화면에 적용하고 선택을 기억해. */
+          const themeToggle = document.getElementById("themeToggle");
+          function applyTheme(theme) {
+               const isDark = theme === "dark";
+               document.documentElement.dataset.theme = isDark ? "dark" : "light";
+               themeToggle.querySelector(".theme-icon").textContent = isDark ? "☀" : "☾";
+               themeToggle.setAttribute("aria-label", isDark ? "라이트 모드로 전환" : "다크 모드로 전환");
+               themeToggle.setAttribute("aria-pressed", String(isDark));
+               try { localStorage.setItem("starlight-theme", isDark ? "dark" : "light"); } catch (error) { }
+          }
+          themeToggle.addEventListener("click", function () {
+               applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+          });
+          applyTheme(document.documentElement.dataset.theme);
+
+          /* =========================
+             8. 로그인 버튼
+          ========================= */
+
+          document.getElementById("loginButton").addEventListener(
+               "click",
+               function () {
+                    alert(
+                         "로그인 기능은 다음 단계에서 만들자!\n\n" +
+                         "나중에는 보유 캐릭터, 즐겨찾기, 육성 현황을 " +
+                         "저장할 수 있게 만들 예정이야."
+                    );
+               }
+          );
+
+
+          /* =========================
+             9. 게임 선택 버튼 + 첫 화면 실행
+          ========================= */
+
+          document.querySelectorAll(".game-tab").forEach(button => {
+               button.addEventListener("click", function () {
+                    selectGame(this.dataset.game);
+               });
+          });
+
+          updatePathFilter();
+          createOverview();
+
+     </script>
+
+
+
+</body>
+
+</html>

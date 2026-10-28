@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>columns</title>
+     <link rel="stylesheet" href="default.css">
+     <style>
+          .flex_container {
+               display: flex;
+               flex-direction: column;
+               height: 100vh;
+          }
+
+          .flex_item {
+               flex: 1 auto;
+
+          }
+
+          @media screen and (min-width:600px) {
+               .flex_container {
+                    flex-flow: row wrap;
+               }
+
+               .flex_item {
+                    width: 50%;
+
+               }
+          }
+
+          @media screen and (min-width:900px) {
+               .flex_item {
+                    width: 30%;
+               }
+          }
+     </style>
+</head>
+
+<body>
+     <div class="flex_container">
+          <div class="flex_item">AAAAAAAAAAAAA</div>
+          <div class="flex_item">BBB</div>
+          <div class="flex_item">CCCCCC</div>
+          <div class="flex_item">AAAAAAAAAAAAA</div>
+          <div class="flex_item">BBB</div>
+          <div class="flex_item">CCCCCC</div>
+          <div class="flex_item">AAAAAAAAAAAAA</div>
+          <div class="flex_item">BBB</div>
+          <div class="flex_item">CCCCCC</div>
+     </div>
+</body>
+
+</html>

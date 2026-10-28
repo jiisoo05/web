@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>flex-grow</title>
+     <link rel="stylesheet" href="default.css">
+     <style>
+          .flex_container {
+               display: flex;
+               height: 100px;
+          }
+
+          /* flex-grow는 아이템이 flex-basis의 값보다 커질 수 있는지를 결정하는 속성
+            flex-basis를 제외한 여백 부분을 flex-grow 에 지정된 숫자의 비율로 나누어 가짐
+             기본값이 0
+             */
+
+          .flex_item {
+               flex-grow: 2;
+          }
+
+          .flex_item:nth-child(1) {
+               flex-grow: 1;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="flex_container">
+          <div class="flex_item">AAAAAAAAAAAAAA</div>
+          <div class="flex_item">BBBBBBBBBBB</div>
+          <div class="flex_item">CCCCCCCCCC</div>
+     </div>
+</body>
+
+</html>

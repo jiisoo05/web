@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>배경 사이즈</title>
+     <style>
+          div {
+               background-image: url(./img/1295.png);
+               width: 500px;
+               height: 400px;
+               border: 2px dotted red;
+               background-repeat: no-repeat;
+               margin-bottom: 20px;
+          }
+
+          .bg1 {
+               background-size: auto;
+               /* 기본값 : 이미지 원본 사이즈 */
+
+          }
+
+          .bg2 {
+               background-size: 200px 150px;
+          }
+
+          .bg3 {
+               background-size: 60% 40%;
+          }
+
+          .bg4 {
+               background-size: contain;
+          }
+
+          .bg5 {
+               background-size: cover;
+               background-position: center;
+          }
+
+          .bg6 {
+               background-size: 100% 100%;
+          }
+     </style>
+
+
+</head>
+
+<body>
+     <!-- .bg$*6 -->
+     <div class="bg1"></div>
+     <div class="bg2"></div>
+     <div class="bg3"></div>
+     <div class="bg4"></div>
+     <div class="bg5"></div>
+     <div class="bg6"></div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>align-self</title>
+     <link rel="stylesheet" href="default.css">
+     <style>
+          .flex_container {
+               display: flex;
+               height: 100vh;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+          }
+          .flex_item:nth-child(2){
+               align-self: auto; 
+               align-self: stretch;
+               align-self: flex-start;
+               align-self: flex-end;
+               align-self: baseline;
+               align-self: center;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="flex_container">
+          <div class="flex_item">AAAAAAAAAAAAAA</div>
+          <div class="flex_item">BBB</div>
+          <div class="flex_item">CCCCCCCCCC</div>
+     </div>
+</body>
+
+</html>

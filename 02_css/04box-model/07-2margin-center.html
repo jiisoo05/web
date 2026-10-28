@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>margin-center</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          div {
+               background: #ccc;
+               width: 200px;
+               height: 300px;
+          }
+
+          .box1 {
+               width: 50%;
+               margin: 0 auto;
+
+          }
+
+          .box2 {
+               background: blue;
+               width: 1280px;
+               margin: 20px auto;
+          }
+
+          .box3 {
+               margin-block: 100px;
+               background: yellow;
+               margin-inline: auto;
+          }
+
+          .box4 {
+               background: green;
+               width: 40%;
+               margin-block-start: 200px;
+               margin-left: auto;
+               margin-right: auto;
+          }
+
+          .box4 div {
+               width: 30%;
+               height: 80%;
+               border: 1px solid #000;
+               float: left;
+          }
+
+          .box4_1 {
+               margin-left: 2%;
+               margin-top: 10px;
+
+          }
+
+          .box4_2 {
+               margin-right: 5%;
+               margin-top: 5%;
+               margin-left: 1%;
+
+          }
+
+          .box4_3 {
+               margin-top: 10%;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="box1"></div>
+     <div class="box2"></div>
+     <div class="box3"></div>
+     <div class="box4">
+          <div class="box4_1"></div>
+          <div class="box4_2"></div>
+          <div class="box4_3"></div>
+     </div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>flex-wrap</title>
+     <link rel="stylesheet" href="default.css">
+     <style>
+      .flex_container{
+        display: flex;
+        width: 700px;
+        flex-wrap: nowrap; /* 기본값: 줄바꿈 하지않음, 넘치면 빠져나감 */
+        flex-wrap: wrap-reverse;
+        /* gap: 20px; */
+        row-gap: 20px;
+        columns: 10px;
+      }
+     </style>
+</head>
+<body>
+     <div class="flex_container">
+    <div class="flex_item">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</div>
+    <div class="flex_item">BBBBBBBBBBBBBBBBBBBBBBBB</div>
+    <div class="flex_item">
+      CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+    </div>
+  </div>
+</body>
+</html>

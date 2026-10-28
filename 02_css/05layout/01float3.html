@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>layout</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+          }
+
+          ul {
+               list-style: none;
+
+          }
+
+          a {
+               color: inherit;
+               text-decoration: none;
+
+          }
+
+          .clearfix::after {
+               content: '';
+               display: block;
+               clear: both;
+
+          }
+
+          h2 {
+               font-size: 30px;
+          }
+
+          .container {
+               width: 1080px;
+               margin: 0 auto;
+          }
+
+          nav {
+               background: pink;
+          }
+
+          nav ul li {
+               background: lemonchiffon;
+               width: 25%;
+               float: right;
+          }
+
+          nav ul li a {
+               border-right: 1px solid #333;
+               display: block;
+               width: 100%;
+               height: 100%;
+               text-align: center;
+          }
+
+          nav ul li:last-child a {
+               border-right: 0;
+
+          }
+
+          main {
+               background: #ccc;
+
+          }
+
+          header {
+               background: red;
+               width: 250px;
+               height: 500px;
+               float: left;
+          }
+
+          .con1 {
+               background: green;
+               width: 250px;
+               height: 500px;
+               float: left;
+          }
+
+          .con2 {
+               background: blue;
+               width: 560px;
+               height: 500px;
+               float: right;
+          }
+
+          footer {
+               background: lemonchiffon;
+               height: 80px;
+               border: 2px solid #333;
+          }
+
+          footer .container {
+               background: gold;
+
+          }
+
+          .box1 {
+               width: 40%;
+               height: 60px;
+               background: blueviolet;
+               float: left;
+          }
+
+          .box2 {
+               width: 40%;
+               height: 60px;
+               background: lavender;
+               float: right;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="wrap">
+          <nav class="container clearfix">
+               <ul class="gnb clearfix">
+                    <li><a href="#">메뉴1</a></li>
+                    <li><a href="#">메뉴2</a></li>
+                    <li><a href="#">메뉴3</a></li>
+                    <li><a href="#">메뉴4</a></li>
+               </ul>
+          </nav>
+          <main class="container clearfix">
+               <header>header</header>
+               <section class="con1">
+                    <h2>con1</h2>
+               </section>
+               <section class="con2">
+                    <h2>con1</h2>
+               </section>
+          </main>
+          <footer>
+               <div class="container clearfix">
+                    <div class="box1">footer1</div>
+                    <div class="box2">footer2</div>
+               </div>
+          </footer>
+     </div>
+</body>
+
+</html>

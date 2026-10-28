@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>align-items</title>
+     <link rel="stylesheet" href="default.css">
+     <style>
+          .flex_container {
+               display: flex;
+               width: 800px;
+               height: 300px;
+               align-items: stretch;
+               /* 기본값: 아이템들이 교차축 방향으로 쭉 늘어난다 */
+               align-items: flex-end;
+               /* 아이템들이 교차축 끝점으로 정렬 */
+               align-items: center;
+               /* 아이템들이 교차축 가운데 정렬 */
+               align-items: flex-start;
+               /* 아이템들이 교차축 시작점으로 연결 */
+               align-items: baseline;
+               /* 교차축의 문자 기준선에 맞춰 배치 */
+
+          }
+
+          .flex_item:nth-child(1) {
+               font-size: 30px;
+          }
+
+          .flex_item:nth-child(2) {
+               font-size: 12px;
+          }
+
+          .flex_item:nth-child(3) {
+               font-size: 50px;
+               align-self: center;
+          }
+
+          .parent {
+               margin-top: 50px;
+               justify-content: center;
+               align-items: center;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="flex_container">
+          <div class="flex_item">AAAAAAAAAAAAAA</div>
+          <div class="flex_item">BBBBBBBBBBB</div>
+          <div class="flex_item">CCCCCCCCCC</div>
+     </div>
+     <div class="flex_container parent">
+          <div class="flex_item">cccccccc</div>
+     </div>
+</body>
+
+</html>

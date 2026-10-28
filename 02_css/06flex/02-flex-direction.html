@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>flex-direction</title>
+     <link rel="stylesheet" href="default.css">
+     <style>
+          .flex_container{
+               display:flex ;
+               flex-direction: row; /* 기본값 : 아이템 들이 행(가로) 방향으로 배치 */
+               flex-direction: column; /* 아이템들이 열(세로)방향으로 배치 */
+               flex-direction: row-reverse; /* 아이템들이 역순으로 배치 */
+               flex-direction: column-reverse; /* 아이템들이 역순으로 세로 배치 */
+               flex-direction: row; 
+               gap: 10px;
+          }
+     </style>
+</head>
+<body>
+          <div class="flex_container">
+          <div class="flex_item">AAAAAAAAAAAAAA</div>
+          <div class="flex_item">BBBBBBBBBBB</div>
+          <div class="flex_item">CCCCCCCCCC</div>
+     </div>
+
+</body>
+</html>
