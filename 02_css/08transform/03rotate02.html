@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>rotate</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          div {
+               width: 300px;
+               height: 300px;
+               margin: 100px;
+               border: 1px solid #000;
+               float: left;
+               perspective: 200px;
+          }
+
+          div p {
+               height: 100%;
+               background: blue;
+               opacity: .3;
+               transition: .6s;
+          }
+
+          div:nth-child(1):hover p {
+               transform: rotateX(45deg);
+          }
+
+          div:nth-child(2):hover p {
+               transform: rotateY(80deg);
+
+          }
+
+          div:nth-child(3):hover p {
+               transform: rotateZ(120deg);
+
+          }
+     </style>
+</head>
+
+<body>
+     <div>
+          <p></p>
+     </div>
+     <div>
+          <p></p>
+     </div>
+     <div>
+          <p></p>
+     </div>
+</body>
+
+</html>

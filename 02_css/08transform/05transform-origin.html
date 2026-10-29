@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>transform-origin</title>
+     <style>
+          div {
+               width: 300px;
+               height: 300px;
+               margin: 100px;
+               border: 1px solid #000;
+               float: left;
+          }
+
+          div p {
+               height: 100%;
+               margin: 0;
+               background: blue;
+               opacity: .3;
+               transition: .6s;
+          }
+
+          div:nth-child(3) p{
+               transform-origin:right bottom ;
+          }
+
+                    div:nth-child(1) p{
+                         transform-origin: left top;
+                    }
+
+          /* 1. x축 y축으로 10px 20px 이동 */
+          div:nth-child(1):hover p {
+               transform: translate(10px, 20px);
+          }
+
+          /* 2. x축 y축으로 1.5배 커지게 */
+          div:nth-child(2):hover p {
+               transform: scale(1.5, 1.5);
+          }
+
+          /* 3. 반시계방향으로 30도 돌림 */
+          div:nth-child(3):hover p {
+               transform: rotate(-30deg);
+          }
+
+          /* 4. x축 y축으로 15도 기울여서 비틈 */
+          div:nth-child(4):hover p {
+               transform: skew(15deg, 15deg);
+          }
+     </style>
+</head>
+
+<body>
+
+     <div>
+          <p></p>
+     </div>
+     <div>
+          <p></p>
+     </div>
+     <div>
+          <p></p>
+     </div>
+     <div>
+          <p></p>
+     </div>
+
+</body>
+
+</html>

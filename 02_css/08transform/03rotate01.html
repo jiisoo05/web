@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          .container {
+               display: flex;
+
+          }
+
+          .container div {
+               width: 200px;
+               height: 200px;
+               margin: 100px;
+               border: 1px solid #333;
+          }
+
+          .container div:nth-child(1):hover p {
+               transform: rotate(15deg);
+          }
+
+          .container div:nth-child(2):hover p {
+               transform: rotate(-30deg);
+
+          }
+
+          .container div:nth-child(3):hover p {
+          }
+     </style>
+</head>
+
+<body>
+     <h2>rotate : 평면상에서의 회전</h2>
+     <p>rotate는 현재 요소의 각도를 기준으로 해당 요소를 평면상에서 회전시킨다. 이전 속성과는 달리 평면상에서 회전시킬 경우에는 따로 x축 y축을 지정하지 않는다.</p>
+     <p>회전각이 플러스 값일 때에는 시계방향, 마이너스 값일 때에는 반시계방향</p>
+     <div class="container">
+          <div>
+               <p></p>
+          </div>
+          <div>
+               <p></p>
+          </div>
+          <div>
+               <p></p>
+          </div>
+     </div>
+
+</body>
+
+</html>

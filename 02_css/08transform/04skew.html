@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>skew</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          .container {
+               display: flex;
+
+          }
+
+          .container div {
+               width: 200px;
+               height: 200px;
+               margin: 100px;
+               border: 1px solid #333;
+          }
+
+          .container div p {
+               width: 100%;
+               height: 100%;
+               background: blueviolet;
+               opacity: 0.3;
+               transition: .3s;
+          }
+
+          .container div:nth-child(1) p {
+               transform: skewX(-30deg);
+          }
+
+          .container div:nth-child(2) p {
+               transform: skewY(45deg);
+
+          }
+
+          .container div:nth-child(3) p {
+               transform: skew(30deg,40deg);
+
+          }
+
+          .container div:nth-child(4) p {
+               transform: skewX(10deg) translateX(100px) scale(1.2) rotate(-30deg);
+
+          }
+     </style>
+</head>
+
+<body>
+     <h2>skew : x축이나 y축으로 기울임</h2>
+     <p>skew는 현재 요소의 각도 값을 기준으로 x축 또는 y축으로 해당 요소를 원하는 각도만큼 기울인다</p>
+     <p>각도를 나타내는 단위는 degree의 약자인 deg이다.</p>
+     <div class="container">
+          <div>
+               <p></p>
+          </div>
+          <div>
+               <p></p>
+          </div>
+          <div>
+               <p></p>
+          </div>
+          <div>
+               <p></p>
+          </div>
+     </div>
+</body>
+
+</html>
