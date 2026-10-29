@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>속성 선택자</title>
+     <style>
+          section {
+               margin-bottom: 20px;
+          }
+
+          a[href] {
+               background: lightcoral;
+          }
+          .navi a[target="_blank"]{
+               background: #ccc;
+          }
+     </style>
+</head>
+
+<body>
+     <ul>
+          <li><a>메인메뉴:</a></li>
+          <li><a href="">메뉴1</a></li>
+          <li><a href="">메뉴2</a></li>
+          <li><a href="">메뉴3</a></li>
+          <li><a href="">메뉴4</a></li>
+     </ul>
+     <section class="site">
+          <h2>사이트</h2>
+          <nav class="navi">
+               <ul><a href="https://www.naver.com/" target="_blank">네이버</a></ul>
+               <ul><a href="https://www.google.com/">구글</a></ul>
+               <ul><a href="https://www.nate.com/">네이트</a></ul>
+               <ul><a href="https://www.ezenac.co.kr/">이젠아카데미</a></ul>
+          </nav>
+     </section>
+</body>
+
+</html>

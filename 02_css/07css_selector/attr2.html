@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>속성 값 선택자</title>
+     <style>
+          a {
+               padding: 5px 20px;
+               font-size: 14px;
+               color: #333;
+               text-decoration: none;
+               background: no-repeat left center;
+          }
+
+          [title ^='us'] {
+               background: url(../images/us.png) no-repeat left center;
+          }
+
+          a[title ^='ja'] {
+               background: url(../images/jp.png) no-repeat left center;
+          }
+
+          a[title ^='ch'] {
+               background: url(../images/ch.png) no-repeat left center;
+          }
+
+          [href $='hwp'] {
+               background-image: url(../images/hwp_icon.gif);
+          }
+
+          ul li a[href $='xls'] {
+               background-image: url(../images/excel_icon.gif);
+          }
+
+          [href *='w3c'] {
+               background: violet;
+          }
+
+          [href *='www'] {
+               font-size: 30px;
+          }
+     </style>
+</head>
+
+<body>
+     <ul>
+          <li>외국어 서비스 : </li>
+          <li><a href="#" title="us">영어</a></li>
+          <li><a href="#" title="us-english">영어</a></li>
+          <li><a href="#" title="japanese">일본어</a></li>
+          <li><a href="#" title="chinese">중국어</a></li>
+     </ul>
+     <h3>회사 소개 파일 다운받기</h3>
+     <ul>
+          <li><a href="intro.hwp">hwp 파일</a></li>
+          <li><a href="intro.xls">엑셀 파일</a></li>
+     </ul>
+
+     <h3>HTML5 참고 사이트</h3>
+     <p>(아래 링크중 파란색 배경의 링크는 w3c 사이트로 연결됩니다.)</p>
+     <ul>
+          <li><a href="http://www.w3c.org/TR/html">html 표준안 사이트</a></li>
+          <li><a href="http://www.webplatform.org">튜토리얼과 아티클</a></li>
+          <li><a href="http://caniuse.com">html 지원 여부 체크</a></li>
+          <li><a href="http://www.w3c.org/TR/css3-mediaqueries">미디어쿼리</a></li>
+     </ul>
+
+</body>
+
+</html>
