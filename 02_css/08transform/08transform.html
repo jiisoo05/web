@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>카드뒤집기</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          .con {
+               width: 300px;
+               height: 300px;
+               background: #ccc;
+               position: relative;
+               margin: 400px auto;
+          }
+
+          .con .card {
+               width: 100%;
+               height: 100%;
+               position: absolute;
+               left: 0;
+               top: 0;
+               transition: .6s;
+               transform-origin: top center;
+               transform-style: preserve-3d;
+          }
+
+          .con:hover .card {
+               transform: rotateX(180deg);
+          }
+
+          .face {
+               width: 100%;
+               height: 100%;
+               position: absolute;
+               left: 0;
+               top: 0;
+               backface-visibility: hidden;
+
+          }
+
+          .back {
+               transform: rotateX(180deg);
+          }
+
+          .face img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="con">
+          <div class="card">
+               <div class="face front"><img
+                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2DG9HVlSHYBW09W8sqNQWNGTYCb4fSO2gQBhYZoOV1uSJepzfa3vwC3cJ&s=10"
+                         alt="우사기 앞면"></div>
+               <div class="face back"><img src="https://i.pinimg.com/236x/d7/83/44/d783447b79f6898df20767ebb3afd78c.jpg"
+                         alt="우사기 뒷면"></div>
+          </div><!-- //.card -->
+     </div>
+</body>
+
+</html>

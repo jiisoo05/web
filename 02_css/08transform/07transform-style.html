@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>transform-style</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          .container {
+               perspective: 300px;
+               background: #000;
+          }
+          .parent{
+               width: 300px;
+               height: 300px;
+               border: 1px solid #ccc;
+               margin: 0 auto;
+               transform: rotateX(45deg);
+               transform-style: preserve-3d;
+          }
+          .child{
+               margin-top: 40px;
+               padding: 100px 0;
+               width: 100%;
+               background: lightcoral;
+               transform: rotateX(-30deg);
+          }
+     </style>
+</head>
+
+<body>
+     <div class="container">
+          <div class="parent">
+               <div class="child">
+                    i'm your sen
+               </div>
+          </div>
+     </div>
+</body>
+
+</html>
