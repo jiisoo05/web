@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>하위 선택자</title>
+     <style>
+          #container ul {
+               border: 1px dotted violet;
+          }
+
+          #container>ul {
+               border: 2px solid red;
+          }
+
+          #container h1 {
+               background: lightblue;
+          }
+     </style>
+</head>
+
+<body>
+     <section id="container">
+          <header>
+               <h1>예약 방법 및 요금</h1>
+          </header>
+          <p>000 맛집에 예약하려면?</p>
+          <ul>
+               <li>
+                    예약방법
+                    <ul>
+                         <li>직접 통화</li>
+                         <li>네이버 예약</li>
+                    </ul>
+               </li>
+               <li>
+                    요금
+                    <ul>
+                         <li>1인 : 40,000원</li>
+                         <li>2인 : 60,000원</li>
+                         <li>3인 : 80,000원</li>
+                         <li>4인 : 100,000원</li>
+                    </ul>
+               </li>
+          </ul>
+     </section>
+</body>
+
+</html>
