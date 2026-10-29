@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title></title>
+     <title>translate</title>
+     <style>
+          *{
+               margin: 0;
+               padding: 0;
+          }
+          .container p:nth-child(2){
+               margin-bottom: 100px;
+          }
+          .container div{
+               width: 200px;
+               height: 200px;
+               margin: 100px;
+               border: 1px solid #000;
+               float: left;
+          }
+          .container div p{
+               width: 100%;
+               height: 100%;
+               background: blue;
+               opacity: 0.3;
+               color: #fff;
+               font-size: 30px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               transition: 0.3s;
+               cursor: pointer;
+          }
+
+          .container div:nth-child(3):hover p{
+               transform: translateX(100px);
+               
+          }
+
+          .container div:nth-of-type(2):hover p{
+               transform: translateY(-100px);
+          }
+          .container div:last-child:hover p{
+               transform: translateX(50px) translateY(50px);
+               transform: translate(-50px,-50px);
+          }
+     </style>
 </head>
+
 <body>
-     
+     <div class="container">
+          <h2>translate : x축이나 y축으로 이동</h2>
+          <p>translate는 현재 요소의 위치값을 기준으로 x축 또는 y축으로 해당 요소를 이동 시킨다</p>
+          <div>
+               <p>1</p>
+          </div>
+          <div>
+               <p>2</p>
+          </div>
+          <div>
+               <p>3</p>
+          </div>
+     </div>
 </body>
+
 </html>
