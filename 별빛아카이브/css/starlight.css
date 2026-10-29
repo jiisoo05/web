@@ -1605,3 +1605,11 @@ body, .header, .hero-box, .tier-card, .full-tier-panel,
 .substat-chip {display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border:1px solid var(--border);border-radius:9px;background:var(--blue-pale);font-size:12px;}
 .substat-chip b {color:var(--blue-dark);}
 @media(max-width:760px) { .detail-recommendations > .detail-cones-card {height:auto!important;} .detail-cones-card .cone-scroll-area {max-height:520px;} }
+
+/* StarRail.js 실험 영역 */
+#starrail-data-test { border: 1px dashed var(--line, #9b9bba); }
+#starrail-test-result { margin-top: 12px; line-height: 1.8; }
+.starrail-test-grid { display: grid; grid-template-columns: minmax(90px, 150px) 1fr; gap: 8px 14px; margin: 12px 0; }
+.starrail-test-grid dt { font-weight: 700; opacity: .72; }
+.starrail-test-grid dd { margin: 0; overflow-wrap: anywhere; }
+.data-source-caption { font-size: 12px; opacity: .7; margin-top: 12px; }
