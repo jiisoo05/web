@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>가상요소</title>
+     <style>
+          ul {
+               list-style: none;
+               display: flex;
+               gap: 50px;
+          }
+
+          ul li {
+               background: lavender;
+               width: 100px;
+               height: 50px;
+               line-height: 50px;
+               position: relative;
+               box-sizing: border-box;
+               padding-left:10px ;
+          }
+
+          ul li::before{
+               content: ' ';
+               display: block;
+               width: 5px;
+               height: 5px;
+               background: palevioletred;
+               border-radius: 50%;
+               position: absolute;
+               left: 0; top: 22px;
+
+          }
+
+          ul li:last-child::after{
+               content: 'new';
+               color: red;
+               font-size: 0.8rem;
+               background: #000;
+               margin-left: 10px;
+               
+          }
+
+          ul li a{
+               text-decoration: none;
+          }
+     </style>
+</head>
+
+<body>
+     <ul>
+          <li><a href="#">메뉴1</a></li>
+          <li><a href="#">메뉴2</a></li>
+          <li><a href="#">메뉴3</a></li>
+          <li><a href="#">메뉴4</a></li>
+     </ul>
+</body>
+
+</html>
