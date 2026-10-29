@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>scale</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          .container {
+               display: flex;
+               
+          }
+
+          .container div {
+               width: 200px;
+               height: 200px;
+               margin: 100px;
+               border: 1px solid #333;
+          }
+
+          .container div p {
+               width: 100%;
+               height: 100%;
+               background: blueviolet;
+               opacity: 0.3;
+               transition: .3s;
+          }
+
+          .container div:nth-child(1):hover p {
+               transform: scaleX(1.5);
+          }
+
+          .container div:nth-child(2):hover p {
+               transform: scaleY(0.5);
+          }
+
+          .container div:nth-child(3):hover p {
+               transform: scaleX(2.2);
+               transform: scale(2)
+          }
+     </style>
+</head>
+
+<body>
+     <h2>scale : x축이나 y축으로 확대/축소</h2>
+     <p>scale은 현재 요소의 크기를 기준으로 x축 또는 y축으로 해당요소를 확대 또는 축소시킨다.</p>
+     <p>scale의 비율은 원본크기 1을 기준으로 1보다 크면 확대 / 작으면 축소 되며 비율값은 소수점으로 설정 가능</p>
+
+     <div class="container">
+          <div>
+               <p></p>
+          </div>
+          <div>
+               <p></p>
+          </div>
+          <div>
+               <p></p>
+          </div>
+     </div>
+</body>
+
+</html>

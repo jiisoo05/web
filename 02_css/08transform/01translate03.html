@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>translate</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          div {
+               width: 600px;
+               height: 400px;
+               margin: 100px auto;
+               border: 1px solid #000;
+               position: relative;
+               perspective: 1600px;
+          }
+
+          div p {
+               width: 100%;
+               height: 100%;
+               background: blue;
+               opacity: .3;
+               color: #fff;
+               font-size: 60px;
+               position: absolute;
+               left: 0;
+               top: 0;
+               transition: .6s;
+          }
+
+          div:hover p:nth-child(1) {
+               transform: translateZ(-500px);
+          }
+
+          div:hover p:nth-child(2) {transform: translateZ(0);}
+
+          div:hover p:nth-child(3) {transform: translateZ(500px);}
+     </style>
+</head>
+
+<body>
+     <div>
+          <P>box1</P>
+          <P>box2</P>
+          <P>box3</P>
+     </div>
+</body>
+
+</html>
