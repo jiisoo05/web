@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>nth-of-type</title>
+     <style>
+          .container p:nth-of-type(2){
+               background: #ccc;
+          }
+          .container div:nth-last-of-type(1){
+               background: yellowgreen;
+          }
+
+          .container p:nth-child(5){
+               background: blue;
+          }
+          .container :nth-last-child(3){
+               background: red;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="container">
+          <p>1-Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum esse aperiam, quam corrupti eveniet
+               commodi necessitatibus corporis voluptates fugiat molestiae provident doloribus, recusandae tenetur at,
+               ipsam nam. Assumenda, explicabo quidem!</p>
+          <div>2-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae vero, amet illo perferendis unde
+               dicta iusto. Debitis, doloribus optio! Sapiente, aut assumenda tempore nobis aliquam praesentium dolorem
+               possimus voluptatem veritatis?</div>
+          <p>3-Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum esse aperiam, quam corrupti eveniet
+               commodi necessitatibus corporis voluptates fugiat molestiae provident doloribus, recusandae tenetur at,
+               ipsam nam. Assumenda, explicabo quidem!</p>
+          <div>4-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae vero, amet illo perferendis unde
+               dicta iusto. Debitis, doloribus optio! Sapiente, aut assumenda tempore nobis aliquam praesentium dolorem
+               possimus voluptatem veritatis?</div>
+          <p>5-Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum esse aperiam, quam corrupti eveniet
+               commodi necessitatibus corporis voluptates fugiat molestiae provident doloribus, recusandae tenetur at,
+               ipsam nam. Assumenda, explicabo quidem!</p>
+          <div>6-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae vero, amet illo perferendis unde
+               dicta iusto. Debitis, doloribus optio! Sapiente, aut assumenda tempore nobis aliquam praesentium dolorem
+               possimus voluptatem veritatis?</div>
+     </div>
+</body>
+
+</html>
