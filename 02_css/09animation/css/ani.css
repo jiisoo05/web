@@ -1,10 +1,214 @@
 @charset "utf-8";
-*{
+
+* {
      margin: 0;
      padding: 0;
 }
-.wrap{
+
+.wrap {
      position: fixed;
      inset: 0;
      background: url(../../images/background.png) no-repeat center/cover;
 }
+
+img {
+     position: absolute;
+}
+
+.viking {
+     position: absolute;
+     left: 240px;
+     top: 240px;
+     background: #ccc;
+}
+
+.viking img:nth-child(2) {
+     transform-origin: top center;
+     animation: vikingAni 7s infinite;
+}
+
+.swing {
+     position: absolute;
+     left: 1000px;
+     top: 150px;
+     background: #ccc;
+}
+
+.swing img:nth-child(2) {
+     transform-origin: top center;
+     animation: vikingAni 7s infinite;
+}
+
+.train{
+     width: 425px;
+     height: 152px;
+     background: url(../../images/train.png);
+     position: absolute;
+     right: -425px;
+     bottom: 100px;
+     animation: trainAni 15s infinite linear;
+}
+
+.seat2{
+     width: 126px;
+     height: 130px;
+     background: url(../../images/seat2.png);
+     position: absolute;
+     right: 1200px;
+     bottom: 600px;
+     animation: seat2Ani 8s infinite alternate ;
+}
+
+.machine{
+     position: absolute;
+     top: 140px;
+     right: 800px;
+     background: #ccc;
+}
+.machine>img{
+     left: 130px;
+     top: 200px;
+}
+.rotate{
+     width: 380px;
+     height: 385px;
+     position: absolute;
+     left: 0;
+     top: 0;
+     background:url(../../images/wheel.png);
+     animation: rotateAni 20s linear infinite;
+
+}
+
+.machine .rotate img{
+     animation: imgAni 20s linear infinite;
+     transform-origin: top;
+}
+
+.machine .rotate .s1 {
+  left: 155px;
+  top: 10px;
+}
+
+.machine .rotate .s2 {
+  left: 254px;
+  top: 33px;
+}
+
+.machine .rotate .s3 {
+  left: 320px;
+  top: 102px;
+}
+
+.machine .rotate .s4 {
+  left: 64px;
+  top: 35px;
+}
+
+.machine .rotate .s5 {
+  left: -4px;
+  top: 102px;
+}
+
+.machine .rotate .s6 {
+  left: -25px;
+  top: 193px;
+}
+
+.machine .rotate .s7 {
+  left: 2px;
+  top: 285px;
+}
+
+.machine .rotate .s8 {
+  left: 62px;
+  top: 347px;
+}
+
+.machine .rotate .s9 {
+  left: 162px;
+  top: 377px;
+}
+
+.machine .rotate .s10 {
+  left: 266px;
+  top: 344px;
+}
+
+.machine .rotate .s11 {
+  left: 331px;
+  top: 274px;
+}
+
+.machine .rotate .s12 {
+  left: 346px;
+  top: 193px;
+}
+
+@keyframes rotateAni {
+     0%{
+          transform: rotate(0);
+     }
+     100%{
+          transform: rotate(360deg);
+
+     }
+}
+
+@keyframes imgAni {
+     0%{
+          transform: rotate(0);
+     }
+     100%{
+          transform: rotate(-360deg);
+
+     }
+}
+
+
+@keyframes seat2Ani {
+     0%{
+          right: 1200px;
+     }
+     100%{
+          right: 1700px;
+     }
+}
+
+@keyframes trainAni {
+     0%{
+          right: -425px;
+          
+     }
+     100%{right: 100%;}
+}
+
+@keyframes vikingAni {
+     0% {
+          transform: rotate(-70deg);
+     }
+
+     50% {
+          transform: rotate(70deg);
+     }
+
+     100% {
+          transform: rotate(-70deg);
+     }
+}
+
+@keyframes swing {
+     0% {
+          transform: rotate(-70deg);
+     }
+
+     50% {
+          transform: rotate(70deg);
+     }
+
+     100% {
+          transform: rotate(-70deg);
+     }
+
+}
+
