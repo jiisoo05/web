@@ -1,0 +1,88 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+:root {
+     --bg_deep: #111315;
+     --bg_warm: #1b1a17;
+     --bg_navy: #080c1b;
+     --ink: #f4ede4;
+     --ink_muted: #c8b9aa;
+     --gold: #f5c04b;
+     --gold_soft: #f1c983;
+     --mint: #46d6a3;
+     --periwinkle: #9fb7ff;
+     --font-eng: "Poiret One", sans-serif;
+     --font-kor: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+}
+*{
+     margin: 0;
+     padding: 0;
+}
+.ir {
+  /*레이아웃에 영향을 끼치지 않도록 함*/
+  position: absolute;
+  /*스크린리더기가 인식할 수 있도록 함*/
+  width: 1px;
+  height: 1px;
+  /*눈에 보이는 부분을 제거. 화면에 보이지 않도록 함*/
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+}
+body{
+     font-family: var(--font-kor);
+     width: 100%;
+     height: 100vh;
+     background: var(--gold_soft);
+     overflow: hidden;
+     animation: skyBg linear 20s infinite;
+}
+@keyframes skyBg {
+     0%{background: var(--gold_soft);}
+     25%{background: var(--gold);}
+     50%{background: var(--ink_muted);}
+     75%{background: var(--bg_warm);}
+     100%{background: var(--gold_soft);}
+}
+
+h1{
+     font: 92px/1 var(--font-eng);
+     width: 1000px;
+     color: var(--ink);
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, 150%);
+     text-align: center;
+     position: absolute;
+}
+
+.main_title{
+     position: absolute;
+     left: 50%;
+     top: calc(50% + 246px);
+     transform: translate(-50%);
+     color: var(--ink);
+     font-size: 34px;
+     font-weight: 700;
+     text-align: center;
+     text-shadow: 0 12px 36px rgba(255, 255, 0, 0.24);
+}
+
+section{
+     width: 1000px;
+     height: 400px;
+     background: #ccc;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -70%);
+}
+section img{
+     position: absolute;
+}
+
+.sky .sun{}
+.sky .cloud1{}
+.sky .cloud2{}
