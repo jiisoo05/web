@@ -16,22 +16,25 @@
      --font-kor: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 
 }
-*{
+
+* {
      margin: 0;
      padding: 0;
 }
+
 .ir {
-  /*레이아웃에 영향을 끼치지 않도록 함*/
-  position: absolute;
-  /*스크린리더기가 인식할 수 있도록 함*/
-  width: 1px;
-  height: 1px;
-  /*눈에 보이는 부분을 제거. 화면에 보이지 않도록 함*/
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  overflow: hidden;
+     /*레이아웃에 영향을 끼치지 않도록 함*/
+     position: absolute;
+     /*스크린리더기가 인식할 수 있도록 함*/
+     width: 1px;
+     height: 1px;
+     /*눈에 보이는 부분을 제거. 화면에 보이지 않도록 함*/
+     clip: rect(0 0 0 0);
+     margin: -1px;
+     overflow: hidden;
 }
-body{
+
+body {
      font-family: var(--font-kor);
      width: 100%;
      height: 100vh;
@@ -39,15 +42,30 @@ body{
      overflow: hidden;
      animation: skyBg linear 20s infinite;
 }
+
 @keyframes skyBg {
-     0%{background: var(--gold_soft);}
-     25%{background: var(--gold);}
-     50%{background: var(--ink_muted);}
-     75%{background: var(--bg_warm);}
-     100%{background: var(--gold_soft);}
+     0% {
+          background: var(--gold_soft);
+     }
+
+     25% {
+          background: var(--gold);
+     }
+
+     50% {
+          background: var(--ink_muted);
+     }
+
+     75% {
+          background: var(--bg_warm);
+     }
+
+     100% {
+          background: var(--gold_soft);
+     }
 }
 
-h1{
+h1 {
      font: 92px/1 var(--font-eng);
      width: 1000px;
      color: var(--ink);
@@ -58,7 +76,7 @@ h1{
      position: absolute;
 }
 
-.main_title{
+.main_title {
      position: absolute;
      left: 50%;
      top: calc(50% + 246px);
@@ -70,19 +88,156 @@ h1{
      text-shadow: 0 12px 36px rgba(255, 255, 0, 0.24);
 }
 
-section{
+section {
      width: 1000px;
      height: 400px;
-     background: #ccc;
      position: absolute;
      left: 50%;
      top: 50%;
      transform: translate(-50%, -70%);
 }
-section img{
+
+section img {
      position: absolute;
 }
 
-.sky .sun{}
-.sky .cloud1{}
-.sky .cloud2{}
+.sky .sun {
+     top: -150px;
+     left: 50%;
+     margin-left: -110px;
+     transform-origin: center 500px;
+     animation: sunAni linear 20s infinite;
+}
+
+@keyframes sunAni {
+     0% {
+          transform: rotate(-90deg);
+          opacity: 0;
+
+     }
+
+     25% {
+          transform: rotate(-30deg);
+          opacity: 1;
+
+     }
+
+     50% {
+          transform: rotate(30deg);
+          opacity: 1;
+
+     }
+
+     75% {
+          transform: rotate(90deg);
+          opacity: 0;
+
+
+     }
+
+     100% {
+          transform: rotate(-90deg);
+          opacity: 0;
+     }
+}
+
+
+.sky .cloud1 {
+     left: 10%;
+     top: -30px;
+     animation: flow linear infinite 10s;
+}
+
+.sky .cloud2 {
+     left: 0;
+     top: 20px;
+     animation: flow linear infinite 20s;
+}
+
+@keyframes flow {
+     0% {
+          opacity: 0;
+     }
+
+     10% {
+          opacity: 1;
+     }
+
+     80% {
+          opacity: 1;
+     }
+
+     100% {
+          opacity: 0;
+          left: 90%;
+     }
+}
+
+.orbit {
+     bottom: 104px;
+     left: 50%;
+     margin-left: -165px;
+     opacity: .7;
+     animation: rotate linear 20s infinite;
+}
+
+@keyframes rotate {
+     0% {
+          transform: rotate(0);
+          opacity: .7;
+     }
+
+     100% {
+          transform: rotate(360deg);
+          opacity: 1;
+     }
+
+}
+
+.town_night {
+     bottom: 0;
+     left: 40px;
+}
+
+.town_day {
+     bottom: 0;
+     left: 40px;
+     animation: dayAni linear 20s infinite;
+}
+
+@keyframes dayAni {
+     0% {
+          opacity: 0.8;
+
+     }
+     25%{
+          opacity: 1;
+     }
+
+     50% {
+          opacity: 1;
+
+     }
+
+     75% {
+          opacity: 0;
+
+
+     }
+
+     100% {
+          opacity: 1;
+     }
+}
+
+.man {
+     left: 0;
+     bottom: 0;
+     animation: flow linear infinite 7s;
+}
+
+.family {
+     left: 0;
+     bottom: 0;
+     animation: flow linear infinite 20s;
+}
