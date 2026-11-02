@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      border:1px solid #000;
+    }
+    .box1{
+      background-color: blueviolet;
+      border-color: red;
+      animation-name: shape;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-delay: 1s;
+      animation-timing-function: linear;
+    }
+    .box2{
+      background-color: crimson;
+      border-color: blue;
+      animation: rotate 5s infinite alternate;
+    }
+    .box3{
+      background-color: lawngreen;
+      border-color: transparent;
+      animation:shape 5s 2s 3;
+    }
+
+    @keyframes shape {
+      0%{border-radius: 0;}
+      30%{border-radius: 50%;}
+      100%{border-radius: 20px;}
+    }
+
+    @keyframes rotate{
+      from{transform: rotate(0);}
+      to{transform: rotate(45deg);}
+    }
+  </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>
