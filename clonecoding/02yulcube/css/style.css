@@ -79,7 +79,7 @@ body {
      margin-left: -300px;
      margin-top: -400px;
      transform-style: preserve-3d;
-     /* animation: cube_rotate 2s linear infinite; */
+     animation: cube_rotate 34s linear infinite;
 }
 
 @keyframes cube_rotate {
@@ -97,7 +97,6 @@ body {
      inset: 0;
      outline: 0;
      backface-visibility: hidden;
-     display: none;
 }
 
 #circle article h2 {
@@ -503,16 +502,72 @@ body {
           var(--color_panel_strong);
 }
 
-#circle article.face_7 {
-     display: block;
+.tag_group {
+     position: relative;
+     z-index: 2;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 10px;
+     margin-top: 30px;
+}
+
+.tag_group span {
+     border: 1px solid rgba(157, 255, 236, 0.22);
+     padding: 10px 13px;
+     color: #defef7;
+     background: rgba(0, 0, 0, 0.28);
+     font: 700 12px/1 var(--eng-font1);
+}
+
+.face_8 .claim_card {
+     padding: 0;
+}
+
+.brand_video {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     opacity: 0.72;
+     background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.92)44%);
+     padding: 160px 34px 34px;
+}
+
+.claim_overlay {
+     position: absolute;
+     left: 40px;
+     right: 40px;
+     bottom: 40px;
 }
 
 
-/* .face_1{transform: rotateY(0deg) translateZ(-764px);}
-.face_2{transform: rotateY(45deg) translateZ(-764px);}
-.face_3{transform: rotateY(90deg) translateZ(-764px);}
-.face_4{transform: rotateY(135deg) translateZ(-764px);}
-.face_5{transform: rotateY(180deg) translateZ(-764px);}
-.face_6{transform: rotateY(225deg) translateZ(-764px);}
-.face_7{transform: rotateY(270deg) translateZ(-764px);}
-.face_8{transform: rotateY(315deg) translateZ(-764px);} */
+.face_1 {
+     transform: rotateY(0deg) translateZ(-764px);
+}
+
+.face_2 {
+     transform: rotateY(45deg) translateZ(-764px);
+}
+
+.face_3 {
+     transform: rotateY(90deg) translateZ(-764px);
+}
+
+.face_4 {
+     transform: rotateY(135deg) translateZ(-764px);
+}
+
+.face_5 {
+     transform: rotateY(180deg) translateZ(-764px);
+}
+
+.face_6 {
+     transform: rotateY(225deg) translateZ(-764px);
+}
+
+.face_7 {
+     transform: rotateY(270deg) translateZ(-764px);
+}
+
+.face_8 {
+     transform: rotateY(315deg) translateZ(-764px);
+}
