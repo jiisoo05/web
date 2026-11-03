@@ -93,7 +93,7 @@ header h1 img {
 }
 
 header h1 span {
-     font: 1vw;
+     font-size: 1vw;
      line-height: 1.2;
      display: block;
      font-weight: 300;
@@ -114,5 +114,121 @@ header address {
 section {
      width: 80%;
      height: 100%;
-     background: blue
+     display: flex;
+     padding-top: 140px;
+}
+
+section article {
+     flex: 1;
+     padding: 70px 40px 100px;
+     cursor: pointer;
+     z-index: 1;
+     position: relative;
+     opacity: .6;
+     transition: flex 1s, opacity 1s;
+}
+
+section article:hover {
+     flex: 1.5;
+     z-index: 2;
+     opacity: 1;
+}
+
+section article::before {
+     content: '';
+     display: block;
+     width: 80%;
+     height: 95%;
+     position: absolute;
+     left: -200px;
+     top: 0;
+     background: var(--main-bg2);
+     opacity: 0;
+     transition: .6s;
+}
+
+section article:hover::before {
+     left: 0;
+     opacity: 1;
+}
+
+section article .inner {
+     width: 100%;
+     height: 100%;
+     position: relative;
+     display: flex;
+     flex-wrap: wrap;
+     align-content: space-between;
+
+}
+
+section article .inner .text {
+     width: 100%;
+     color: var(--font-color4);
+}
+
+section article:hover .inner .text {
+     width: 75%;
+}
+
+section article .inner .text h2 {
+     font: normal 2vw/1 'Alegreya Sans', sans-serif;
+     color: var(--font-color2);
+     margin-bottom: 40px;
+     padding-top: 70px;
+     transition: font-size 0.6s;
+}
+
+section article:hover .inner .text h2 {
+     font-size: 5vw;
+     padding-top: 0;
+}
+
+section article .inner .text h2::after {
+     content: '';
+     display: block;
+     width: 40px;
+     height: 2px;
+     background: var(--font-color2);
+     margin-top: 20px;
+     transition: 1s;
+}
+
+section article:hover .inner .text h2::after {
+     width: 120px;
+     background: var(--point-color);
+
+}
+
+section article .inner figure {
+     width: 100%;
+     height: 15vh;
+     overflow: hidden;
+     filter: saturate(10%);
+     transition: 1s;
+}
+
+section article:hover .inner figure {
+     filter: saturate(120%);
+     height: 25vh;
+}
+
+section article .inner figure video {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: 1.5s;
+}
+
+section article:hover .inner figure video {
+     transform: scale(1.1);
+}
+aside{
+     position: fixed;
+     width: 100%;
+     height: 100vh;
+     background: var(--main-bg3);
+     left: 0;
+     top: 0;
+     z-index: 2;
 }
