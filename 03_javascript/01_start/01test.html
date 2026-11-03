@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>첫 자바스트립트</title>
+</head>
+<body>
+  <button type="button" onclick="alert('눌렀음?')">클릭하면 경고창</button>
+  <button type="button" class="change_btn">글씨바꾸기</button>
+  <button type="button" class="reset_btn">전체바꿈</button>
+  <button type="button" id="out">외부스크립트</button>
+  <p class="change">뭘까요?</p>
+  <script>
+    // crtl + / 한줄주석
+    /* 
+      alt + shift + a
+      여러줄 주석
+    */
+   document.querySelector('.change_btn').onclick = () => {
+      document.querySelector('.change').innerHTML = '<em>hello world</em>'
+   }
+  </script>
+  <script>
+    document.querySelector('.reset_btn').onclick = function(){
+      document.write('<h1>자바스크립트 엄청 재미있어요.</h1>')
+    }
+  </script>
+  <script src="js/01test.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>javascript 시작하기</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="./css/js_all.css">
+</head>
+<body>
+  <main>
+    <h1>JavaScript 사용 방법</h1>
+    <h2 class="sr_only">JavaScript 사용 방법</h2>
+    <section class="contents">
+      <h3>JavaScript 이야기</h3>
+      <ul>
+        <li><strong>JavaScript</strong>와 <strong>Java</strong>는 <strong>완전히 다른 프로그래밍 언어</strong>이며,</li>
+        <li>각각의 언어는 특정한 목적과 환경에 맞게 설계되었습니다.</li>
+        <li>두 언어의 이름이 비슷한 것은 당시에 ‘자바’가 인기있는 언어였기 때문에,
+        <li>좀더 친숙하게 보이도록 하는 <strong>마케팅 전략의 일환</strong>이었으며,</li>
+        <li>실제로는 서로 관련이 없습니다.</li>
+      </ul>
+    </section>
+    <section class="contents">
+      <h3>Inline JavaScript 사용하기</h3>
+      <ul>
+        <li>HTML 요소 내에 직접 JavaScript를 작성하는 방법입니다.</li>
+        <li>코드 양을 적게 작성할 수는 있는데, HTML과 JavaScript 코드가 혼재하여 <strong>가독성과 유지 보수에 좋지 않습니다.</strong></li>
+        <li>팝업 창을 열고 닫거나, 알림 메시지를 표시할 때처럼 <strong>간단한 명령을 처리할 경우</strong> 인라인 스크립트를 자주 사용 합니다.</li>
+        <li> 아래 type이 button인 button 요소를 클릭하게 되면 <strong>onclick으로 연결된 alert 메서드가 호출</strong>되게 되고, <strong>시스템
+            대화상자</strong>로 <strong>"클릭했어요?"라는 문구가 화면</strong>에 나타나게 됩니다</li>
+      </ul>
+      <button type="button" onclick="alert('점심 먹으러 갈까요?')">클릭</button>
+    </section>
+    <section class="contents">
+      <h3>Internal JavaScript(내부 스크립트) 사용하기</h3>
+      <ul>
+        <li>HTML 파일 <strong>내부에서 script 요소</strong>를 사용해서 JavaScript 코드를 작성하는 방법입니다.</li>
+        <li>head 요소 또는 body 요소 내부에 위치할 수 있지만, HTML DOM Tree가 생성되고 난 후에 적용되게 하기 위해서 <strong>주로 body 요소 닫기
+            직전</strong>에
+          작성하게 됩니다.</li>
+        <li>이 방법도 <strong>유지보수와 가독성에 취약하므로 주의</strong>가 필요합니다.</li>
+      </ul>
+      <button type="button" class="js_click">클릭</button>
+    </section>
+    <section class="contents">
+      <h3>External JavaScript(외부 스크립트 연결) 사용하기</h3>
+      <ul>
+        <li>JavaScript 코드를 작성하고 HTML 파일에서 이를 로드해서 사용하는데, </li>
+        <li><strong>가장 권장되는 방법</strong>이며, <strong>코드의 재사용성과 유지 보수가 용이</strong>합니다.</li>
+      </ul>
+      <button type="button" class="js_clickOut">클릭</button>
+    </section>
+  </main>
+  <script>
+    document.querySelector('.js_click').onclick = function(){
+      alert('js_click 클래스 선택자로 내부스크립트를 사용해서 클릭했나요?');
+    }
+  </script>
+  <script src="js/js01.js"></script>
+</body>
+</html>
