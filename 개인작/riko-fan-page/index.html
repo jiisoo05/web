@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eef5dd">
+  <meta name="description" content="연두빛 봄, 맑은 물결과 함께 만나는 유즈하 리코. 비공식 팬 페이지 연습작입니다.">
+  <title>Yuzuha Riko — A fresh beginning</title>
+  <link rel="icon" href="assets/star.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="hero" id="home">
+    <!-- 배경 이미지 위에 WebGL로 같은 이미지를 그려 물결을 만듭니다. -->
+    <div class="landscape" aria-hidden="true"></div>
+    <canvas id="water" aria-hidden="true"></canvas>
+
+    <nav class="socials" aria-label="리코 공식 채널">
+      <a href="https://www.youtube.com/@yuzuhariko" target="_blank" rel="noopener noreferrer" aria-label="리코 YouTube (새 탭)" data-label="YouTube">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M30 9.2a4 4 0 0 0-2.8-2.8C24.7 5.7 16 5.7 16 5.7s-8.7 0-11.2.7A4 4 0 0 0 2 9.2a42 42 0 0 0 0 13.6 4 4 0 0 0 2.8 2.8c2.5.7 11.2.7 11.2.7s8.7 0 11.2-.7a4 4 0 0 0 2.8-2.8 42 42 0 0 0 0-13.6Z"/><path d="m13 11 8 5-8 5Z" fill="var(--icon-cutout)"/></svg>
+      </a>
+      <a href="https://x.com/YuzuhaRiko" target="_blank" rel="noopener noreferrer" aria-label="리코 X (새 탭)" data-label="X / Twitter">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M29 7.4a11 11 0 0 1-3.1.9A5.4 5.4 0 0 0 28.3 5a11 11 0 0 1-3.5 1.3 5.4 5.4 0 0 0-9.3 4.9A15.4 15.4 0 0 1 4.3 5.5 5.4 5.4 0 0 0 6 12.7a5.4 5.4 0 0 1-2.4-.7v.1a5.4 5.4 0 0 0 4.3 5.3 5.4 5.4 0 0 1-2.4.1 5.4 5.4 0 0 0 5 3.7A10.9 10.9 0 0 1 2.5 23a15.4 15.4 0 0 0 23.7-13c0-.2 0-.5-.1-.7A11 11 0 0 0 29 7.4Z"/></svg>
+      </a>
+      <a href="https://chzzk.naver.com/8fd39bb8de623317de90654718638b10" target="_blank" rel="noopener noreferrer" aria-label="리코 치지직 (새 탭)" data-label="CHZZK">
+        <svg class="broadcast" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="2.4" fill="currentColor" stroke="none"/><path d="M10.5 10a8 8 0 0 0 0 12M21.5 10a8 8 0 0 1 0 12M6 5.5a14 14 0 0 0 0 21M26 5.5a14 14 0 0 1 0 21"/></svg>
+      </a>
+    </nav>
+
+    <div class="hero-copy">
+      <p class="brand"><svg viewBox="0 0 44 44" aria-hidden="true"><defs><linearGradient id="brand" x2="0" y2="1"><stop stop-color="#9473e3"/><stop offset="1" stop-color="#7ca9f3"/></linearGradient></defs><circle cx="22" cy="22" r="21" fill="url(#brand)"/><path d="M8 27 18 15l6 10 12-13a17 17 0 0 1-28 20Z" fill="#f7f8e9"/><path d="m13 22 2.5 6 6 2.5-6 2.5L13 39l-2.5-6L5 30.5l5.5-2.5Z" fill="#fff"/></svg><span>STELLIVE</span></p>
+      <h1>Yuzuha Riko</h1>
+      <button class="meet-button" id="meet" type="button" aria-haspopup="dialog"><span class="button-label">Discover Riko</span><span class="button-arrow" aria-hidden="true">↘</span></button>
+    </div>
+
+    <footer class="hero-footer">
+      <button class="motion-control" id="motion" type="button" aria-pressed="false" aria-label="물결 효과 끄기"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10c3-5 5 5 9 0s6 5 9 0M3 16c3-5 5 5 9 0s6 5 9 0"/></svg><span>Water on</span></button>
+      <p class="water-hint">Move gently. Make a little ripple.</p>
+      <small>UNOFFICIAL FAN PAGE</small>
+    </footer>
+    <span class="pointer-ring" aria-hidden="true"></span>
+  </main>
+
+  <!-- Discover Riko 버튼으로 열리는 두 번째 화면. ESC 또는 닫기 버튼으로 돌아갑니다. -->
+  <!-- 수면 아래로 잠기는 화면 전환. 장식용이라 읽기 순서에서 제외합니다. -->
+  <div class="dive-transition" aria-hidden="true">
+    <div class="dive-water">
+      <svg class="dive-waterline" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 64 C160 18 270 104 440 58 S710 20 860 62 S1150 100 1440 40 L1440 120 L0 120Z" fill="#bcebdc"/></svg>
+      <div class="dive-caustics"></div>
+      <i class="dive-bubble one"></i><i class="dive-bubble two"></i><i class="dive-bubble three"></i>
+    </div>
+  </div>
+  <dialog class="about" id="about" aria-labelledby="about-title">
+    <button class="back-button" id="close" type="button">← <span>Back to the water</span></button>
+    <div class="about-content">
+      <p class="eyebrow">STELLIVE · YUZUHA RIKO</p>
+      <h2 id="about-title">A fresh beginning.</h2>
+      <p class="about-korean">오늘에 작은 용기를 더해줄,<br><strong>유즈하 리코.</strong></p>
+      <p class="about-description">이세계의 마왕을 물리치고 세상을 구한 용사.<br>이제 스텔라이브에서 리코의 새로운 이야기를 만나보세요.</p>
+      <div class="about-links">
+        <a href="https://www.youtube.com/@yuzuhariko" target="_blank" rel="noopener noreferrer">YouTube <span>↗</span></a>
+        <a href="https://chzzk.naver.com/8fd39bb8de623317de90654718638b10" target="_blank" rel="noopener noreferrer">Live on CHZZK <span>↗</span></a>
+        <a href="https://stellive.me/riko" target="_blank" rel="noopener noreferrer">Official profile <span>↗</span></a>
+      </div>
+    </div>
+    <p class="fan-note">팬이 만든 비공식 연습 페이지입니다. 공식 채널은 새 탭에서 열립니다.</p>
+  </dialog>
+</body>
+</html>

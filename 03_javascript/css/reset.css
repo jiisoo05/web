@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* 
+unset : 상속 가능한 속성은 inherit, 아니면 initial (완전 초기화)
+
+initial : W3C 표준에 정의된 최초 기본값
+
+revert : 브라우저 기본 스타일 또는 이전 스타일시트에서 지정된 값으로 되돌림
+*/
+
+@layer base {
+
+    /* 사용자 에이전트 기본 스타일을 대부분 초기화하고, display 속성만 유지
+     - 다음 선택자는 Firefox의 SVG 스프라이트 버그를 피하기 위함
+     - html 요소는 제외(Chrome의 hyphens 관련 버그 회피) */
+    *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+        all: unset;
+        display: revert;
+    }
+
+    /* 모든 요소의 box-sizing을 border-box로 설정 (내/외부 가상요소 포함) */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    /* iOS 사파리 가로모드에서 글자 크기 자동 확대 방지 */
+    html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+
+    /* a, button에 포인터 커서 재적용 */
+    a,
+    button {
+        cursor: revert;
+    }
+
+    /* 목록 기본 불릿/숫자 제거 (menu/summary 포함) */
+    ol,
+    ul,
+    menu,
+    summary {
+        list-style: none;
+    }
+
+    /* 이미지가 컨테이너 크기를 넘지 않도록 제한 */
+    img {
+        max-inline-size: 100%;
+        max-block-size: 100%;
+    }
+
+    /* 테이블 셀 간격 제거(겹치기) */
+    table {
+        border-collapse: collapse;
+    }
+
+    /* iOS 사파리에서 body에 user-select:none 사용 시, 입력요소 선택 문제 보완 */
+    input,
+    textarea {
+        -webkit-user-select: auto;
+        /* Safari, 구버전 iOS 대응 */
+        user-select: auto;
+        /* 표준 속성 (크롬, 파이어폭스, 최신 사파리) */
+    }
+
+    /* 사파리에서 textarea의 white-space 동작 원복 */
+    textarea {
+        white-space: revert;
+    }
+
+    /* meter 요소 최소한의 기본 렌더링 유지 */
+    meter {
+        -webkit-appearance: revert;
+        appearance: revert;
+    }
+
+    /* pre 요소는 서식 유지가 필요하므로 기본값으로 돌리고 box-sizing은 유지 */
+    :where(pre) {
+        all: revert;
+        box-sizing: border-box;
+    }
+
+    /* placeholder 기본 불투명도/색 재설정 */
+    ::placeholder {
+        color: unset;
+    }
+
+    /* hidden 속성의 기본 동작(비표시) 유지 */
+    :where([hidden]) {
+        display: none;
+    }
+
+    /* Chromium/Safari의 contenteditable 관련 버그 보완
+     - 편집 가능 상태에서 줄바꿈/단어 줄바꿈 동작 개선
+     - 상위에 user-select:none이 있어도 편집 가능하도록 설정 */
+    :where([contenteditable]:not([contenteditable='false'])) {
+        -moz-user-modify: read-write;
+        -webkit-user-modify: read-write;
+        overflow-wrap: break-word;
+        -webkit-line-break: after-white-space;
+        -webkit-user-select: auto;
+        user-select: auto;
+        /* 표준 속성 */
+        line-break: anywhere;
+        /* 표준 속성 */
+    }
+
+    /* 드래그 가능 요소(draggable=true)의 네이티브 드래그 동작 복구 (Chromium/Safari) */
+    :where([draggable='true']) {
+        -webkit-user-drag: element;
+    }
+
+    /* <dialog open> 모달 동작을 기본값으로 복구하고 box-sizing 유지 */
+    :where(dialog:modal) {
+        all: revert;
+        box-sizing: border-box;
+    }
+
+    /* details/summary의 웹킷 기본 마커 제거 */
+    ::-webkit-details-marker {
+        display: none;
+    }
+}
