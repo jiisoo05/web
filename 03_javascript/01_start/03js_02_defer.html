@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>defer 속성</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="css/js_all.css">
+  <script src="js/js01.js" defer></script>
+  <script src="js/js02.js" defer></script>
+</head>
+
+<body>
+  <main class="main">
+    <h1>defer 속성</h1>
+    <section class="container">
+      <h2 class="sr_only">defer 속성 사용 방법</h2>
+      <ul>
+        <li>HTML 문서에서 Javascript를 로드하는 위치는 중요하지만 <strong>항상 body태그 전에 위치시킬 필요 없음</strong></li>
+        <li><strong>defer 속성을 사용하면</strong> 태그 내부에 있어도 <strong> DOM 렌더링을 중단하지 않고</strong> </li>
+        <li>js01.js가 먼저 실행 된 후 js02.js가 실행되며 충분히 순서를 보장</li>
+      </ul>
+      <button type="button" class="js_clickOut">js_clickOut 클릭</button>
+      <button type="button" id="js_clickOut2">js_clickOut2 클릭</button>
+    </section>
+  </main>
+</body>
+
+</html>

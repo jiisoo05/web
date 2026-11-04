@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>식, 문, 기본 입출력 실습</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="css/js_all.css">
+  <script src="js/basic.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <h1>JavaScript 시작하기</h1>
+    <section>
+      <h2>1. 식(Expression)이란?</h2>
+      <p>식(Expression)은 자바스크립트 코드 중에서 <strong>어떤 값을 만들어 내는 코드 조각</strong>을 말합니다.</p>
+      <p>예를 들어 아래 코드는 모두 식입니다:</p>
+      <ul>
+        <li><code>5</code> → 숫자 5라는 값</li>
+        <li><code>"안녕하세요"</code> → 문자열 값을 만들어냄</li>
+        <li><code>2 + 3</code> → 5라는 값을 계산해서 만듦</li>
+        <li><code>sum * 2</code> → 변수 <code>sum</code>의 값에 2를 곱한 값</li>
+      </ul>
+      <p>이렇게 식은 <em>값이 만들어지는 코드</em>라고 기억하면 됩니다.</p>
+    </section>
+    <section>
+      <h2>2. 문(Statement)이란?</h2>
+      <p>문(Statement)은 자바스크립트가 <strong>실행하는 명령어 단위</strong>입니다. 즉 프로그램에게 동작을 지시하는 코드 단위입니다.</p>
+      <p>문은 식과 다르게, 명령을 수행하지만 반드시 값을 되돌려주지는 않습니다.</p>
+      <p>예를 들어:</p>
+      <ul>
+        <li><code>let sum = 5;</code> → 변수에 값을 저장하는 문</li>
+        <li><code>if (sum > 3) { ... }</code> → 조건에 따라 코드를 실행하는 문</li>
+        <li><code>for (let i=0; i &lt; 3; i++) { ... }</code> → 반복문</li>
+      </ul>
+      <p><strong>모든 문은 하나 이상의 식을 포함할 수 있습니다.</strong></p>
+    </section>
+    <section>
+      <h2>3. 식(Expression)과 문(Statement) 기본 예제</h2>
+      <p>자바스크립트에서는 <strong>식</strong>과 <strong>문</strong>을 구분합니다.</p>
+      <ul>
+        <li><strong>식(Expression)</strong> : 실행하면 <em>값</em>을 만들어내는 코드 조각입니다.</li>
+        <li><strong>문(Statement)</strong> : 하나의 <em>명령어</em>로, 동작을 지시합니다.</li>
+      </ul>
+
+      <p>아래 예제를 실행하고 결과를 확인해보세요.</p>
+      <button id="btn_expression">식(Expression) 예제 실행</button>
+      <button id="btn_statement">문(Statement) 예제 실행</button>
+
+      <div class="output">
+        <div class="pre_wrap pre_wrap1 none ">
+          const sum = 3 + 2; // 식: 5라는 값을 생성<br>
+          const greeting = '안녕하세요'; // 식: 문자열 값<br>
+          const isAdult = 20 >= 18; // 식: true 값을 생성<br>
+        </div>
+        <div class="pre_wrap pre_wrap2 none">
+          if (sum > 5) {<br>
+          output2 = 'sum 값이 5보다 큽니다.';<br>
+          } else {<br>
+          output2 = 'sum 값이 5 이하입니다.';<br>
+          }<br>
+        </div>
+        <div id="result_output2"></div>
+      </div>
+    </section>
+    <section>
+      <h2>4. 자바스크립트 입출력 명령어 소개</h2>
+      <p>자바스크립트에서 가장 기본적인 입출력 방법은 아래와 같습니다.</p>
+      <ul>
+        <li><strong>alert()</strong> : 알림 창 출력</li>
+        <li><strong>prompt()</strong> : 사용자에게 입력 받기</li>
+        <li><strong>confirm()</strong> : 사용자 확인(예/아니오) 받기</li>
+        <li><strong>document.write()</strong> : HTML 문서에 직접 출력</li>
+        <li><strong>console.log()</strong> : 개발자 도구 콘솔에 출력</li>
+      </ul>
+      <button id="btn_prompt1">prompt1 예제 실행</button>
+      <button id="btn_prompt2">prompt2 예제 실행</button>
+      <button id="btn_alert">alert 예제 실행</button>
+      <button id="btn_confirm">confirm 예제 실행</button>
+    </section>
+
+    <section class="fix">
+      <h2>4. 화면 출력 영역</h2>
+      <div id="ioResult" class="output"></div>
+    </section>
+  </main>
+</body>
+
+</html>
