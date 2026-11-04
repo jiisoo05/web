@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이스케이프 문자</title>
+</head>
+
+<body>
+  <script>
+    /*
+    \n 행바꿈
+    \t 탭문자
+    \\ 역슬래시
+    \' 작은따옴표
+    \" 큰따옴표
+    */
+    let str = 'you\'re too smart';
+    console.log(str);
+    /*
+    document.write()에서는 <br>태그로 행을 바꿀 수 있지만
+    alert()에서는 바꿀 수 없다. 이럴때 이스케이프문자 \n을 사용하면 행을 바꿀 수 있다.
+    */
+    alert('자바스크립트 \n리액트 \t \\ \"javascript\'');
+  </script>
+</body>
+
+</html>
