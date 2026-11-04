@@ -1,0 +1,81 @@
+@charset "utf-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Stack+Sans+Text:wght@200..700&display=swap');
+
+*{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-size: 18px;
+  --yul-brand-paper: #f6f0e2;
+  --yul-brand-paper-soft: #fffaf1;
+  --yul-brand-card: #efede7;
+  --yul-brand-ink: #262118;
+  --yul-brand-muted: #756e62;
+  --yul-brand-line: #ddd7c9;
+  --yul-brand-yellow: #f6c84f;
+  --yul-brand-yellow-soft: #ffe7ad;
+  --yul-brand-amber: #d3a24d;
+  --yul-brand-orange-soft: #ffd0a3;
+  --yul-brand-orange: #f28c28;
+  --yul-brand-orange-deep: #c8671e;
+  --yul-brand-lavender: #8d83c9;
+  --yul-brand-navy: #17243b;
+  --yul-brand-shadow: 0 18px 52px rgba(32, 24, 8, .13);
+  --yul-brand-shadow2: 0 18px 32px rgba(32, 24, 8, 0.055);
+  --header-h: 74px;
+  --stage-w: min(1320px, calc(100vw - 128px));
+  --stage-h: min(760px, calc(100vh - var(--header-h) - 64px));
+  --black: #000;
+  --gray-00: #fff;
+  --gray-01: var(--yul-brand-paper);
+  --gray-02: var(--yul-brand-card);
+  --gray-03: var(--yul-brand-line);
+  --gray-04: var(--yul-brand-muted);
+  --gray-05: #8a8174;
+  --gray-06: #756e62;
+  --gray-07: #625947;
+  --gray-08: #3a3328;
+  --gray-09: var(--yul-brand-ink);
+  --gray-10: #1f1b14;
+  --gray-b-01: #eee7d8;
+  --gray-b-02: #e2dacb;
+  --gray-b-03: #c9c0ae;
+  --gray-b-04: #968a75;
+  --gray-b-05: #5f5546;
+  --color-default: var(--yul-brand-ink);
+  --color-link: var(--yul-brand-lavender);
+  --color-nav: var(--yul-brand-ink);
+  --color-subNav: var(--yul-brand-line);
+  --color-title: var(--yul-brand-ink);
+  --color-tab: var(--yul-brand-muted);
+  --color-red: #b65a4c;
+  --normal: #6f9b65;
+  --error: #b65a4c;
+  --important: var(--yul-brand-yellow);
+  --disabled: rgba(38, 33, 24, .5);
+  --blue: var(--yul-brand-lavender);
+  --light-blue: #bbb5df;
+  --sky: #eeeaf6;
+  --red: #b65a4c;
+  --light-red: #d78e80;
+  --pink: #fbefed;
+  --font-Eng: "Stack Sans Text", sans-serif;
+  --font-Eng2: "Merriweather", serif;
+  --round: 24px;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(255, 255, 255, .86), transparent 30%),
+    linear-gradient(135deg, #fffaf1 0%, #f6f0e2 38%, #ffe0ad 72%, #f3c27e 100%);
+  overflow-x: hidden;
+  color: var(--yul-brand-ink);
+}
