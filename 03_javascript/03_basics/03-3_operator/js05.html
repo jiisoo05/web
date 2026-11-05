@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비교 연산자</title>
+</head>
+
+<body>
+  <script>
+    /*
+      비교 연산자 : 두 피연산자의 값을 비교하여 참(true) 또는 거짓(false) 값을 반환
+    */
+    const x = 5;
+    const y = '5';
+    const z = 6;
+    let result;
+    result = x > z;
+    console.log(result); //f
+
+    result = x == y; //두값이 같은지 비교
+    console.log(result);//t
+
+    result = x === y; //두값과 타입이 같은지 비교
+    console.log(result); //f
+
+    result = x != y; //두값이 다른지 비교
+    console.log(result); //f
+
+    result = x !== y; //두값이 다르거나(f) 또는 타입이 다른지 비교(t)
+    console.log(result); //t
+  </script>
+</body>
+
+</html>

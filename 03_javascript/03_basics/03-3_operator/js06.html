@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>논리 연산자</title>
+</head>
+
+<body>
+  <script>
+    let f = 10 > 20;
+    let t = 10 < 20;
+    let result;
+    result = f || f || f;
+    console.log(result);
+
+    result =  f || t || f;
+    console.log(result);
+
+    result =  f && t && f;
+    console.log(result);//f
+
+    result = t && t && t;
+    console.log(result);//t
+
+    result = !result;
+    console.log(result);//f
+  </script>
+</body>
+
+</html>

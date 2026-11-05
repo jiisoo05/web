@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삼항 조건 연산자</title>
+</head>
+
+<body>
+  <script>
+    // (조건식) ? (참일때 코드) : (거짓일때 코드) ;
+    // let 변수명 = (조건식) ? (참일때 코드) : (거짓일때 코드) ;
+    /*     const num1 = Number(prompt('숫자입력1'));
+        const num2 = Number(prompt('숫자입력2'));
+        let result = (num1 > num2) ? 'javascript' : 'hello';
+        document.write(result); */
+
+    const num3 = 1;
+    const num4 = 2;
+    (num3 > num4) ? console.log('true') : console.log('false');
+
+    if (num3 > num4) {
+      console.log('true')
+    } else {
+      console.log('false');
+    }
+
+    let result2;
+    if (num3 < num4) {
+      result2 = 'true';
+    } else {
+      result2 = 'false';
+    }
+    document.write(result2);
+  </script>
+</body>
+
+</html>
