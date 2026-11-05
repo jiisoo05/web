@@ -10,15 +10,16 @@
 <body>
   <script>
     //num이라는 변수에 prompt로 숫자를 받아와서 - 초기화
-
+    let num = Number(prompt('숫자를 입력하세요',10));
     //result라는 변수에 num 변수가 퍼센트계산 (%) = 짝수
-
+    let result = num % 2;
     //삼항조건 연산자 사용
     //comment 라는 변수에
     //num은 짝수입니다, 홀수입니다
-
+    //let comment = (result===0) ? `${num}은(는) 짝수입니다` :`${num}은(는) 홀수입니다`;
+    let comment = result ?`${num}은(는) 홀수입니다`:`${num}은(는) 짝수입니다`;
     //comment가 h2태그로 뜨게
-    
+    document.write(`<h2>${comment}</h2>`);
   </script>
 </body>
 
