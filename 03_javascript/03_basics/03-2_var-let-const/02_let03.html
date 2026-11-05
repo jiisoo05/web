@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+</head>
+
+<body>
+  <script>
+    let kor = prompt('당신의 국어점수를 입력하세요');
+    //alert(`나의 국어점수는 ${kor}점 입니다`);
+    /*
+      1. 변수이름 eng
+      2. prompt 로 값을 받아옴 - 당신의 영어 점수를 입력하세요. 90(초기값)
+      3. 콘솔로 나의 영어 점수는 (eng) 점 입니다 - 백틱사용 안됨
+      4. 콘솔로 평균값  평균 : 80 점 입니다-백틱
+    */
+    let eng = prompt('당신의 영어 점수를 입력하세요.', 90);
+    console.log('나의 영어 점수는 (' + eng + ') 점 입니다');
+    let avg = (Number(kor)+Number(eng)) /2;
+    console.log(`평균 : ${avg} 점 입니다`)
+  </script>
+</body>
+
+</html>

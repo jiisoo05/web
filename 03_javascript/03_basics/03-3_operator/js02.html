@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나머지 연산</title>
+</head>
+
+<body>
+  <script>
+    let evenOdd = prompt('숫자를 입력하세요');
+    evenOdd = Number(evenOdd);
+    let comment;
+    if (evenOdd % 2 === 0) {
+      comment = evenOdd + '는(은) 짝수 입니다';
+    } else {
+      comment = evenOdd + '는(은) 홀수 입니다';
+    }
+    document.write(comment);
+  </script>
+</body>
+
+</html>
