@@ -1,0 +1,38 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.fw_1 {
+  font-weight: 100;
+}
+
+.fw_2 {
+  font-weight: 300;
+}
+
+.fw_3 {
+  font-weight: 400;
+}
+
+.fw_31 {
+  font-weight: bold;
+}
+
+.fw_4 {
+  font-weight: 500;
+  color: red;
+}
+
+.fw_5 {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.fw_6 {
+  font-weight: 900;
+  line-height: 3;
+  font:300 50px "Roboto", sans-serif;
+}

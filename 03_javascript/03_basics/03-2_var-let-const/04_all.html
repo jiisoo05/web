@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수 선언과 사용법</title>
+</head>
+
+<body>
+  <script>
+    var box; //선언
+    document.write(box + '<br>');
+    var box = '변우석'; //box 라는 변수 재선언과 동시에 10값을 할당
+    document.write(box + '<br>');
+
+    let box2; //선언
+    document.write(box2 + '<br>');
+    box2 = 10; //box2값 할당
+    document.write(box2 + '<br>');
+
+    const nickName = '율쌤';
+    alert(nickName);
+    /*
+      단어 두개 조합으로 변수명을 만들때 두번째 단어의 첫글자를 대문자로 표기
+      카멜표기법
+    */
+    /*
+      변수명, 함수명 등은 식별자라 함
+      식별자 생성 규칙
+      1. 키워드는 사용하지 않음
+      2. 특수문자는 _와 $만 허용
+      3. 숫자로 시작하면 안됨
+      4. 공백은 입력하면 안됨
+      nick_name 
+      */
+  </script>
+</body>
+
+</html>

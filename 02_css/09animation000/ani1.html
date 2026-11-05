@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            animation-name: changeBg;
+            animation-duration: 3s;
+            animation-iteration-count: 3;
+            animation-direction: alternate;
+        }
+
+        @keyframes changeBg {
+            from {
+                background: blue;
+            }
+
+            to {
+                background: red;
+                border: 1px solid yellowgreen;
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

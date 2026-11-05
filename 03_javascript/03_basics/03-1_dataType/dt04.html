@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>boolean</title>
+</head>
+
+<body>
+  <script>
+    // boolean 데이터는 true(참)과 false(거짓)의 값을 표현한다.
+    let temp1 = 5 > 4;
+    let temp2 = 5 < 4;
+    console.log(temp1,temp2);
+    /* 
+      boolean에서 0값은 false를 의미하며
+      0값 이외의 숫자나 문자값은 true
+      단 빈 문자열은 false 
+    */
+    let temp3 = 0;
+    let temp4 = 100;
+    let temp5 = '문자';
+    let temp6 = '';
+    console.log(Boolean(temp3));
+    console.log(Boolean(temp4));
+    console.log(Boolean(temp5));
+    console.log(Boolean(temp6));
+    if(temp3){
+      document.write('참');
+    }else{
+      document.write('거짓');
+    }
+  </script>
+</body>
+
+</html>

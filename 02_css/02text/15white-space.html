@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공백, 줄바꿈 처리방법 지정</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      line-height: 1;
+      border: 1px solid #ccc;
+      margin-bottom: 30px;
+    }
+    p.a{
+      white-space: nowrap;
+    }
+    p.b{
+      /* 공백을 하나로 처리, 자동 줄바꿈 됨, 기본 값 */
+      white-space: normal;
+    }
+    p.c{
+      white-space: pre;
+    }
+    p.d{
+      white-space: pre-wrap;
+    }
+    p.e{
+      white-space: pre-line;
+    }
+    p.f{
+      white-space: break-spaces;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>The white-space Property</h1>
+  <section>
+    <h2>white-space : nowrap : </h2>
+    <p class="a">
+
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+    </p>
+  </section>
+  <section>
+    <h2>white-space : normal : </h2>
+    <p class="b">
+
+      This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+    </p>
+  </section>
+  <section>
+    <h2>white-space : pre - HTML의 &lt;pre&gt;처럼 입력한 모양 유지 </h2>
+    <p class="c">
+
+      This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+    </p>
+  </section>
+  <section>
+    <h2>white-space: pre-wrap - 입력한 줄바꿈도 살리고, 영역이 좁으면 자동 줄바꿈</h2>
+    <p class="d">
+
+      This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+    </p>
+  </section>
+  <section>
+    <h2>white-space: pre-line - 엔터 줄바꿈은 유지, 연속 공백은 하나로</h2>
+    <p class="e">
+
+      This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+    </p>
+  </section>
+  <section>
+    <h2>white-space: break-spaces - 공백까지 줄바꿈 기준에 포함</h2>
+    <p class="f">
+
+      This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.
+      This is some text. This is some text. This is some text.This is some text. This is some text. This is some text..
+    </p>
+  </section>
+</body>
+
+</html>

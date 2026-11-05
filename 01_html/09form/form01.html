@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폼태그</title>
+</head>
+
+<body>
+  <!-- 
+        method : 사용자가 입력한 내용들을 서버쪽 프로그램으로 어쩧게 넘겨줄지 지정하는 속성
+            get - 주소표시줄에 사용자가 입력한 내용이 그대로 드러난다.
+            post - 대부분 이 방식을 사용함, 사용자의 입력을 표준 입력으로 넘겨주기 때문에 입력 내용의 길이에 제한을 받지 않고 사용자가 입력한 내용이 드러나지 않습니다.
+        action : form 태그 안의 내용들을 처리해 줄 서버상의 프로그램을 지정
+    -->
+    <form  action="search.php" method="post">
+      <input type="text" />
+      <input type="submit">
+    </form>    
+</body>
+
+</html>

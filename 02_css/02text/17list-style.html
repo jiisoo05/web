@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목록 스타일</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul,ol{
+      width: 700px;
+      margin: 0 auto;
+      border:1px solid #ccc;
+    }
+    ul{
+      list-style-type: none;
+      list-style: decimal-leading-zero inside;
+    }
+    ol{
+      list-style-position: inside;
+      list-style: disc;
+    }
+    .img_ul{
+      list-style-image: url(./home.png);
+      list-style: url(./home.png) outside;
+    }
+    .check_list{
+      list-style-type: 'v';
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>순서가 없는 목록</li>
+    <li>순서가 없는 목록</li>
+    <li>순서가 없는 목록</li>
+    <li>순서가 없는 목록</li>
+    <li>순서가 없는 목록</li>
+  </ul>
+
+  <ol>
+    <li>순서 목록</li>
+    <li>순서 목록</li>
+    <li>순서 목록</li>
+    <li>순서 목록</li>
+    <li>순서 목록</li>
+  </ol>
+
+  <ul class="img_ul">
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+  </ul>
+
+  <ol class="check_list">
+    <li>순서목록 바꾸기</li>
+    <li>순서목록 바꾸기</li>
+    <li>순서목록 바꾸기</li>
+    <li>순서목록 바꾸기</li>
+    <li>순서목록 바꾸기</li>
+  </ol>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Jua&display=swap');
+
+.dokdo{
+    font-family: "Dokdo", system-ui;
+}
+.jua{
+    font-family: "Jua", sans-serif;
+}

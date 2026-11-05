@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문자열(string) 데이터</title>
+</head>
+
+<body>
+  <script>
+    //문자열(string) 데이터는 '' 또는  ""로 표현할 수 있다.
+    //보통 문자 데이터는 작은따옴표로 많이 표현한다.
+    let num = 10;
+    console.log(num);
+    let str1 = '문자' + num;
+    let str2 = "문자" + num;
+    console.log(str1);
+    console.log(str2);
+
+    //문자 안에 따옴표 들어간 경우
+    let str3 = "문자안에 '작은 따옴표' " + num;
+    let str4 = '문자안에 "큰 따옴표" ' + num;
+    console.log(str3);
+    console.log(str4);
+
+    //백틱 사용법 ``
+    let str5 = `문자안에 "큰 따옴표" '작은따옴표' / 변수 : ${num}`;
+    console.log(str5);
+  </script>
+</body>
+
+</html>

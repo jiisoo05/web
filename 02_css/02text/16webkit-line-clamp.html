@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>말줄임표 : 두줄이상 처리</title>
+  <style>
+    .ellipsis_2{
+      border:1px solid #ccc;
+      width: 220px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="ellipsis_2">
+    This is some text! This is some text! This is some text!
+    This is some text! This is some text! This is some text!
+  </p>
+</body>
+
+</html>

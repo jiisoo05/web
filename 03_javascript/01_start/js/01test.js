@@ -1,3 +1,3 @@
 document.querySelector('#out').onclick = () => {
-     prompt('나이를 입력하세요');
+  prompt('나이를 입력하세요');
 }

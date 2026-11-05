@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>text-overflow 속성</title>
+  <style>
+    .ex{
+      width: 300px;
+      border:1px solid #ccc;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .ex:hover{
+      overflow: visible;
+      white-space: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <dl>
+    <dt>말줄임표: 한 줄 처리</dt>
+    <dd>지정한 영역을 벗어나는 텍스트를 어떻게 할지 지정</dd>
+    <dd>해당 요소의 overflow 속성 hidden 일때 또는 scroll, auto 이면서 white-space:nowrap 일때만 적용됨</dd>
+    <dd>text-overflow : elddpsis - 말줄임표(...)로 잘린 텍스트가 있다고 표시</dd>
+  </dl>
+  <p class="ex">
+    귀리는 베타 글루칸 항암 및 면역력증감작용을 가지고 있는 불소화성 다당류 성분을 포함하고 있다.
+  </p>
+</body>
+
+</html>

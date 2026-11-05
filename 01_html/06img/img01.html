@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 태그</title>
+  <style>
+    body {
+      background: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+    img 태그의 속성
+    src : 이미지 파일 경로
+          웹 문서 파일의 위치를 기준으로 이미지 경로 지정 - 상대경로
+          서버에 파일이 올라가 있는 확실한 주소가 있다면 사용 가능 - 절대경로
+    alt : 대체 텍스트
+          화면 낭독기가 읽어줌
+          이미지를 표시할 수 없는 상황에 대체 텍스트를 노출
+  -->
+  <!-- html과 이미지 파일이 같은 폴더에 있다면 src 속성에 파일 이름만 적용 or ./ -->
+  <img src="./01.webp" alt="변우석이미지" width="100">
+  <img src="02.webp" alt="변우석이미지" height="100" />
+
+  <!-- images라는 하위 폴더에 이미지 파일이 있다면 하위 폴더까지 같이 넣기 -->
+  <div>
+    <img src="images/03.jpg" alt="변우석" width="30%">
+    <img src="./images/04.jpg" alt="변우석" width="500" height="500">
+  </div>
+
+  <!-- 상위폴더로 가기 -->
+  <img src="../../02_css/kakao.png" alt="카카오톡로고">
+
+  <!-- alt shift f : 자동 줄 정렬 -->
+  <!-- 
+    width(가로사이즈), height(세로사이즈) 
+   이미지 크기 조정하는 속성
+   이 속성을 사용하지 않으면 원래 이미지 크기대로 표시
+   이 속성을 이용해 화면에 표시하는 이미지 크기 조정, but 이미지 파일 용량은 그대로
+  -->
+</body>
+
+</html>

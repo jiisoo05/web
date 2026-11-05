@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input태그 속성</title>
+  <style>
+    em {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <ul>
+      <li>
+        <!-- autofocus : 페이지를 불러오자마자 원하는 폼 요소에 마우스 커서 표시-->
+        <label for="uid">이름</label>
+        <input type="text" id="uid" autofocus>
+      </li>
+      <li>
+        <!-- placeholder : 입력란에 표시하는 힌트로 필드를 클릭하면 사라짐 -->
+        <label for="subj">학번</label>
+        <input type="number" id="subj" placeholder="하이픈 없이 입력">
+      </li>
+      <li>
+        <!-- readonly : 내용을 보기만 하고 입력하지 못하게 함.-->
+        <label for="read">읽기만함</label>
+        <input type="text" id="read" value="못쳐요" readonly>
+      </li>
+      <li>
+        <!-- required : 필수 필드 체크 -->
+        <label for="uname"><em>*</em>닉네임</label>
+        <input type="text" id="uname" required>
+      </li>
+      <li><input type="submit" value="전송"></li>
+    </ul>
+  </form>
+</body>
+
+</html>

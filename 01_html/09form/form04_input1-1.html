@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input</title>
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <style>
+    .icon_simple_icons_searxng {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      background: currentColor;
+      mask: url('https://api.iconify.design/simple-icons/searxng.svg') no-repeat center / contain;
+      -webkit-mask: url('https://api.iconify.design/simple-icons/searxng.svg') no-repeat center / contain;
+    }
+  </style>
+  <link rel="stylesheet" href="css/form04.css">
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="card search_card">
+      <h2>검색</h2>
+      <form method="get" class="search_form">
+        <label for="search" class="blind">검색어 입력</label>
+        <!-- 검색 필드 : 검색창에 x 표시가 되어 검색어 삭제가 쉬움 -->
+        <input type="search" id="search" placeholder="검색어를 입력하세요">
+        <button type="submit">
+          <span class="icon_simple_icons_searxng" aria-hidden="true"></span>
+        </button>
+      </form>
+    </section>
+
+    <!-- 회원정보 폼 -->
+    <section class="card">
+      <form method="post" class="info_form">
+        <fieldset class="login_fieldset">
+          <legend>로그인</legend>
+          <!-- 화면상의 폼에는 보이지 않으며 서버로 값을 전송 -->
+          <input type="hidden" value="서버로 넘길 값">
+
+          <!-- 한줄짜리 텍스트 입력 필드, 주로 아이디나 이름, 주소 등 텍스트 입력 -->
+          <div class="form_group">
+            <label>
+              아이디 <input type="text" placeholder="아이디입력" value="기본아이디" size="5">
+            </label>
+          </div>
+          <!-- 비밀번호 입력란 : 사용자가 입력하는 내용이 *이나 ●으로 표시된다 -->
+          <div class="form_group">
+            <label>비밀번호<input type="password" value="" maxlength="10"></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>추가정보</legend>
+          <div class="form_group">
+            <label for="add">웹주소</label>
+            <input type="url" id="add" required>
+          </div>
+          <div class="form_group">
+            <label for="mail">메일주소</label>
+            <input type="email" id="mail">
+          </div>
+          <div class="form_group">
+            <!-- 전화번호 입력 필드 : 체크안함 -->
+            <label for="phone">전화번호</label>
+            <input type="tel" id="phone">
+          </div>
+        </fieldset>
+
+        <div class="btn_area">
+          <!-- 폼 전송 버튼 : 사용자 입력 내용을 서버로 전송 -->
+          <input type="submit" value="전송" class="btn submit_btn">
+          <!-- 폼 전송 버튼 : 이미지 -->
+          <input type="image" src="btn.png" alt="submit">
+          <!-- 폼 리셋 버튼 : 사용자 입력 내용 전부 삭제 -->
+          <input type="reset" value="다시입력" class="btn reset_btn">
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>

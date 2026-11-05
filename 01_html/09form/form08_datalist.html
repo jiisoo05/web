@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>datalist</title>
+</head>
+
+<body>
+  <form>
+    <fieldset>
+      <legend>수강 과목을 신청하세요</legend>
+      <input type="text" list="choices">
+      <datalist id="choices">
+        <option value="gramer" label="문법"></option>
+        <option value="voca" label="어휘"></option>
+        <option value="speaking" label="회화"></option>
+        <option value="listening" label="리스닝"></option>
+        <option value="news" label="뉴스"></option>
+      </datalist>
+    </fieldset>
+    <textarea cols="60"
+      rows="5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, aliquam reprehenderit unde, laudantium quod debitis atque harum ad quis magni ut. Assumenda, quas! Esse facere ipsum in, quia sint quibusdam!</textarea>
+  </form>
+</body>
+
+</html>

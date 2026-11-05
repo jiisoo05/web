@@ -2,41 +2,46 @@
 <html lang="ko">
 
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>background-origin</title>
-     <style>
-          * {
-               margin: 0;
-               padding: 0;
-          }
-
-          div {
-               margin-bottom: 50px;
-               width: 400px;
-               height: 200px;
-               border: 10px dotted red;
-               padding: 35px;
-               background-image: url(./img/bg8.png);
-               background-repeat: no-repeat;
-
-          }
-
-          .bg1{
-               background-origin: padding-box;
-               /* 기본값 */
-          }
-          .bg2{
-               background-origin: border-box;
-          }
-          .bg3{
-               background-origin: content-box;
-          }
-     </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-origin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    div{
+      margin-bottom: 50px;
+      width: 400px;
+      height: 200px;
+      border:10px dotted red;
+      padding: 35px;
+      background-image: url(./img/bg8.png);
+      background-repeat: no-repeat;
+    }
+    .bg1{
+      background-origin: padding-box;
+      /* 기본값 */
+    }
+    .bg2{
+      background-origin: border-box;
+    }
+    .bg3{
+      background-origin: content-box;
+    }
+  </style>
 </head>
 
 <body>
-     <div class="bg1"></div>
+  <div class="bg1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae doloremque fugit accusamus
+    mollitia amet libero, vitae facilis provident. Recusandae eum deleniti ad exercitationem. Maiores corporis mollitia
+    beatae tempora eaque maxime?</div>
+  <div class="bg2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae doloremque fugit accusamus
+    mollitia amet libero, vitae facilis provident. Recusandae eum deleniti ad exercitationem. Maiores corporis mollitia
+    beatae tempora eaque maxime?</div>
+  <div class="bg3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae doloremque fugit accusamus
+    mollitia amet libero, vitae facilis provident. Recusandae eum deleniti ad exercitationem. Maiores corporis mollitia
+    beatae tempora eaque maxime?</div>
 </body>
 
 </html>

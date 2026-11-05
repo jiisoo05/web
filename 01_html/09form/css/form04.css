@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+/* 기본 설정 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Pretendard", "Noto Sans KR", "맑은 고딕", sans-serif;
+  color: #222;
+  background:
+    radial-gradient(circle at top left, #e7f0ff 0, transparent 32%),
+    linear-gradient(135deg, #f6f8fc, #eef2f7);
+}
+
+/* 전체 감싸는 영역 */
+.wrap {
+  width: min(720px, 92%);
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+
+/* 카드 공통 */
+.card {
+  margin-bottom: 16px;
+  padding: 16px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 45px rgba(40, 55, 90, 0.14);
+  backdrop-filter: blur(10px);
+}
+
+.card h2 {
+  margin: 0 0 18px;
+  font-size: 24px;
+  color: #111827;
+}
+
+/* 화면에서 숨기되 접근성은 유지 */
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+section {
+  padding: 28px 32px;
+}
+
+.search_form {
+  display: flex;
+  overflow: hidden;
+  border: 2px solid #dbe4f0;
+  border-radius: 16px;
+  background-color: #fff;
+  transition: 0.25s;
+}
+
+/*  포커스를 받았거나, 포커스를 받은 요소를 포함하는 요소 */
+.search_form:focus-within {
+  border-color: #4f7cff;
+  box-shadow: 0 0 0 4px rgba(79, 124, 255, 0.15);
+}
+
+.search_form input {
+  flex: 1;
+  border: 0;
+  padding: 16px 18px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search_form button {
+  width: 64px;
+  border: 0;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #4f7cff, #6c5ce7);
+  transition: 0.25s;
+}
+
+.search_form button:hover {
+  filter: brightness(1.08);
+}
+
+/* 폼 영역 */
+.info_form {
+  display: grid;
+  gap: 26px;
+}
+
+fieldset {
+  margin: 0;
+  padding: 26px;
+  border: 1px solid #dbe4f0;
+  border-radius: 20px;
+  background-color: #f9fbff;
+}
+
+
+
+legend {
+  padding: 0 10px;
+  color: #2563eb;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* 입력 그룹 */
+.form_group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.login_fieldset .form_group {
+  /* background: #ccc; */
+}
+
+.form_group:last-child {
+  margin-bottom: 0;
+}
+
+.form_group label {
+  color: #374151;
+  font-size: 15px;
+  font-weight: 700;
+  width: 120px;
+}
+
+.login_fieldset label {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.form_group input {
+  flex: 1;
+  /* width: 100%; */
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #cfd8e3;
+  border-radius: 14px;
+  color: #111827;
+  font-size: 15px;
+  background-color: #fff;
+  outline: none;
+  transition: 0.25s;
+}
+.login_fieldset .form_group input{
+  flex: 0 0 480px;
+}
+.form_group input::placeholder {
+  color: #a0a8b8;
+}
+
+.form_group input:focus {
+  border-color: #4f7cff;
+  box-shadow: 0 0 0 4px rgba(79, 124, 255, 0.14);
+}
+
+/* 버튼 영역 */
+.btn_area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn {
+  min-width: 110px;
+  height: 46px;
+  border: 0;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.submit_btn {
+  color: #fff;
+  background: linear-gradient(135deg, #4f7cff, #2563eb);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.28);
+}
+
+.reset_btn {
+  color: #fff;
+  background-color: #1a1a1a;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* 이미지 버튼 */
+.image_btn {
+  /* max-height: 46px; */
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.image_btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}

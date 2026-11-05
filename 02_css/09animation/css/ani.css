@@ -1,90 +1,103 @@
 @charset "utf-8";
 
 * {
-     margin: 0;
-     padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
-.wrap {
-     position: fixed;
-     inset: 0;
-     background: url(../../images/background.png) no-repeat center/cover;
+.wrap{
+  position: fixed;
+  inset: 0;
+  background: url(../../images/background.png) no-repeat center/cover;
 }
-
-img {
-     position: absolute;
+img{
+  position: absolute;
 }
-
-.viking {
-     position: absolute;
-     left: 240px;
-     top: 240px;
-     background: #ccc;
+.viking{
+  position: absolute;
+  left: 240px;
+  top: 150px;
+  background: #ccc;
 }
-
-.viking img:nth-child(2) {
-     transform-origin: top center;
-     animation: vikingAni 7s infinite;
+.viking img:nth-child(2){
+  transform-origin: top center;
+  animation: vikingAni 7s infinite;
 }
-
-.swing {
-     position: absolute;
-     left: 1000px;
-     top: 150px;
-     background: #ccc;
+@keyframes vikingAni {
+  0%{transform: rotate(-70deg);}
+  50%{transform: rotate(70deg);}
+  100%{transform: rotate(-70deg);}
 }
-
-.swing img:nth-child(2) {
-     transform-origin: top center;
-     animation: vikingAni 7s infinite;
+.swing{
+  position: absolute;
+  left: 850px;
+  top: 150px;
+  z-index: 10;
+}
+.swing img:nth-child(2){
+  animation: swingAni 3s infinite linear;
+  transform-origin: top;
+}
+@keyframes swingAni {
+  0%{transform: rotate(32deg);}
+  50%{transform: rotate(-32deg);}
+  100%{transform: rotate(32deg);}
 }
 
 .train{
-     width: 425px;
-     height: 152px;
-     background: url(../../images/train.png);
-     position: absolute;
-     right: -425px;
-     bottom: 100px;
-     animation: trainAni 15s infinite linear;
+  width: 425px;
+  height: 152px;
+  background: url(../../images/train.png);
+  position: absolute;
+  right: -425px;
+  bottom: 100px;
+  animation: trainAni 15s infinite linear;
+}
+@keyframes trainAni {
+  0%{right: -425px;}
+  100%{right: 100%;}
 }
 
 .seat2{
-     width: 126px;
-     height: 130px;
-     background: url(../../images/seat2.png);
-     position: absolute;
-     right: 1200px;
-     bottom: 600px;
-     animation: seat2Ani 8s infinite alternate ;
+  width: 126px;
+  height: 130px;
+  background: url(../../images/seat2.png);
+  position: absolute;
+  right: 400px;
+  bottom: 300px;
+  animation: seat2Ani2 2s alternate infinite;
+}
+
+@keyframes seat2Ani2 {
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-350px);
+  }
 }
 
 .machine{
-     position: absolute;
-     top: 140px;
-     right: 800px;
-     background: #ccc;
+  position: absolute;
+  top: 140px;
+  right: 800px;
+  background: #ccc;
 }
 .machine>img{
-     left: 130px;
-     top: 200px;
+  left: 135px;
+  top: 200px;
 }
 .rotate{
-     width: 380px;
-     height: 385px;
-     position: absolute;
-     left: 0;
-     top: 0;
-     background:url(../../images/wheel.png);
-     animation: rotateAni 20s linear infinite;
-
+  width: 385px;
+  height: 385px;
+  position: absolute;
+  left: 0; top: 0;
+  background: url(../../images/wheel.png);
+  animation: rotateAni 20s linear infinite;
 }
-
 .machine .rotate img{
-     animation: imgAni 20s linear infinite;
-     transform-origin: top;
+  animation: imgAni 20s linear infinite;
+  transform-origin: top;
 }
-
 .machine .rotate .s1 {
   left: 155px;
   top: 10px;
@@ -145,70 +158,11 @@ img {
   top: 193px;
 }
 
-@keyframes rotateAni {
-     0%{
-          transform: rotate(0);
-     }
-     100%{
-          transform: rotate(360deg);
-
-     }
+@keyframes rotateAni{
+  0%{transform: rotate(0);}
+  100%{transform: rotate(360deg);}
 }
-
-@keyframes imgAni {
-     0%{
-          transform: rotate(0);
-     }
-     100%{
-          transform: rotate(-360deg);
-
-     }
+@keyframes imgAni{
+  0%{transform: rotate(0);}
+  100%{transform: rotate(-360deg);}
 }
-
-
-@keyframes seat2Ani {
-     0%{
-          right: 1200px;
-     }
-     100%{
-          right: 1700px;
-     }
-}
-
-@keyframes trainAni {
-     0%{
-          right: -425px;
-          
-     }
-     100%{right: 100%;}
-}
-
-@keyframes vikingAni {
-     0% {
-          transform: rotate(-70deg);
-     }
-
-     50% {
-          transform: rotate(70deg);
-     }
-
-     100% {
-          transform: rotate(-70deg);
-     }
-}
-
-@keyframes swing {
-     0% {
-          transform: rotate(-70deg);
-     }
-
-     50% {
-          transform: rotate(70deg);
-     }
-
-     100% {
-          transform: rotate(-70deg);
-     }
-
-}
-

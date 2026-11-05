@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>button</title>
+  <style>
+    li {margin-bottom: 30px;}
+    #btn{
+      /* 배경색 투명 */
+      background: transparent;
+      /* 보더 없애기 */
+      border: none;
+      /* 커서를 포인터로 */
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <ul>
+      <li><input type="text"></li>
+      <li>
+        <input type="submit" value="전송">
+        <button type="submit">전송</button>
+      </li>
+      <li>
+        <input type="reset" value="다시입력">
+        <button type="reset">다시입력</button>
+      </li>
+      <li>
+        <input type="image" src="./btn.png" alt="submit">
+        <button type="submit" id="btn"><img src="./btn.png" alt="submit"></button>
+      </li>
+      <li>
+        <input type="button" value="새탭열기" onclick="window.open()">
+        <button type="button" onclick="window.open()">새탭열기</button>
+      </li>
+    </ul>
+  </form>
+</body>
+</html>

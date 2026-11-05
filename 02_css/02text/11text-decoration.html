@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>text-decoration 속성</title>
+  <style>
+    table {
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      height: 100px;
+      padding-inline: 10px;
+    }
+
+    #none {
+      text-decoration: none;
+    }
+
+    #underline {
+      text-decoration: underline;
+    }
+
+    #overline {
+      text-decoration: overline;
+    }
+
+    #line-through {
+      text-decoration: line-through;
+    }
+
+    .alink {
+      color: green;
+    }
+
+    .alink a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .ex {
+      margin-bottom: 20px;
+    }
+
+    /* 선택자 {text-decoration: 선종류 선스타일 선색상 선두께;} */
+    .ex1 {
+      text-decoration: underline wavy rgb(255, 0, 0) 3px;
+    }
+
+    .ex2 {}
+
+    .ex3 {}
+
+    .ex4 {}
+  </style>
+</head>
+
+<body>
+  <h2>text-decoration 속성</h2>
+  <p>텍스트에 밑줄을 긋거나 가로지르는 줄 표시</p>
+  <p>텍스트 링크의 밑줄을 없앨 때도 사용</p>
+  <p>예전에는 text-decoration을 밑줄, 윗줄, 취소선 정도로만 설명했지만, CSS3 이후에는 텍스트 장식 관련 속성을 묶는 단축 속성으로 확장</p>
+  <p>현재는 text-decoration-line, text-decoration-style, text-decoration-color, text-decoration-thickness까지 함께 지정할 수 있습니다.
+    다만 두께까지 포함하는 형태는 CSS Text Decoration Level 4에서 확장된 최신 문법</p>
+  <div class="alink">
+    <a href="http://naver.com">네이버 바로가기</a>
+  </div>
+  <div class="ex1 ex">text-decoration: 선종류 선스타일 선색상 선두께</div>
+  <div class="ex2 ex">text-decoration: 선종류 선스타일 선색상 선두께</div>
+  <div class="ex3 ex">text-decoration: 선종류 선스타일 선색상 선두께</div>
+  <div class="ex4 ex">text-decoration: 선종류 선스타일 선색상 선두께</div>
+  <table>
+    <thead>
+      <tr>
+        <th>속성 값</th>
+        <th>설명</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>none</td>
+        <td id="none">밑줄을 표시하지 않습니다</td>
+      </tr>
+      <tr>
+        <td>underline</td>
+        <td id="underline">밑줄을 표시합니다</td>
+      </tr>
+      <tr>
+        <td>overline</td>
+        <td id="overline">영역 위로 선을 그립니다</td>
+      </tr>
+      <tr>
+        <td>line-through</td>
+        <td id="line-through">영역을 가로지르는 선(취소 선)을 그립니다</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
