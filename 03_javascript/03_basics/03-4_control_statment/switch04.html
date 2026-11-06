@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+</head>
+
+<body>
+  <script>
+    /*  사용자에게 월을 입력받아(숫자)
+        str
+        (3,4,5)월은 봄
+        (6,7,8)월은 여름
+        (9,10,11)월은 가을
+        (12,1,2)월은 겨울
+        그외에는 잘못입력 하셨습니다.
+        document.write()로 찍어주세요        
+        12월은 겨울입니다
+    */
+    const mon = Number(prompt('1~12월 중에 좋아하는 월을 넣어주세요'));
+    let str;
+    switch (mon) {
+      case 3:
+      case 4:
+      case 5: str = '봄';
+        break;
+      case 6:
+      case 7:
+      case 8: str = '여름';
+        break;
+      case 9:
+      case 10:
+      case 11: str = '가을';
+        break;
+      case 12:
+      case 1:
+      case 2: str = '겨울';
+        break;
+      default: str = '없는 계절';
+    }
+    document.write(`${mon}월은 ${str}입니다`);
+  </script>
+</body>
+
+</html>
