@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>if else 문</title>
+</head>
+
+<body>
+     <script>
+          /*
+          prompt로 숫자를 두개를 받아와서-변수명 마음대로
+          첫번째 숫자가 두번째 숫자보다 클때
+          "첫번째 숫자가 크군요"
+          아닐때에
+          "첫번째 숫자가 두번째 숫자보다 작거나 같군요"
+          document.write()로 출력
+
+          result-변수 출력
+          */
+
+          let minseo = Number(prompt('첫번째 숫자를 입력하세요'));
+          let minseo2 = Number(prompt('두번째 숫자를 입력하세요'));
+
+          if (minseo > minseo2) {
+               result = ('첫번째 숫자가 크군요');
+          } else {
+               result = ('첫번째 숫자가 두번째 숫자보다 작거나 같군요');
+          }
+          document.write(result)                                                                                                                                                                                                                                                                                                                                  
+     </script>
+</body>
+
+</html>
