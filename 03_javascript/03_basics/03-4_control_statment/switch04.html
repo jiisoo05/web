@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>test</title>
+</head>
+
+<body>
+     <script>
+          /* 사용자에게 월을 입력받아(숫자)
+               str
+           (3,4,5)월은 봄
+           (6,7,8)월은 여름
+           (9,10,11)월은 가을
+           (12,1,2)월은 겨울
+           그외에는 잘못입력 하셨습니다.
+           document.write()로 찍어주세요        
+           12월은 겨울입니다
+           */
+
+          let month = Number(prompt('몇 월인가요? 숫자로입력하세요'));
+          let str;
+          /* 경우의 수들을 입력과 경우의 수의 맞게 결과값 */
+          /* str 변수 */
+          switch (month) {
+               case 3:
+               case 4:
+               case 5:
+                    str = month + '월은 봄입니다';
+                    break
+               case 6:
+               case 7:
+               case 8:
+                    str = month + '월은 여름입니다';
+                    break
+               case 9:
+               case 10:
+               case 11:
+                    str = month + '월은 가을입니다';
+                    break
+               case 12:
+               case 1:
+               case 2:
+                    str = month + '월은 겨울입니다';
+                    break
+                    default: str = '없는 계절';
+                    /* 내가 생각한 경우의 수 제외한 것들은 안나오게 정리 */
+
+                    // let (내가 정한 변수값이름) = Number(숫자)(prompt(띄울문구))
+                    // let str
+          }
+          /* 기억을 한 수식어를 화면에 보여주는 */
+          document.write(str);     
+          
+     </script>
+</body>
+
+</html>
