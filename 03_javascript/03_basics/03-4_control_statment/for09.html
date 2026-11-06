@@ -13,11 +13,13 @@
     <option value="2025">2025년도</option>
     <option value="2024">2024년도</option>
   </select> -->
-    <script>
-
-
-
-    </script>
+  <script>
+    document.write('<select>');
+      for(let i = 2026; i>=1900; i--){
+        document.write(`<option value="${i}">${i}년도</option>`);
+      }
+    document.write('</select>');
+  </script>
 </body>
 
 </html>
