@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+</head>
+
+<body>
+  <div id="result"></div>
+  <script>
+    /*
+        국어, 영어, 수학 점수를 prompt로 받아와서
+        토탈
+        평균
+        학점
+
+        평균이 90점 이상이면 A
+        80점 이상이면 B
+        70점 이상이면 C
+        60점 이상이면 D
+        그외는 F
+        
+        "당신의 학점은      입니다"
+*/
+
+    const kor = prompt('국어 점수를 입력하세요');
+    const eng = prompt('영어 점수를 입력하세요');
+    const math = prompt('수학 점수를 입력하세요');
+    const total = Number(kor) + Number(eng) + Number(math);
+    const i = 3;
+    const avg = total / i;
+    let grade;
+    if (avg >= 90) {
+      grade = 'A';
+    } else if (avg >= 80) {
+      grade = 'B';
+    } else if (avg >= 70) {
+      grade = 'C';
+    } else if (avg >= 60) {
+      grade = 'D';
+    } else {
+      grade = 'F';
+    }
+    document.querySelector('#result').innerHTML = `당신의 학점은 ${grade}입니다`;
+  </script>
+</body>
+
+</html>
