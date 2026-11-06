@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>if</title>
+</head>
+
+<body>
+  <h1 id="result"></h1>
+  <script>
+    let userNumber = Number(prompt('숫자를 입력하세요'));
+    const displayArea = document.querySelector('#result');
+    //console.log(displayArea)
+    if (userNumber != 0) {
+      //값을 넣고 확인을 눌렀을 때 실행할 명령
+      if (userNumber % 3 === 0) {
+        displayArea.innerHTML = userNumber + '은(는) 3의 배수입니다';
+      } else {
+        displayArea.innerHTML = userNumber + '은(는) 3의 배수가 아닙니다';
+      }
+    } else {
+      alert('입력이 취소되었습니다');
+    }
+  </script>
+</body>
+
+</html>
