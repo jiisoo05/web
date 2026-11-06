@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>for</title>
   <style>
-    p.red{color: red;}
-    p.green{color: green;}
-    p.blue{color: blue;}
+    p.red {
+      color: red;
+    }
+
+    p.green {
+      color: green;
+    }
+
+    p.aqua {
+      color: aqua;
+    }
   </style>
 </head>
+
 <body>
   <!-- <p>1</p>
   <p class="green">2</p> -->
   <script>
-    for(let i=1; i<=100; i++){
+    for (let i = 1; i <= 100; i++) {
       //document.write('<p class="green">'+i+'</p>');
       //document.write('<p>'+i+'</p>');
       /*
@@ -23,9 +33,18 @@
          5의배수 이면서 7의배수 일때 aqua
          그외 p태그로
      */
-      
-
+      if (i % 5 == 0 && i % 7 != 0) {
+        document.write('<p class="red">' + i + '</p>');
+      } else if (i % 5 != 0 && i % 7 == 0) {
+        document.write('<p class="green">' + i + '</p>');
+      } else if (i % 5 == 0 && i % 7 == 0) {
+        document.write('<p class="aqua">' + i + '</p>');
+      } else {
+        document.write('<p>' + i + '</p>');
+      }
     }
+    
   </script>
 </body>
+
 </html>
