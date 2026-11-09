@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>shift &amp; unshift 메소드</title>
+</head>
+<body>
+  <script>
+    let kdata = ['서울','부산'];
+    //unshift 메소드 : 기존 배열의 앞쪽 위치에 데이터를 추가하고 배열의 길이를 반환
+    let p1 = kdata.unshift('청주','세종');
+    console.log(p1);
+    console.log(kdata);//청주,세종,서울,부산
+
+    //shift 메소드 : 기존 배열의 앞쪽 위치에 있는 데이터를 삭제하고 삭제한 데이터를 반환
+    let p2 = kdata.shift();
+    console.log(p2);
+    console.log(kdata);
+  </script>
+</body>
+</html>

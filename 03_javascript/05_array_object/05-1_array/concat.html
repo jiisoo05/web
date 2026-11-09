@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>concat 메소드</title>
+</head>
+
+<body>
+  <script>
+    /* 
+      지정된 배열에 두개 이상의 데이터를 결합 하거나 다른 배열 객체를 결합
+    */
+    let city01 = ['서울', '부산', '대전'];
+    let city02 = ['대구', '광주', '인천'];
+    let city03 = ['진주', '부여', '세종'];
+    let data1 = city01.concat(city02);
+    console.log(data1);
+
+    console.log(city03.concat(city01,city02));
+   /* concat()메서드는 새로운 배열을 만들기 때문에 기존 배열에는 영향을 주지 않음 */
+    console.log(city01);
+  </script>
+</body>
+
+</html>
