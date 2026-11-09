@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>다른 데이터 타입을 가진 배열 연산하기</title>
+</head>
+
+<body>
+  <script>
+    let arr = [10, 20, 30, 40, '50'];
+    let printSum = () => {
+      let sum =0;
+      for(let i in arr){
+        sum += arr[i];
+      }
+      return sum;
+    }
+    let result = printSum();
+    console.log(`배열 원소의 합 : ${result}`);
+  </script>
+</body>
+
+</html>
