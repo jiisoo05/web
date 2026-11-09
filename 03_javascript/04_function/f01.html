@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수 선언 및 호출</title>
+</head>
+<body>
+  <script>
+    //동작해야 할 목적대로 명령을 묶어 놓은 것
+    //각 명령의 시작과 끝을 명확하게 구별할 수 있음
+    //묶은 기능에 이름을 붙여서 어디서든 같은 이름으로 명령을 실행할 수 있음
+    //자바스크립트에는 이미 여러 함수가 만들어져 있어서 가져다 사용할 수 있음
+    function 율쌤(디자인,코딩){
+      const 사이트 = `${디자인}디자인과 ${코딩}사이트`;
+      return 사이트;
+    }
+    let 원하는디자인 = prompt('어떤 디자인 스타일을 원하시나요?');
+    let 원하는코딩 = prompt('어떤 코딩 언어를 원하시나요?');
+    let 원하는사이트 = 율쌤(원하는디자인,원하는코딩);
+    console.log(원하는사이트);
+    alert(율쌤('컬러풀한','자바스크립트없는'));
+  </script>
+</body>
+</html>

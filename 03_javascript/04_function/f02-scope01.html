@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수 스코프 - var 예약어를 사용한 변수</title>
+</head>
+<body>
+  <script>
+    //스코프 - 변수가 적용되는 범위
+    //var 예약어를 사용한 변수 : 함수스코프->함수안에서 선언된 변수는 함수 바깥에서 쓸 수 없음
+    function testVar(){
+      if(true){
+        var x = 10;
+      }
+      console.log('지역'+x);//10 - 블록은 무시하고 함수 전체에서 유효
+    }
+    testVar();
+    console.log('전역'+x); //함수 밖에서는 접근 불가
+  </script>
+</body>
+</html>

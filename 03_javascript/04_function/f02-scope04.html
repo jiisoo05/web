@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수 스코프 var vs let</title>
+</head>
+
+<body>
+  <script>
+    function sumVar1() {
+      var n1 = 10;
+      var result1 = 0;
+      for (var i = 1; i <= n1; i++) {
+        result1 += i;
+      }
+      console.log(`sumVar1 함수 내부 result1 : ${result1}`);
+      console.log(`sumVar1 함수 내부 i : ${i}`);
+    }
+    sumVar1();
+  </script>
+</body>
+
+</html>
