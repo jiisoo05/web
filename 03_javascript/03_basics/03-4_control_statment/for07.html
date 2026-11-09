@@ -2,21 +2,26 @@
 <html lang="ko">
 
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>구구단</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>구구단</title>
 </head>
 
 <body>
-     <script>
-          for (let z = 2; z < 10; z++) {
-               document.write(z + '단 입니다<br>');
+  <script>
+    //2x1=2
+    //2x2=4
+    //2x3=6
 
-               for (let i = 1; i < 10; i++) {
-                    document.write(z + 'x' + i + '=' + (z * i) + '<br>');
-               }
-          }
-     </script>
+    for (let z = 2; z < 10; z++) {
+
+      document.write(z + '단 입니다<br>');
+      for (let i = 1; i < 10; i++) {
+        document.write(z + 'x' + i + '=' + (z * i) + '<br>');
+      }
+      
+    } 
+  </script>
 </body>
 
 </html>

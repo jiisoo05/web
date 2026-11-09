@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지역변수, 전역변수</title>
+</head>
+
+<body>
+  <script>
+    //var로 선언된 변수는 선언자체만 코드 맨 위로 끌어올려짐
+    //초기화(값 대입)는 원래 위치에서 실행되므로, 선언전 사용하면 undefined 상태
+    console.log(r);
+    var r = 1;
+
+    var sum = 0; //전역변수 선언+초기화
+    function addNumber() {
+      var localResult; //지억변수 선언 - 함수 안에서만 유효
+      sum = 10 + 20; //전역변수 sum 값 변경
+      autoResult = 10 * 20; //var let const 없이 선언->자동 전역변수(암묵적 호이스팅)
+      localResult = 10 * 20; //지역변수 localResult값 변경
+      console.log('함수안' + localResult);
+    }
+    addNumber();
+    console.log(sum);//30 전역변수 sum이 변경됨
+    console.log(autoResult);//함수안에서 var 없이 선언 -> 호이스팅되어 전역 변수처럼 동작 -200
+    console.log(localResult);
+  </script>
+</body>
+
+</html>

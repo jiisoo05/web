@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test2</title>
+</head>
+
+<body>
+  <script>
+    let greenArr = ['교대', '방배', '강남'];
+    let yellowArr = ['미금', '정자', '수서'];
+    //2번 인덱스부터 1개의 데이터를 삭제합니다. 그런다음 서초,역삼을 삽입합니다.
+    //[교대,방배,서초,역삼]
+    greenArr.splice(2, 1, '서초', '역삼');
+    console.log(greenArr);
+    //yellowArr 배열 마지막 인덱스의 데이터를 삭제하고 data1에 저장 - 콘솔출력
+    let data1 = yellowArr.pop();
+    console.log(data1);//수서
+    console.log(yellowArr);//미금,정자
+
+    //yellowArr 배열 가장 앞쪽에 인덱스의 데이터를 삭제하고 data2에 저장  - 콘솔출력
+    let data2 = yellowArr.shift();
+    console.log(data2);//미금
+    console.log(yellowArr);//정자
+
+    //yellowArr배열 마지막 인덱스에 data2 데이터를 밀어넣습니다.
+    //정자,미금  - 콘솔출력
+    yellowArr.push(data2);
+    console.log(yellowArr);//정자,미금 
+
+    //yellowArr배열 가장 앞쪽 인덱스에 data1 데이터를 밀어 넣습니다
+    //수서 정자 미금  - 콘솔출력
+    yellowArr.unshift(data1);
+    console.log(yellowArr);//수서,정자,미금 
+  </script>
+</body>
+
+</html>

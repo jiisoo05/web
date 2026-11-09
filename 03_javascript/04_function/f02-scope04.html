@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수 스코프 var vs let</title>
+</head>
+
+<body>
+  <script>
+    function sumVar1() {
+      var n1 = 10;
+      var result1 = 0;
+      for (var i = 1; i <= n1; i++) {
+        result1 += i;
+      }
+      console.log(`sumVar1 함수 내부 result1 : ${result1}`);
+      console.log(`sumVar1 함수 내부 i : ${i}`);
+    }
+    sumVar1();
+
+    let n2 = 100; //전역변수
+    function sumLet(){
+      let n2 = 10; //지역변수
+      let result2 = 0;
+      for(let z=1; z<=n2; z++){
+        result2 += z;
+      }
+      console.log(`sumLet 함수 내부 result2 : ${result2}`);
+      //console.log(z);
+    } 
+    sumLet();
+    console.log(n2);
+    //console.log(i);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>forEach 메소드</title>
+</head>
+
+<body>
+  <script>
+    let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    //forEach 메서드 사용하셔서
+    //printArr 함수이름
+    //배열데이터[0] : 1
+    let sum = 0;
+    let printArr = (v,i) =>{
+      document.write(`배열데이터[${i}] : ${v}<br>`);
+      sum += v;
+    }
+    data.forEach(printArr);
+    document.write(sum);
+  </script>
+</body>
+
+</html>

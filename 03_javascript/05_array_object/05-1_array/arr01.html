@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열 리터럴로 생성하기</title>
+</head>
+
+<body>
+  <script>
+    // let 배열명 = [원소1,원소2,원소3,....];
+    let city = ['서울', '부산', '인천', '대전', '대구'];
+    console.log(city[2]);
+    city[2] = '바꿈';
+    function printArr() {
+      for (let i = 0; i < city.length; i++) {
+        document.write(city[i] + '<br>');
+      }
+    }
+  </script>
+  <button type="button" onclick="printArr()">배열 함수 호출</button>
+</body>
+
+</html>

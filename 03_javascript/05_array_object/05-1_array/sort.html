@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sort 메소드</title>
+</head>
+
+<body>
+  <script>
+    let ndata = [19, 38, 67, 26, 55, 24, 53, 12, 31];
+    let ndata2 = [132, 2, 41, 123, 45, 1234, 6, 29, 4567];
+    let edata = ["apple", "html", "game", "computer", "javascript"];
+    let kdata = ["서울", "부산", "구포", "대구", "인천"];
+    document.write(`수치정렬1 : ${ndata.sort()}<br>`);
+    document.write(`수치정렬2 : ${ndata2.sort()}<br>`);
+
+    //암시적으로 원소를 문자로 형변환 하기때문에 10이 1뒤에 온다
+    document.write(`수치정렬3 : ${ndata2.sort(
+      //function(a,b){return a-b;}
+      (a, b) => a - b
+    )}<br>`);
+   /*
+    비교대상인 a와 b가 인자로 전달된다.
+    a에서 b를 뺀 결과가 음수면 a가 b보다 작고 0이면 같다
+    sort 메소드는 return값이 음수 양수 0인지에 따라서 순서를 정한다.
+   */
+  document.write(`영문 정렬 : ${edata.sort()}<br>`);
+  document.write(`한글 정렬 : ${kdata.sort()}<br>`);
+  </script>
+
+</body>
+
+</html>

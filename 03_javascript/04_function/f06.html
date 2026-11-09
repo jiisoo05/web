@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>즉시 실행 함수</title>
+</head>
+<body>
+  <script>
+    (function(){
+      life();
+    })();
+
+    function life(){
+      console.log('즉시실행함수1');
+    }
+    let instant = (function(a,b){
+      console.log('즉시실행함수2 : '+ a + b);
+      return a+b;
+    })(1,2);
+    console.log(instant);
+  </script>
+</body>
+</html>

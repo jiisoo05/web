@@ -1,75 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>test</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    .con {
-      width: 300px;
-      height: 300px;
-      background: #ccc;
-      position: relative;
-      margin: 400px auto;
-    }
-
-    .con .card {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: .6s;
-      transform-origin: left center;
-      transform-style: preserve-3d;
-    }
-
-    .con:hover .card {
-      transform: rotateY(-180deg);
-    }
-    
-  .face {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .face img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .back{
-   
-    backface-visibility: hidden;
-    
-  }
-
-
-
-  </style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>1111</title>
 </head>
-
 <body>
-  <div class="con">
-    <div class="card">
-      <div class="face front"><img
-          src="https://i.namu.wiki/i/kR9nawSEvLQbLGx-43cRXxdGdUqM3pyOkzRs2xscTCQubmEioC9hUIHTELlLTJ4g5JdRc8hELv9ySi_g7is-DQ.webp"
-          alt="먼작귀 앞"></div>
-      <div class="face back"><img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcGmnJOG0mcBlehqccYi6XN7nrm8wWfoy_zB_L_r2QyneZCNuaxQEfxbQ&s=10"
-          alt="먼작귀 뒤"></div>
-    </div>
-  </div>
-</body>
+   <script>
+      let i = 1;
+      let sum = 0 ;
+      let sum_0 = 0;
+      while(i <= 3){
+         for(let j = 1; j <= 5 ; j++ ){
+            if(j % 2 == 0 ){
+               document.write(`${j}는 짝수입니다.<br>`);
+               sum += j ;
+            }else if(j % 2 == 1){
+               document.write(`${j}는 홀수입니다.<br>`);
+               sum_0 += j ;
+            }
+         }
+         i++
+      }
 
+      document.write(`짝수의 합은 ${sum} 입니다.<br>`);
+      document.write(`홀수의 합은 ${sum_0} 입니다.`);
+      // j가 따로 저장 될 수 있는 이유
+   </script>
+</body>
 </html>

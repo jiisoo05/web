@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수선언/표현식/화살표 비교</title>
+</head>
+
+<body>
+  <h1>호이스팅 데모</h1>
+  <p>콘솔(f12)에서 실행 결과를 확인하세요</p>
+  <script>
+    //1.함수 선언문
+    decl(); //실행됨 (호이스팅 O)
+    function decl() {
+      console.log('선언문 함수 실행!');
+    }
+    decl();
+
+    //2.함수 표현식
+    //expr1(); 에러
+    const expr1 = function () {
+      console.log('expr1 함수 실행');
+    }
+    //expr2(); 에러
+    var expr2 = function () {
+      console.log('expr2 함수 실행');
+    }
+
+    //3.화살표 함수
+    //arrow(); 에러
+    let arrow = () => {
+      console.log('화살표 함수 실행');
+    }
+    //선언문 : 선언 전에도 실행 됨 - 호이스팅 전체
+    //표현식 or 화살표 : 선언 전에 실행하면 에러 발생
+  </script>
+</body>
+
+</html>

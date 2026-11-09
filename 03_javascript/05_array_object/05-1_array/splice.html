@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포트폴리오 기술 스택 관리</title>
+</head>
+
+<body>
+  <script>
+    /* 배열의 원소 추가/삭제: array.splice(start, deleteCount, ...items)
+   - 인수 1개: start부터 끝까지 잘라 '반환' (원본에서 제거)
+   - 인수 2개: start부터 deleteCount개 '삭제'
+   - 인수 3개+: 삭제 + 새 요소 삽입(교체/추가)
+    */
+    let skills = ['HTML', 'CSS', 'JavaScript', 'jQuery', 'TypeScript', 'React.js'];
+    document.write(`<h2>skills 배열 : ${skills.join(', ')}</h2><hr>`);
+
+    //1)인수 1개 -> 해당 인덱스부터 끝까지 반환
+    let addSkills = skills.splice(3);
+    document.write(`<h3>[인수 1개] skills.splice(3)</h3>`);
+    document.write(`(분리된 adddSkills) : ${addSkills.join(', ')}<br>`);
+    document.write(`(남은 skills) : ${skills.join(', ')}<hr>`);
+
+    //2)인수 2개 -> 해당 인덱스부터 두번째 인자(개수) 분리
+    let delLegacy = addSkills.splice(0, 1);
+    document.write(`<h3>[인수 2개] addSkills.splice(0, 1)</h3>`);
+    document.write(`(삭제된 요소) : ${delLegacy.join(', ')}<br>`);
+    document.write(`(업데이트된 addSkills) : ${addSkills.join(', ')}<hr>`);
+
+    //3)인수 3개 이상 -> 삭제없이(0) Node.js 추가
+    let noDel = addSkills.splice(2, 0, 'Node.js');
+    document.write(`<h3>[인수 3개] addSkills.splice(2, 0, 'Node.js')</h3>`);
+    document.write(`(삭제된 요소) : ${noDel.join(', ')}<br>`);
+    document.write(`(업데이트된 addSkills) : ${addSkills.join(', ')}<hr>`);
+
+    //4)인수 3개 이상 -> 1번 인덱스 1개 삭제후 새요소 추가
+    let replaceDesign = addSkills.splice(1, 1, 'Swiper', 'GSAP', 'Three.js');
+    document.write(`<h3>[인수 3개] addSkills.splice(1, 1, 'Swiper', 'GSAP', 'Three.js')</h3>`);
+    document.write(`(삭제된 요소) : ${replaceDesign.join(', ')}<br>`);
+    document.write(`(업데이트된 addSkills) : ${addSkills.join(', ')}<hr>`);
+
+    //최종 합치기
+    const finalSkills = skills.concat(addSkills,replaceDesign);
+    document.write(`<strong>최종 skills 스택</strong> : ${finalSkills.join(', ')}`);
+  </script>
+</body>
+
+</html>

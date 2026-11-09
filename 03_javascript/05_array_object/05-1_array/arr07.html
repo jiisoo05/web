@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열 객체 생성 확인하기</title>
+</head>
+<body>
+  <script>
+    let city = new Array('서울','대구','부산');
+    city = '서울'
+    if(city instanceof Array){
+      document.write('배열 객체가 생성되었습니다.<br>');
+      for(let v of city){
+        document.write(v+'<br>');
+      }
+    }else{
+      document.write('배열 객체가 아닙니다<br>');
+      document.write(`데이터 : ${city}<br>`);
+    }
+
+    document.write(`city 변수 타입 : ${typeof city}`);
+  </script>
+</body>
+</html>

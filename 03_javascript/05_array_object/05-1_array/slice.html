@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포트폴리오 기술 스택 관리(slice)</title>
+</head>
+
+<body>
+  <script>
+    /* 배열의 복사: 
+      array.slice(start, end인덱스 직전까지)
+      원본 배열은 변경되지 않음
+      */
+    let skills = ['HTML', 'CSS', 'JavaScript', 'jQuery', 'TypeScript', 'React.js'];
+    document.write(`<h2>skills 배열 : ${skills.join(', ')}</h2><hr>`);
+    //인수 1개 : 해당 인덱스 부터 끝까지 복사
+    let slice1 = skills.slice(3);
+    document.write(`<h3>[인수1개] skills.slice(3)</h3>`);
+    document.write(`(복사된 slice1) : ${slice1}<hr>`);
+
+    //인수 2개 : (start인덱스,end인덱스직전);
+    let slice2 = skills.slice(1, 4);
+    document.write(`<h3>[인수2개] skills.slice(1, 4)</h3>`);
+    document.write(`(복사된 slice2) : ${slice2}<hr>`);
+
+    //음수 인덱스 : 끝에서부터 카운트
+    let slice3 = skills.slice(0, -2);
+    document.write(`<h3>[인수2개] skills.slice(0, -2)</h3>`);
+    document.write(`(복사된 slice3) : ${slice3}<hr>`);
+
+    document.write(`원래 배열 변경 안됨 : ${skills.join('-')}`);
+  </script>
+</body>
+
+</html>

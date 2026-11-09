@@ -2,26 +2,24 @@
 <html lang="ko">
 
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-     <!--   <select>
+  <!--   <select>
     <option value="2026">2026년도</option>
     <option value="2025">2025년도</option>
     <option value="2024">2024년도</option>
   </select> -->
-     <script>
-          document.write('<select>');
-               for(let i = 2026; i>=1900; i--){
-                    document.write('<option value="${i}">${i}년도</option')
-               }
-
-          document.write('</select>');
-
-     </script>
+  <script>
+    document.write('<select>');
+      for(let i = 2026; i>=1900; i--){
+        document.write(`<option value="${i}">${i}년도</option>`);
+      }
+    document.write('</select>');
+  </script>
 </body>
 
 </html>
