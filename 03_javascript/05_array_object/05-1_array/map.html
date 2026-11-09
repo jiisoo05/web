@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>map 메소드</title>
+</head>
+
+<body>
+  <script>
+    /* 
+     배열의 데이터를 함수의 인자로 전달하고
+     함수의 수행결과를 반환받아 새로운 배열 생성
+   */
+    let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let mapData = data.map(v => v * v);
+    document.write(`원래 배열 : ${data.join(', ')}<br>`);
+    document.write(`mapData 배열 : ${mapData.join(', ')}<br>`);
+
+    function mapArr(v, i) {
+      return v + 1;
+    }
+    let mapData2 = data.map(mapArr);
+    document.write(`mapData2 배열 : ${mapData2.join(', ')}<br>`);
+    document.write(`mapData2.map(mapArr) : ${mapData2.map(mapArr)}`);
+    document.write(`mapData2.map((v,i)=>v+v+i) : ${mapData2.map((v,i)=>v+v+i)}`);
+  </script>
+</body>
+
+</html>
