@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+</head>
+
+<body>
+  <script>
+    //prompt로 이름 받아 오기 (uName)
+    const uName = prompt('이름을 입력하세요','변우석');
+    //prompt로 나이 받아 오기 (uAge)
+    const uAge = prompt('나이를 입력하세요',20);
+    //함수 printMsg(이름,나이) 선언 ->함수선언문
+    function printMsg(name,age){
+      document.write(`학생이름 : <b>${name}</b><br>`);
+      document.write(`학생나이 : <b>${age}</b><br>`);
+    }
+    //호출uName,uAge
+    printMsg(uName,uAge);
+  </script>
+</body>
+
+</html>
