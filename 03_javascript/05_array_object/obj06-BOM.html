@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>BOM</title>
+</head>
+
+<body>
+     <div id="display"></div>
+     <script>
+          //현재 페이지의 전체 url 출력
+          document.write(`<p><b>location.href : </b>${location.href}</p>`)
+
+          document.write(`<p><b>location.host : </b>${location.host}</p>`)
+
+
+          document.write(`<p><b>location.protocol : </b>${location.protocol}</p>`)
+
+          let url = 'https://www.youtube.com/@flowyullab';
+
+          
+          document.write(`<p><b></b></p>`)
+          document.write(`<p><b></b></p>`)
+     </script>
+
+     <button type="button" onclick="location.replace(url)">율쌤 유튜브로 바로가기</button>
+     <!-- 버튼을 클릭하면 location.replace() 메서드를 사용하여 
+         현재 문서를 새로운 URL로 교체(이동)합니다. 
+         → 뒤로 가기 버튼으로 원래 페이지로 돌아올 수 없음 -->
+</body>
+
+</html>
