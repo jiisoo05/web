@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>생성자 함수를 이용하는 방법 Object()와 this의 활용</title>
+</head>
+<body>
+  <p id="toolname"></p>
+  <p id="tooldomain"></p>
+  <p id="toolupdate"></p>
+  <script>
+    //Object 생성
+    let designTool = new Object();//빈 객체 생성
+
+    //속성 정의
+    designTool.name = 'Figma';
+    designTool.domain = 'UI/UX/AX 디자인';
+    designTool.version = '126.5.6';
+    // 126.12.8
+
+    //메서드 정의(this 활용)
+    designTool.introduce = function(){
+      return `저는 ${this.domain}을 위한 ${this.name}툴이에요`;
+    }
+    designTool.update = function(newVersion){
+      this.version = newVersion;
+      return `${this.name} 버전이 ${this.version}으로 업데이트 되었습니다`;
+    }
+
+    //DOM 출력
+    document.getElementById('toolname').textContent = designTool.introduce();
+    document.getElementById('tooldomain').innerHTML = `사용 분야 : <b>${designTool.domain}</b>`;
+
+    console.log(designTool.version);
+    document.getElementById('toolupdate').textContent = designTool.update('126.12.8');
+    console.log(designTool.version);
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>디지털 시계 만들기</title>
+  <style>
+    #digClock {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 2rem;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="digClock"></div>
+  <script>
+    //디지털 시계 함수
+    function digClock() {
+      //현재 시간 정보를 가져옴
+      let today = new Date();
+
+      //날짜부분 (월/일)
+      let day = (today.getMonth() + 1) + '월 ' + today.getDate() + '일 '
+
+      //(시/분/초)
+      let time = today.getHours() + '시 '
+        + today.getMinutes() + '분 '
+        + today.getSeconds() + '초';
+
+      //화면에 출력
+      document.getElementById('digClock').innerHTML = `<h1>${day+time}</h1>`  
+
+      //setTimeout(func,ms) : ms 후에 딱 1번 함수를 실행
+      setTimeout(digClock,1000);
+    }
+
+    //페이지 로딩시 바로 시작
+    digClock();
+  </script>
+</body>
+
+</html>

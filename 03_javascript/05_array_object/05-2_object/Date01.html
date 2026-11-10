@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date 객체 -방식과 ,방식 혼합</title>
+</head>
+
+<body>
+  <script>
+    //요일 변환 함수
+    function dayName(dayNum) {
+      switch (dayNum) {
+        case 0: return '일요일';
+        case 1: return '월요일';
+        case 2: return '화요일';
+        case 3: return '수요일';
+        case 4: return '목요일';
+        case 5: return '금요일';
+        case 6: return '토요일';
+        default: return '없는요일';
+      }
+    }
+    //날짜 정보 출력 함수
+    function printInfo(title, dateObj, type) {
+      let year = dateObj.getFullYear();
+      let month = dateObj.getMonth() + 1; //0부터 시작하므로 +1
+      let date = dateObj.getDate();
+      let day = dateObj.getDay();
+      document.write(`<h2>${title} (${type})방식</h2>`);
+      document.write(`${year}년 ${month}월 ${date}일 ${dayName(day)}<br>`);
+    }
+
+    let basicDate = new Date();
+    printInfo('오늘',basicDate,'아무것도 안넣음');
+
+    //시작일 날짜 -> ,방식 ->인자 값
+    let startDate = new Date(2026,9,20);
+    printInfo('개강일',startDate,'2026,9,20');
+
+    //종강일 날짜 '-방식' ->인자값 하나인 string 타입
+    //new Date('YYYY-MM-DD') ->입력한 그대로
+    let finalDate = new Date('2027-04-07');
+    printInfo('종강일',finalDate,'하이픈-');
+  </script>
+</body>
+
+</html>
