@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Date 객체 - 방식과 , 방식 혼합</title>
+</head>
+<body>
+     <script>
+          //요일 변환 함수
+          function dayName(dayNum){
+               switch(dayNum){
+                    case 0 : return '일요일';
+                    case 1 : return '월요일';
+                    case 2 : return '화요일';
+                    case 3 : return '수요일';
+                    case 4 : return '목요일';
+                    case 5 : return '금요일';
+                    case 6 : return '토요일';
+                    default: return '없는 요일';
+               }
+          }
+
+          let basicDate = new Date();
+          console.log(dayName(basicDate.getDate()));
+     </script>
+</body>
+</html>
