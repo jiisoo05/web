@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>랜덤 뽑기</title>
+</head>
+
+<body>
+  <script>
+     let uiuxClass = ['1조','2조','3조','4조']
+/*     let uiuxClass = [
+      "고동우",
+      "김문경",
+      "김미란",
+      "김태완",
+      "김형준",
+      "김희정",
+      "박나은",
+      "박윤경",
+      "신서희",
+      "엄준호",
+      "여우규",
+      "이민서",
+      "이연두",
+      "이연희",
+      "이혜원",
+      "정다운",
+      "조태림",
+      "최승일",
+      "최호정",
+      "홍예슬"
+    ]; */
+    let random = [];
+    let len = uiuxClass.length;
+    //console.log(uiuxClass[random[0]]);
+    for (let i = 0; i < len; i++) {
+      random[i] = Math.floor(Math.random() * len);
+      for (let j = 0; j < i; j++) {
+        if (random[i] == random[j]) {
+          i--;
+          break;
+        }
+      }
+    }
+    //console.log(random);
+    function docu() {
+      for (let i = 0; i < len; i++) {
+        alert(`(${i+1}) ${uiuxClass[random[i]]}`);
+        document.write(`(${i+1}) ${uiuxClass[random[i]]}<br>`);
+      }
+    }
+  </script>
+  <button type="button" onclick="docu()">랜덤뽑기</button>
+</body>
+
+</html>
