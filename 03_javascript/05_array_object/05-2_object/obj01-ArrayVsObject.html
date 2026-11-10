@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 알아보기</title>
+</head>
+
+<body>
+  <script>
+    /*
+    프로그램에서 인식할 수 있는 모든 대상이며 ,데이터를 저장하고 처리하는 기본 단위
+    배열도 사실은 Array라는 특별한 객체(Object)
+    */
+    let obj = {
+      name: '홍길동',
+      age: 20,
+      play: true,
+      design: function () {
+        return '감각적이고 똘똘한'
+      },
+      speed: 100,
+    }
+    console.log(obj['name']);
+    console.log(obj.age);
+    console.log(obj.play);
+    console.log(obj.design())
+    console.log(obj['speed']);
+
+    let arr = [1, '율쌤', true, [1, 2, 3], { name: '홍길동2', age: 18 }, '졸려요'];
+
+    let obj2 = {
+      name: '율쌤',
+      age: 18,
+      design: () => '구조적이고 모던한',
+      speed: 100,
+      //upSpeed: function (up) { return this.speed + up },
+      upSpeed: (up) => obj2.speed + up,
+    }
+    console.log(obj2.upSpeed(100));
+  </script>
+</body>
+
+</html>
