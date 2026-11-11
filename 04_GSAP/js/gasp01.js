@@ -46,5 +46,49 @@ document.addEventListener("DOMContentLoaded", (event) => {
     opacity: 0,
     duration: 0.6,
     stagger: 0.15, //요소들이 0.15초 간격으로 순서대로 실행
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: '.chips',
+      start: 'top 50%', //화면의 50% 지점에서 시작
+      //markers: true,
+      toggleActions: 'play none none reverse',
+      // 내려올 때 실행, 올라가면 반대로
+      // toggleActions: "onEnter onLeave onEnterBack onLeaveBack"
+      //트리거 요소가 아래에서 위로 들어올 때
+      //트리거 요소가 스크롤 위로 지나가 화면에서 사라질 때
+      //트리거 요소가 다시 아래로 내려오며 화면에 재진입할 때
+      //트리거 요소가 다시 아래로 내려갔다가 화면에서 사라질 때
+      //play(재생 시작), pause(멈춘 상태), resume(멈췄던 부분부터 다시 실행), restart(항상 처음부터 다시 실행), reverse(반대로 재생 (거꾸로)), reset(애니메이션을 0초 상태로 초기화), none(아무것도 안 함)
+      toggleActions: 'restart none none none',
+      //스크롤이 들어올 때 마다 항상 처음부터 다시 실행
+    }
   });
+
+  const timeline_card = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.scene', //scene클래스가 화면에 들어오면 실행
+      markers: true, //디버깅용 마커
+      start: 'top 70%', //트리거 시작 지점
+      toggleActions: 'play none none reverse',
+    }
+  });
+  timeline_card.from('.card1', {
+    y: 60,
+    opacity: 0,
+    duration: 0.6,
+  }).from('.card2', {
+    y: 80,
+    opacity: 0,
+    duration: 0.8,
+  }, '<0.2')
+    .from('.card3', {
+      y: 80,
+      opacity: 0,
+      duration: 0.8,
+    }, '>0.2');
+
+  /*
+    <	이전 애니메이션 시작 시점
+    >	이전 애니메이션 끝 시점 
+*/
 });//end
