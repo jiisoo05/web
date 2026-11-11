@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
+=======
+document.addEventListener('DOMContentLoaded',()=>{
+>>>>>>> origin/main
   //DOMContentLoaded
   //html 구조(dom트리)가 완전히 렌더링 된 후 실행
   //css 이미지 등 외부 리소스 로드 완료는 기다리지 않음
 
   //키 버튼들을 담은 컨테이너 요소들
+<<<<<<< HEAD
   const $keyContainers = document.querySelectorAll('.key_container');
+=======
+  const $keyContainers =document.querySelectorAll('.key_container');
+>>>>>>> origin/main
 
   //키보드 이벤트 정보를 표시할 영역
   const $info = document.querySelector('.js-info');
@@ -17,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //한줄에 배치할 키 개수
   const KEY_COUNT = 4;
+<<<<<<< HEAD
   $keyContainers.forEach((container, containerIndex) => {
     for (let i = 0; i < KEY_COUNT; i++) {
       const keyIndex = containerIndex * KEY_COUNT + i;
@@ -106,4 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
 
+=======
+>>>>>>> origin/main
 });//end
