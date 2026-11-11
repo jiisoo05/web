@@ -1,0 +1,15 @@
+은랑 LV.999 StarRail.js 연동 시험
+
+기존 은랑 공략의 추천 광추/유물/파티/스킬 내용은 변경하지 않았습니다.
+StarRail.js는 Node.js용 비공식 데이터 래퍼로, 브라우저 HTML에서 바로 호출하는 서비스가 아닙니다.
+
+실제 게임 데이터 생성 절차 (Node.js 16 이상 설치 필요):
+1. VS Code에서 별빛아카이브 폴더 열기
+2. 터미널에서 npm install starrail.js@latest
+3. node scripts/export-silverwolf.cjs
+4. Live Server로 starlight.html을 열고 은랑LV.999 상세 페이지 확인
+
+위 스크립트는 캐시의 캐릭터 목록에서 은랑 LV.999 이름이 정확히 일치하는 항목을 찾습니다.
+찾지 못하면 found:false를 기록하고, 다른 은랑 캐릭터로 대체하지 않습니다.
+현재 전달한 ZIP에는 게임 서버에서 검증한 JSON을 넣지 않았습니다.
+데이터 소스: https://yuko1101.github.io/starrail.js/docs/

@@ -1,0 +1,50 @@
+{
+  "character": "은랑LV.999",
+  "source": "data/은랑 텍스트.txt (사용자 작성)",
+  "path": "환락",
+  "element": "허수",
+  "tier": 0,
+  "cones": [
+    {
+      "name": "갤럭시 시티에 오신 것을 환영합니다",
+      "rarity": 5,
+      "image": "./images/lightcones/갤럭시티에오신것을환영합니다.webp",
+      "description": "은랑 LV.999의 전용 광추. 페이크 엔딩 스피드런 공략의 버프를 더 받을 수 있게 속도를 올려주는 옵션이 있고, 필살기 사용 후 웃음포인트를 20pt를 생성하여, 행적 효과와 함께 변신 직후 히든 스코어가 40pt까지 차오르게 해줘 은랑 LV.999 개인의 저점도 끌어올리는 건 물론이고, 파티적인 면에서도 최상의 옵션을 준다."
+    },
+    {
+      "name": "그녀가 보기로 결심했을 때",
+      "rarity": 5,
+      "image": "./images/lightcones/그녀가보기로결심했을때.webp",
+      "description": "효광의 전용 광추. 속도 18%를 주고 [대길]의 효과인 치명타 확률 10%, 치명타 피해 30%를 주기에 은랑 LV.999 의 전용 광추가 없으면 이 광추를 추천한다. 하지만 효광 역시 대체 광추의 선택지가 좁아 여분의 광추가 있을 때 고려할 만하다."
+    },
+    {
+      "name": "파도에 내던진 한여름",
+      "rarity": 5,
+      "image": "./images/lightcones/파도의내던진한여름.webp",
+      "description": "어벤츄린·웨이브의 전용 광추. 기본적으로 치확 18%, 속도 24%를 제공하고, 변신 후 환락 스킬 발동 시 환락도 40%, 환락 스킬 3번 발동 시 전투 스킬 포인트 1pt를 제공하여 이 전용 광추도 고려해 볼 만하다."
+    },
+    {
+      "name": "오늘의 행운",
+      "rarity": 4,
+      "image": "./images/lightcones/오늘의행운.webp",
+      "description": "공훈 광추. 그나마 사용 가능한 환락 딜러용 광추지만 속도 관련 옵션이 없어 셋팅 난이도가 상당히 높다."
+    },
+    {
+      "name": "슈룸 모험기",
+      "rarity": 4,
+      "image": "./images/lightcones/슈룸모험기.webp",
+      "description": "망각의 상점 광추. 슈룸 5중첩이 행운 1중첩에 비해 약간 우위를 점한다."
+    }
+  ],
+  "recommendedRelicSets": [
+    "빛나는 공훈의 마법 소녀",
+    "0호 스테이지 펑크 로드"
+  ],
+  "partyCharacters": [
+    "은랑LV.999",
+    "스파키",
+    "효광",
+    "펄"
+  ],
+  "skillDataSource": "기존 starlight.html의 silverWolfGrowth"
+}
