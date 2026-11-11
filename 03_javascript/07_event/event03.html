@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마우스 이벤트 전체 정리</title>
+  <script src="js/event03.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #box {
+      width: 200px;
+      height: 200px;
+      background: lightblue;
+      margin: auto;
+      line-height: 200px;
+      font-size: 18px;
+      border: 2px solid #333;
+      user-select: none;
+      /* 드래그 시 글자 선택 안되게 */
+    }
+  </style>
+</head>
+
+<body>
+  <h1> 마우스 이벤트 연습</h1>
+  <div id="box">박스</div>
+  <button id="triggerBtn">강제로 이벤트 발생</button>
+  <p id="log"></p>
+</body>
+
+</html>
