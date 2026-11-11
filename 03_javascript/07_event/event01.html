@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>마우스 이벤트 예제</title>
+</head>
+<body>
+     <button type="button" id="btn">클릭해보세요</button>
+     <script>
+          const btn = document.getElementById('btn');
+          btn.addEventListener('click',(e)=>{
+               console.log('버튼이 클릭됨',e);
+          });
+
+          const clickEvent = new Event('click',{
+               bubbles:true,
+               cancelable:true,
+          })
+     </script>
+</body>
+</html>
