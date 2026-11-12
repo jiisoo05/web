@@ -115,8 +115,8 @@ console.log(positionWidth.top);
 const $jsPosition = $position_width.querySelector('.js_position');
 const $temp = document.createElement('div');
 
-$temp.innerHTML = 
-`<div>
+$temp.innerHTML =
+  `<div>
   $jsPosition.offsetLeft : ${$jsPosition.offsetLeft},
   $jsPosition.offsetTop : ${$jsPosition.offsetTop},
 </div>
@@ -132,7 +132,7 @@ const $jsSize = $position_width.querySelector('.js_size');
 const $temp2 = document.createElement('div');
 
 $temp2.innerHTML =
-    `<div>
+  `<div>
         $jsSize.offsetWidth : ${$jsSize.offsetWidth},
         $jsSize.offsetHeight : ${$jsSize.offsetHeight},
     </div>
