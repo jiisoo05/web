@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSAP 제어 심화 + ScrollTrigger</title>
+  <link rel="stylesheet" href="css/style03.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+  <script src="js/gsap03.js"></script>
+</head>
+
+<body>
+  <section class="intro">⬇️ 아래로 스크롤 해보세요</section>
+
+  <!-- demo1 -->
+  <section class="demo">
+    <h1>Demo1: ScrollTrigger + Label Jump</h1>
+    <div class="wrap">
+      <div class="box b1">1</div>
+      <div class="box b2">2</div>
+      <div class="box b3">3</div>
+      <div class="box b4">4</div>
+    </div>
+  </section>
+
+  <!-- demo2 -->
+  <section class="demo2">
+    <h1>Demo2: Keyboard로 타임라인 제어</h1>
+    <div class="panel">HELLO</div>
+    <p>🎹 키보드: [P] play / [O] pause / [R] reverse</p>
+  </section>
+
+  <section class="outro">🎉 끝!</section>
+
+  <div class="control_panel">
+    <p>🎹 단축키</p>
+    <ul>
+      <li>[1] → demo1 label2</li>
+      <li>[2] → demo1 label3</li>
+      <li>[P] → demo2 play</li>
+      <li>[O] → demo2 pause</li>
+      <li>[R] → demo2 reverse</li>
+    </ul>
+  </div>
+</body>
+
+</html>
