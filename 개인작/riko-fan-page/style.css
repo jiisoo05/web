@@ -1,0 +1,111 @@
+@charset "utf-8";
+@font-face{font-family:Allura;src:url('assets/allura.ttf') format('truetype');font-display:swap}
+@font-face{font-family:Hurricane;src:url('assets/hurricane.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Barlow;src:url('assets/barlow.ttf') format('truetype');font-display:swap}
+
+/* 공통 설정 */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#172216;--green:#506841;--icon-cutout:#f8f8ed}
+body{background:#f4f5e9;color:var(--ink);font-family:Arial,'Malgun Gothic',sans-serif}
+button,a{-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+button:focus-visible,a:focus-visible{outline:2px solid #506841;outline-offset:7px}
+
+/* 첫 화면: 모든 요소를 담는 기준 영역 */
+.hero{height:100svh;min-height:540px;width:100%;position:relative;overflow:hidden;isolation:isolate}
+.landscape,#water{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.landscape{background:url('assets/spring-water.png') center/cover no-repeat;z-index:-2}
+#water{z-index:-1;opacity:0;transition:opacity 1.2s}
+#water.ready{opacity:1}
+
+/* 공식 채널 아이콘 */
+.socials{position:absolute;top:32px;right:4.6%;display:flex;align-items:center;gap:22px;z-index:3}
+.socials{transform:translate(var(--nav-x,0px),var(--nav-y,0px));will-change:transform}
+.socials a{position:relative;display:grid;place-items:center;width:40px;height:40px;transition:transform .25s,color .25s}
+.socials a:hover{transform:translateY(-3px);color:var(--green)}
+.socials svg{width:29px;height:29px;fill:currentColor}
+.socials .broadcast{fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round}
+.socials a::after{content:attr(data-label);position:absolute;top:47px;left:50%;transform:translate(-50%,-3px);font:12px Arial,sans-serif;white-space:nowrap;opacity:0;transition:.2s;pointer-events:none}
+.socials a:hover::after,.socials a:focus-visible::after{opacity:1;transform:translate(-50%,0)}
+
+/* 중앙 타이포그래피: 제목은 이미지가 아닌 실제 글자입니다. */
+.hero-copy{position:absolute;left:50%;top:49%;width:max-content;max-width:94%;text-align:center;transform:translate(calc(-50% + var(--title-x,0px)),calc(-50% + var(--title-y,0px)));will-change:transform}
+.hero.ripple-ready .hero-copy,.hero.ripple-ready .socials,.hero.ripple-ready .hero-footer{opacity:0}
+.brand{display:flex;align-items:center;justify-content:center;gap:9px;font-family:Barlow,'Arial Narrow',sans-serif;font-size:clamp(24px,3.3vw,46px);line-height:1;margin-bottom:16px;font-weight:400;letter-spacing:-.02em}
+.brand{width:max-content;margin-inline:auto}
+.brand svg{width:43px;height:43px}
+.brand span,h1{text-shadow:1px 2px 0 #31482522,3px 6px 15px #17221633}
+.hero:not(.ripple-ready) .brand:hover span,.hero:not(.ripple-ready) h1:hover{color:#E4F9CD}
+h1{font-family:Hurricane,cursive;font-size:clamp(80px,10.6vw,158px);font-weight:400;font-style:normal;line-height:1.08;letter-spacing:0;color:#080d08;white-space:nowrap}
+.meet-button{border:0;border-radius:100px;background:#fff;min-width:244px;padding:11px 30px;display:inline-flex;justify-content:center;align-items:center;gap:22px;font:27px/1 Barlow,'Arial Narrow',sans-serif;margin-top:22px;box-shadow:0 4px 24px #50684103;transition:color .35s,box-shadow .3s;position:relative;overflow:hidden;isolation:isolate}
+.meet-button::before{content:"";position:absolute;inset:-100% -15% 100%;background:#080808;border-radius:0 0 45% 55%;z-index:-1;transition:transform .65s cubic-bezier(.2,.7,.2,1),border-radius .65s}
+.meet-button:hover,.meet-button:focus-visible{color:#fff;box-shadow:0 8px 30px #41563713}
+.meet-button:hover::before,.meet-button:focus-visible::before{transform:translateY(100%);border-radius:0}
+.meet-button .button-arrow{font:25px/1 Arial,sans-serif;transition:transform .3s}
+.meet-button:hover span{transform:none}
+
+/* 하단의 작은 조작 안내 */
+.hero-footer{position:absolute;bottom:25px;left:32px;right:32px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#344d40}
+.hero-footer{transform:translate(var(--footer-x,0px),var(--footer-y,0px));will-change:transform}
+.motion-control{border:0;background:#ffffffb3;backdrop-filter:blur(12px);border-radius:50px;display:flex;align-items:center;gap:9px;padding:11px 14px;font-size:11px;letter-spacing:.03em}
+.motion-control svg{width:21px;height:21px;stroke:currentColor;stroke-width:1.5;stroke-linecap:round}
+.water-hint{font:italic 14px Georgia,serif;opacity:.78}
+.hero-footer small{font-size:9px;letter-spacing:.14em;opacity:.75}
+.pointer-ring{position:fixed;left:0;top:0;width:14px;height:14px;border:1px solid #435a3d55;border-radius:50%;pointer-events:none;opacity:0;z-index:4;transition:opacity .3s;will-change:transform}
+.pointer-ring.visible{opacity:1}
+
+/* 두 번째 화면. dialog로 키보드 초점과 ESC 닫기를 처리합니다. */
+.about{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;border:0;padding:0;background:#f5f7ed;color:var(--ink);overflow:auto}
+.about::backdrop{background:#e5efdbb3;backdrop-filter:blur(12px)}
+.about[open]{animation:reveal .55s ease both}
+.about::before{content:'';position:fixed;inset:0;background:linear-gradient(90deg,#f5f7edfa 0%,#f5f7ede8 52%,#f5f7ed55 100%),url('assets/spring-water.png') center/cover;z-index:-1}
+.back-button{position:absolute;left:5vw;top:35px;background:transparent;border:0;display:flex;gap:13px;align-items:center;font-size:14px;padding:12px 0}
+.about-content{width:min(900px,90%);margin:0 auto;padding:clamp(140px,19vh,200px) 0 110px}
+.eyebrow{font-size:11px;letter-spacing:.23em;color:var(--green);margin-bottom:20px}
+.about h2{font:400 clamp(64px,8.5vw,118px)/1.1 Allura,cursive;margin-bottom:35px;letter-spacing:-.025em}
+.about-korean{font-size:clamp(24px,3vw,38px);font-weight:400;line-height:1.7;letter-spacing:-.04em}
+.about-korean strong{font-weight:500}
+.about-description{margin-top:22px;font-size:14px;line-height:2;color:#5e6a5c;word-break:keep-all}
+.about-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:38px}
+.about-links a{background:#ffffffb8;border:1px solid #dbe3d1;padding:14px 20px;border-radius:50px;font-size:13px;display:flex;gap:25px;transition:.2s}
+.about-links a:hover{background:#e7f0da;transform:translateY(-2px)}
+.fan-note{position:absolute;bottom:25px;left:5vw;font-size:10px;line-height:1.8;color:#72806c}
+@keyframes arrive{from{opacity:0;transform:translate(-50%,calc(-50% + 14px))}to{opacity:1;transform:translate(calc(-50% + var(--title-x,0px)),calc(-50% + var(--title-y,0px)));will-change:transform}}
+@keyframes reveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media(max-width:650px){
+ .hero{min-height:500px}.landscape{background-position:43% center}
+ .socials{top:22px;right:20px;gap:12px}.socials a{width:34px;height:34px}.socials svg{width:25px;height:25px}
+ .hero-copy{top:47%}.brand{font-size:28px;margin-bottom:17px}.brand svg{width:30px;height:30px}
+ h1{font-size:clamp(66px,16vw,100px)}.meet-button{font-size:23px;min-width:190px;margin-top:22px;padding:12px 24px}
+ .hero-footer{left:20px;right:20px;bottom:22px}.water-hint{display:none}.hero-footer small{font-size:8px;letter-spacing:.08em}
+ .pointer-ring{display:none}.about-content{padding-top:150px}.about h2{font-size:64px}.about-description br{display:none}.fan-note{position:static;padding:0 5vw 24px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.pointer-ring{display:none}}
+
+/* 배경과 분리된 전경 글자: 소개 화면도 같은 깊이감을 유지합니다. */
+.about :is(h2,p,a,button){text-shadow:1px 2px 0 #31482514,3px 5px 12px #17221624}
+@media(prefers-reduced-motion:reduce){.hero-copy{transform:translate(-50%,-50%)}.socials,.hero-footer{transform:none}}
+
+/* 채널 아이콘 뒤에는 어두운 그림자 대신 부드러운 흰색 빛을 둡니다. */
+.socials svg{filter:drop-shadow(0 2px 5px #ffffffd9) drop-shadow(0 0 12px #ffffff99)}
+
+/* 잠수 전환: 화면은 위로 멀어지고 수면의 경계가 아래에서 올라옵니다. */
+.hero{transform-origin:50% 72%;transition:transform 1.05s cubic-bezier(.2,.65,.25,1),filter 1.05s}
+.is-diving .hero{transform:translateY(-11vh) scale(1.11);filter:blur(5px) saturate(.85)}
+.dive-transition{position:fixed;inset:0;z-index:20;overflow:hidden;pointer-events:none;visibility:hidden;opacity:0;transition:opacity .55s}
+.dive-transition.is-active{visibility:visible;opacity:1}
+.dive-water{position:absolute;inset:0;background:linear-gradient(180deg,#bcebdc 0%,#99d4c1 55%,#80bead 100%);transform:translateY(115%);transition:transform 1.05s cubic-bezier(.24,.65,.2,1)}
+.is-active .dive-water{transform:translateY(0)}
+.dive-waterline{position:absolute;left:-10%;top:-85px;width:120%;height:86px;filter:drop-shadow(0 -3px 8px #ffffff99);animation:waterline-sway 2.5s ease-in-out infinite alternate}
+.dive-caustics{position:absolute;inset:0;background:url('assets/spring-water.png') center bottom/cover;mix-blend-mode:soft-light;opacity:.5;filter:blur(2px);transform:scale(1.1);animation:caustic-drift 3s ease-in-out infinite alternate}
+.dive-bubble{position:absolute;bottom:-40px;display:block;width:14px;height:14px;border:1px solid #ffffff99;border-radius:50%;box-shadow:inset -2px 2px 4px #ffffff66;animation:bubble-rise 1.5s ease-in infinite}
+.dive-bubble.one{left:28%;width:9px;height:9px}.dive-bubble.two{left:64%;animation-delay:.2s}.dive-bubble.three{left:76%;width:7px;height:7px;animation-delay:.55s}
+.dive-transition.is-fading{opacity:0}
+.about.from-dive{animation:underwater-arrival .9s cubic-bezier(.2,.65,.25,1) both}
+.about.from-dive::backdrop{background:#a8ddcecc;backdrop-filter:blur(8px)}
+@keyframes waterline-sway{from{transform:translateX(-1%)}to{transform:translateX(2%)}}
+@keyframes caustic-drift{from{transform:scale(1.1) translateY(0)}to{transform:scale(1.15) translateY(-3%)}}
+@keyframes bubble-rise{to{transform:translateY(-110vh) translateX(20px);opacity:0}}
+@keyframes underwater-arrival{0%{opacity:0;filter:blur(10px);transform:translateY(55px) scale(1.035)}100%{opacity:1;filter:blur(0);transform:none}}
+@media(prefers-reduced-motion:reduce){.hero{transition:none}.dive-transition{display:none}}

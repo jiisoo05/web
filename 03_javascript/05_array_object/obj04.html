@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object</title>
+</head>
+
+<body>
+  <p id="upspeed"></p>
+  <p id="downspeed"></p>
+  <script>
+    //yulcar 객체
+    //name : '붕붕이' /speed:50/color->red/
+    //speedUp speed+20
+    //speedDown speed-20
+    let yulcar = {
+      name: '붕붕이',
+      speed: 50,
+      color: 'red',
+      speedUp: function () { return this.speed + 20; },
+      speedDown: function () { return this.speed - 20;},
+    }
+    document.getElementById('upspeed').textContent = `속도증가 : ${yulcar.speedUp()}`;
+    document.getElementById('downspeed').textContent =`속도감소 : ${yulcar.speedDown()}`;
+    console.log(`내 차의 이름음 ${yulcar.name}, 기본 스피드는 ${yulcar.speed} , 색상은 ${yulcar.color} 입니다.`);
+  </script>
+</body>
+
+</html>
