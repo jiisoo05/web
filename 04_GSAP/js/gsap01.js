@@ -91,4 +91,43 @@ document.addEventListener("DOMContentLoaded", (event) => {
     <	이전 애니메이션 시작 시점
     >	이전 애니메이션 끝 시점 
 */
+  // 5. 스타일 변화
+  gsap.to('.hero', {
+    duration: 1.2,
+    backgroundColor: '#4caf50',
+    color: '#111',
+    scale: 1.2,
+    rotate: 10,
+    borderRadius: '30px',
+    repeat: -1,
+    yoyo: true,
+    ease: "power2.inOut",
+  });
+
+  //6.토글 애미메이션 (버튼이벤트)
+  const panel_slide = gsap.to('.panel', {
+    x: 240,
+    duration: 0.5,
+    paused: true,
+  }).reverse();
+  //애니메이션을 반대로 실행 - GSAP Tween/Timeline 객체 전용 - 시작부터 역재생 상태로 세팅
+
+  document.getElementById('btn_toggle').addEventListener('click', () => {
+    //지금 상태 확인 -> 지금 상태를 반대로 바꾸기
+    panel_slide.reversed(!panel_slide.reversed());
+  });
+  
+  //버튼 클릭할 때마다 true ↔ false로 바꿔주니까
+  //정방향 ↔ 역방향 실행이 계속 토글됨
+
+  /*
+       my_tween.reversed();  GSAP Tween/Timeline 전용 메서드
+       애니메이션 실행 방향 상태를 읽거나 바꾸기
+       true 또는 false 반환
+       true = 지금 "역재생 모드"
+       false = 지금 "정방향 모드"
+ 
+      my_tween.reversed(true);  // 강제로 역재생
+      my_tween.reversed(false); // 강제로 정방향 실행
+  */
 });//end
