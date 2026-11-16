@@ -17,7 +17,8 @@
   <link rel="icon" type="image/png" sizes="192x192" href="./favicon/icon-192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="./favicon/icon-512.png" />
   <link rel="manifest" href="./favicon/site.webmanifest" />
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <!-- 오픈그래프 (카카오톡/페이스북 등 공유 미리보기) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FlowYulLab" />
@@ -27,9 +28,11 @@
   <meta property="og:image" content="./favicon/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
   <script src="js/main.js" defer></script>
 </head>
 
@@ -160,7 +163,93 @@
     <main>
       <div class="main_visual">
         <div class="inner">
-
+          <div class="swiper">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide slide1">
+                <div class="txt_area">
+                  <div class="sub_txt">Education</div>
+                  <div class="tit">
+                    <p>디자인에서 AI 코딩까지</p>
+                    <p>실무 흐름을 배우는 곳</p>
+                  </div><!-- //tit -->
+                  <div class="txt">
+                    <p>FlowYulLab은 UI/UX, 웹디자인, 프론트엔드,</p>
+                    <p>AI 코딩을 쉽게 풀어주는 교육 브랜드입니다.</p>
+                  </div><!-- //.txt -->
+                  <a href="#" class="more border">
+                    <span>유튜브 강의 보기</span>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </a>
+                </div><!-- //.txt_area -->
+              </li>
+              <li class="swiper-slide slide2">
+                <div class="txt_area">
+                  <div class="sub_txt">Design</div>
+                  <div class="tit">
+                    <p>UI/UX 기획부터</p>
+                    <p>Figma 실습까지</p>
+                  </div><!-- //tit -->
+                  <div class="txt">
+                    <p>디자인의 흐름을 이해하고</p>
+                    <p>실제 화면을 만드는 법을 배웁니다.</p>
+                  </div><!-- //.txt -->
+                  <a href="#" class="more border">
+                    <span>학습 트랙 보기</span>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </a>
+                </div><!-- //.txt_area -->
+              </li>
+              <li class="swiper-slide slide3">
+                <div class="txt_area">
+                  <div class="sub_txt">AI Coding</div>
+                  <div class="tit">
+                    <p>Claude Code · Codex</p>
+                    <p>Figma MCP 실무</p>
+                  </div><!-- //tit -->
+                  <div class="txt">
+                    <p>AI 코딩 도구를 실무에 바로 적용하는</p>
+                    <p>실험적인 커리큘럼을 경험해보세요.</p>
+                  </div><!-- //.txt -->
+                  <a href="#" class="more border">
+                    <span>AI 코딩 트랙 보기</span>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </a>
+                </div><!-- //.txt_area -->
+              </li>
+              <li class="swiper-slide slide4">
+                <div class="txt_area">
+                  <div class="sub_txt">Publishing</div>
+                  <div class="tit">
+                    <p>웹디자인개발기능사</p>
+                    <p>실기 대비</p>
+                  </div><!-- //tit -->
+                  <div class="txt">
+                    <p>HTML · CSS · JavaScript 기초부터</p>
+                    <p>자격증 실기 완성까지 함께합니다.</p>
+                  </div><!-- //.txt -->
+                  <a href="#" class="more border">
+                    <span>커리큘럼 둘러보기</span>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </a>
+                </div><!-- //.txt_area -->
+              </li>
+            </ul><!-- //.swiper-wrapper -->
+          </div><!-- //.swiper -->
+          <div class="pager">
+            <button type="button" class="left" aria-label="이전 슬라이드 버튼">&larr;</button>
+            <div class="box">
+              <div class="txt_box">
+                <span class="num">1</span>
+                /
+                <span>4</span>
+              </div><!-- //.txt_box -->
+              <div class="btn_box">
+                <i class="mdi mdi-play"></i>
+                <i class="material-symbols-outlined">pause</i>
+              </div><!-- //.btn_box -->
+            </div><!-- //.box -->
+            <button type="button" class="right" aria-label="다음 슬라이드 버튼">&rarr;</button>
+          </div><!-- //.pager -->
         </div> <!-- //.inner -->
       </div><!-- //.main_visual -->
       <section class="info">
