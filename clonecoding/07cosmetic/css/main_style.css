@@ -218,11 +218,11 @@ a.more .plus::after {
   display: none;
 }
 
-.best_product .right_box ul li a span {
+.best_product .right_box ul li a > span {
   font-size: 1.3rem;
 }
 
-.best_product .right_box ul li:hover a span {
+.best_product .right_box ul li:hover a > span {
   font-size: 2.2rem;
   font-weight: 600;
   line-height: 2.2;
@@ -256,7 +256,21 @@ a.more .plus::after {
   background-size: cover;
   background-position: center;
   filter: saturate(70%) contrast(80%);
-  transition: .5s;
+  opacity: 0;
+  transition: filter .5s;
+}
+
+.our_business .list ul li.is-visible,
+.our_business .list ul li:focus-within {
+  opacity: 1;
+  transition: filter .5s, opacity 1.2s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .our_business .list ul li.is-visible,
+  .our_business .list ul li:focus-within {
+    transition: filter .5s;
+  }
 }
 
 .our_business .list ul li:nth-child(1) {
@@ -300,7 +314,7 @@ a.more .plus::after {
 /* instagram */
 .instagram {
   margin-top: 150px;
-  height: 100vh;
+  min-height: 100vh;
   color: var(--w-color);
   font-size: 2rem;
   font-family: var(--Roboto-serif);
@@ -321,11 +335,9 @@ a.more .plus::after {
 }
 
 .instagram .list ul li {
-  width: 300px;
+  width: min(300px, 100%);
   height: 300px;
-  overflow: hidden;
-  border-radius: 20px;
-  transition: .6s;
+  transition: filter .6s;
 }
 
 .instagram .list ul li:hover {
@@ -335,5 +347,104 @@ a.more .plus::after {
 .instagram .list ul li a {
   display: block;
   width: 100%; height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
 }
 .instagram .list ul li a img{  width: 100%; height: 100%; object-fit: cover;}
+
+.instagram h3 span { display: inline-block; }
+
+.instagram h3.scroll-reveal span {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.instagram h3.scroll-reveal.is-visible span {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .65s ease-out, transform .65s ease-out;
+}
+
+.instagram .list li.scroll-reveal > a {
+  opacity: 0;
+}
+
+.instagram .list li.scroll-reveal.is-visible > a {
+  animation: instagram-card-flip .75s ease-out var(--photo-delay) both;
+}
+
+@keyframes instagram-card-flip {
+  0% {
+    opacity: 0;
+    transform: perspective(800px) rotateY(-90deg);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: perspective(800px) rotateY(0);
+  }
+}
+
+.instagram .list li:nth-child(1) { --photo-delay: .35s; }
+.instagram .list li:nth-child(2) { --photo-delay: .55s; }
+.instagram .list li:nth-child(3) { --photo-delay: .75s; }
+.instagram .list li:nth-child(4) { --photo-delay: .95s; }
+.instagram .list li:nth-child(5) { --photo-delay: 1.15s; }
+
+.instagram .list li.scroll-reveal:focus-within > a {
+  opacity: 1;
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .instagram h3.scroll-reveal span,
+  .instagram h3.scroll-reveal.is-visible span,
+  .instagram .list li.scroll-reveal > a,
+  .instagram .list li.scroll-reveal.is-visible > a {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+}
+
+
+.reveal-text {
+  display: inline-block;
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main [data-text-reveal].scroll-reveal > .reveal-text {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  main [data-text-reveal].scroll-reveal.is-visible > .reveal-text,
+  main [data-text-reveal].scroll-reveal:focus-within > .reveal-text {
+    opacity: 1;
+    transform: none;
+    transition: opacity var(--text-fade-duration, .65s) ease-out,
+                transform var(--text-fade-duration, .65s) ease-out;
+  }
+
+  header > .inner [data-text-reveal] > .reveal-text,
+  header.on .fix [data-text-reveal] > .reveal-text {
+    animation: header-text-fade var(--text-fade-duration, .65s) ease-out both;
+  }
+
+  @keyframes header-text-fade {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

@@ -1,7 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // 카드가 화면에 들어올 때마다 페이드 인하고, 화면을 벗어나면 초기화
+  const scrollCards = document.querySelectorAll('.our_business .list ul li, .instagram h3, .instagram .list ul li, main [data-text-reveal]');
+  if ('IntersectionObserver' in window) {
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting || entry.intersectionRatio < 0.01) {
+          entry.target.classList.remove('is-visible');
+        } else if (entry.intersectionRatio >= 0.2) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: [0.01, 0.2] });
+
+    scrollCards.forEach((card) => {
+      card.classList.add('scroll-reveal');
+      scrollObserver.observe(card);
+    });
+  } else {
+    scrollCards.forEach((card) => card.classList.add('is-visible'));
+  }
+
+  const textDurations = [650, 820, 560, 740, 910, 610, 780];
+  document.querySelectorAll('[data-text-reveal]').forEach((text, index) => {
+    text.style.setProperty('--text-fade-duration', textDurations[index % textDurations.length] + 'ms');
+  });
+
   //  AOS 초기화 (스크롤 애니메이션)
-  AOS.init({
+  window.AOS?.init({
     disable: false,                //  AOS 끄지 않기! → 애니메이션 작동하게 두기
     startEvent: 'DOMContentLoaded', //  HTML이 다 불러와지면 바로 AOS 시작!
     initClassName: 'aos-init',      //  AOS가 준비됐다는 표시 클래스 (자동 붙음)
